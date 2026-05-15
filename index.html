@@ -45,9 +45,11 @@
       }
     },
 
-    "transform": [
-      {"filter": "isValid(datum.LimitingMag)"}
-    ],
+"transform": [
+  {"filter": "isValid(datum.LimitingMag)"},
+  {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
+  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 170"}
+],
 
     "projection": {"type": "mercator"},
 
