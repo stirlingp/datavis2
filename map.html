@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 450,
+    "data": {
+      "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
+      "format": {
+        "type": "json",
+        "parse": {
+          "Latitude": "number",
+          "Longitude": "number",
+          "LimitingMag": "number"
+        }
+      }
+    },
+    "projection": {"type": "mercator"},
+    "layer": [
+      {
+        "data": {
+          "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+          "format": {"type": "topojson", "feature": "countries"}
+        },
+        "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
+      },
+      {
+        "mark": {"type": "circle", "size": 80, "opacity": 0.85},
+        "encoding": {
+          "longitude": {"field": "Longitude"},
+          "latitude": {"field": "Latitude"},
+          "color": {
+            "field": "LimitingMag",
+            "type": "quantitative",
+            "scale": {"scheme": "viridis", "domain": [0, 7]}
+          },
+          "tooltip": [
+            {"field": "ID"},
+            {"field": "LocalDate"},
+            {"field": "LocalTime"},
+            {"field": "LimitingMag"},
+            {"field": "CloudCover"},
+            {"field": "Country"}
+          ]
+        }
+      }
+    ]
+  };
+
+  vegaEmbed('#vis', spec);
+</script>
+
+</body>
+</html>
