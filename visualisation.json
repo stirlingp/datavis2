@@ -1,22 +1,12 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-
-  "description": "Full Earth map",
-
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 900,
   "height": 900,
-
-  "projection": {
-    "type": "mercator",
-    "center": [134, -25],
-    "scale": 300
-  },
-
+  "projection": {"type": "mercator"},
   "data": {
     "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
     "format": {"type": "topojson", "feature": "countries"}
   },
-
   "mark": {
     "type": "geoshape",
     "fill": "#d0d0d0",
