@@ -4,6 +4,7 @@
   "description": "Map of GAN observations colored by Limiting Magnitude",
   "width": 700,
   "height": 900,
+
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
     "format": {
@@ -15,8 +16,20 @@
       }
     }
   },
-  "transform": [{"filter": "isValid(datum.LimitingMag)"}],
-  "projection": {"type": "mercator"},
+
+"transform": [
+  {"filter": "isValid(datum.LimitingMag)"},
+  {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
+  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 170"}
+],
+
+
+"projection": {
+  "type": "mercator"
+},
+
+
+
   "layer": [
     {
       "data": {
@@ -33,7 +46,10 @@
         "color": {
           "field": "LimitingMag",
           "type": "quantitative",
-          "scale": {"scheme": "plasma", "domain": [0, 7]},
+          "scale": {
+            "scheme": "plasma",
+            "domain": [0, 7]
+          },
           "title": "Limiting Magnitude"
         },
         "tooltip": [
@@ -49,6 +65,5 @@
         ]
       }
     }
-  ],
-  "config": {}
+  ]
 }
