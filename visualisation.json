@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
 
-  "description": "Earth map with transparent land and Australia outline over PNG background.",
+  "description": "Full Earth map",
 
   "width": 900,
   "height": 900,
@@ -12,31 +12,15 @@
     "scale": 300
   },
 
-  "layer": [
-    {
-      "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": null,
-        "stroke": "#999",
-        "strokeWidth": 0.5
-      }
-    },
-    {
-      "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
-      "transform": [{"filter": "datum.id == '036'"}],
-      "mark": {
-        "type": "geoshape",
-        "fill": null,
-        "stroke": "white",
-        "strokeWidth": 2
-      }
-    }
-  ]
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+    "format": {"type": "topojson", "feature": "countries"}
+  },
+
+  "mark": {
+    "type": "geoshape",
+    "fill": "#d0d0d0",
+    "stroke": "#999",
+    "strokeWidth": 0.5
+  }
 }
