@@ -26,7 +26,6 @@
       overflow: hidden;
     }
 
-    /* Right-hand visualisation: PNG behind outline */
     #australia-container {
       background-image: url('https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png');
       background-size: cover;
@@ -46,18 +45,21 @@
 
 <body>
 
-  <!-- LEFT: your full Earth map -->
+  <!-- LEFT: full map -->
   <div class="viz-box">
     <div id="earth-vis" class="vega-layer"></div>
   </div>
 
-  <!-- RIGHT: your Australia heatmap -->
+  <!-- RIGHT: Australia heatmap -->
   <div class="viz-box" id="australia-container">
     <div id="aus-vis" class="vega-layer"></div>
   </div>
 
   <script>
-    vegaEmbed('#earth-vis', 'visualisation.json');
+    // LEFT visualisation: keep as canvas (default)
+    vegaEmbed('#earth-vis', 'visualisation.json', { renderer: "canvas" });
+
+    // RIGHT visualisation: force SVG for transparency
     vegaEmbed('#aus-vis', 'visualisation2.json', { renderer: "svg" });
   </script>
 
