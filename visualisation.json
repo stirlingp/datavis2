@@ -3,7 +3,7 @@
   "background": "#bdbdc0",
   "description": "Map of GAN observations colored by Limiting Magnitude",
   "width": 700,
-  "height": 900,
+  "height": 600,
 
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
@@ -20,7 +20,7 @@
 "transform": [
   {"filter": "isValid(datum.LimitingMag)"},
   {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
-  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 170"}
+  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
 ],
 
 
