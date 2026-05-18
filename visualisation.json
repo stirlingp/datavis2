@@ -7,28 +7,16 @@
 
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {
-      "type": "json",
-      "parse": {
-        "Latitude": "number",
-        "Longitude": "number",
-        "LimitingMag": "number"
-      }
-    }
+    "format": {"type": "json"}
   },
 
-"transform": [
-  {"filter": "isValid(datum.LimitingMag)"},
-  {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
-  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
-],
+  "transform": [
+    {"filter": "isValid(datum.LimitingMag)"},
+    {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
+    {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
+  ],
 
-
-"projection": {
-  "type": "mercator"
-},
-
-
+  "projection": {"type": "mercator"},
 
   "layer": [
     {
@@ -46,10 +34,7 @@
         "color": {
           "field": "LimitingMag",
           "type": "quantitative",
-          "scale": {
-            "scheme": "plasma",
-            "domain": [0, 7]
-          },
+          "scale": {"scheme": "plasma", "domain": [0, 7]},
           "title": "Limiting Magnitude"
         },
         "tooltip": [
