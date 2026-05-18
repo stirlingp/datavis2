@@ -46,19 +46,19 @@
 
 <body>
 
-  <!-- LEFT: Full Earth map -->
+  <!-- LEFT: your full Earth map -->
   <div class="viz-box">
     <div id="earth-vis" class="vega-layer"></div>
   </div>
 
-  <!-- RIGHT: Australia heatmap -->
+  <!-- RIGHT: your Australia heatmap -->
   <div class="viz-box" id="australia-container">
     <div id="aus-vis" class="vega-layer"></div>
   </div>
 
   <script>
-    vegaEmbed('#earth-vis', 'earth.json');
-    vegaEmbed('#aus-vis', 'australia.json');
+    vegaEmbed('#earth-vis', 'visualisation.json');
+    vegaEmbed('#aus-vis', 'visualisation2.json');
   </script>
 
 </body>
