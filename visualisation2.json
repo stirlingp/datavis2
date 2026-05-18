@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
+  "description": "Australia outline over PNG heatmap",
+
+  "width": 900,
+  "height": 900,
+
+  "projection": {
+    "type": "mercator",
+    "center": [134, -25],
+    "scale": 900
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "transform": [{"filter": "datum.id == '036'"}],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "white",
+        "strokeWidth": 2
+      }
+    }
+  ]
+}
