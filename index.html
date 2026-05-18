@@ -1,33 +1,65 @@
-<div id="map-container">
-  <div id="earth"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Side-by-side Visualisations</title>
 
-<style>
-  #map-container {
-    position: relative;
-    width: 900px;
-    height: 900px;
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    /* PNG heatmap BEHIND everything */
-    background-image: url('https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  <style>
+    body {
+      display: flex;
+      gap: 20px;
+      background: #222;
+      padding: 20px;
+      font-family: sans-serif;
+    }
 
-    /* This ensures the PNG stays behind */
-    z-index: 1;
-  }
+    .viz-box {
+      position: relative;
+      width: 900px;
+      height: 900px;
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-  #earth {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* Right-hand visualisation: PNG behind outline */
+    #australia-container {
+      background-image: url('https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-    /* Vega-Lite map ABOVE the PNG */
-    z-index: 2;
-  }
-</style>
+    .vega-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
 
-<script>
-  vegaEmbed('#earth', 'visualisation.json');
-</script>
+<body>
+
+  <!-- LEFT: Full Earth map -->
+  <div class="viz-box">
+    <div id="earth-vis" class="vega-layer"></div>
+  </div>
+
+  <!-- RIGHT: Australia heatmap -->
+  <div class="viz-box" id="australia-container">
+    <div id="aus-vis" class="vega-layer"></div>
+  </div>
+
+  <script>
+    vegaEmbed('#earth-vis', 'earth.json');
+    vegaEmbed('#aus-vis', 'australia.json');
+  </script>
+
+</body>
+</html>
