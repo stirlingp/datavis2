@@ -1,49 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>GAN Map visualisation</title>
+  <meta charset="UTF-8">
+  <title>Earth + Australia Luminance Heatmap</title>
 
+  <!-- Vega & Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <style>
-    body {
-      background: #bdbdc0;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
+    #map-container {
+      position: relative;
+      width: 900px;
+      height: 900px;
+
+      /* Your PNG heatmap behind the map */
+      background-image: url('https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .reference {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #333;
-    }
-    .reference a {
-      color: #0044aa;
-      text-decoration: none;
+
+    #vis {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
 
 <body>
 
-<h1>GAN Observations Map</h1>
-<div id="vis"></div>
+  <div id="map-container">
+    <div id="vis"></div>
+  </div>
 
-<div class="reference">
-  Data reference: <a href="https://globeatnight.org/maps-data/" target="_blank">
-    Globe at Night – Maps & Data
-  </a>
-</div>
-
-<script>
-  vegaEmbed(
-    '#vis',
-    'https://raw.githubusercontent.com/stirlingp/datavis2/main/visualisation.json'
-  );
-</script>
+  <script>
+    vegaEmbed('#vis', 'visualisation.json');
+  </script>
 
 </body>
 </html>
