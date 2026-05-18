@@ -1,34 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#bdbdc0",
-  "description": "Map of GAN observations colored by Limiting Magnitude",
-  "width": 700,
+
+  "description": "Earth map with Australia outline over PNG background.",
+
+  "width": 900,
   "height": 900,
 
-  "data": {
-    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {
-      "type": "json",
-      "parse": {
-        "Latitude": "number",
-        "Longitude": "number",
-        "LimitingMag": "number"
-      }
-    }
+  "projection": {
+    "type": "mercator",
+    "center": [134, -25],
+    "scale": 300
   },
-
-"transform": [
-  {"filter": "isValid(datum.LimitingMag)"},
-  {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
-  {"filter": "datum.Longitude >= -170 && datum.Longitude <= 170"}
-],
-
-
-"projection": {
-  "type": "mercator"
-},
-
-
 
   "layer": [
     {
@@ -36,33 +18,24 @@
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
         "format": {"type": "topojson", "feature": "countries"}
       },
-      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#d0d0d0",
+        "stroke": "#999",
+        "strokeWidth": 0.5
+      }
     },
     {
-      "mark": {"type": "circle", "size": 80, "opacity": 0.85},
-      "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
-        "color": {
-          "field": "LimitingMag",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "plasma",
-            "domain": [0, 7]
-          },
-          "title": "Limiting Magnitude"
-        },
-        "tooltip": [
-          {"field": "ID"},
-          {"field": "LocalDate"},
-          {"field": "LocalTime"},
-          {"field": "LimitingMag"},
-          {"field": "SQMReading"},
-          {"field": "CloudCover"},
-          {"field": "Constellation"},
-          {"field": "LocationComment"},
-          {"field": "Country"}
-        ]
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "transform": [{"filter": "datum.id == '036'"}],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "white",
+        "strokeWidth": 2
       }
     }
   ]
