@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Side-by-side Visualisations</title>
+  <title>Data Visualisation Two – Light Pollution</title>
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -11,10 +11,34 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
       gap: 20px;
       background: #222;
       padding: 20px;
       font-family: sans-serif;
+      color: #eee;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+    }
+
+    header p {
+      margin: 4px 0;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .viz-row {
+      display: flex;
+      gap: 20px;
     }
 
     .viz-box {
@@ -40,21 +64,48 @@
       object-fit: cover;
       display: block;
     }
+
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: 0.85;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- LEFT: your original full map -->
-  <div class="viz-box">
-    <div id="earth-vis" class="vega-layer"></div>
-  </div>
+  <!-- PAGE HEADER -->
+  <header>
+    <h1>Data Visualisation Two – Light Pollution</h1>
+    <p>Stirling Perrott — Student Number: 34968253</p>
+  </header>
 
-  <!-- RIGHT: PNG heatmap only -->
-  <div class="viz-box">
-    <img id="heatmap-img"
-         src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
-         alt="Luminance Heatmap">
+  <div class="viz-row">
+
+    <!-- LEFT VISUALISATION -->
+    <div>
+      <div class="viz-box">
+        <div id="earth-vis" class="vega-layer"></div>
+      </div>
+      <div class="caption">
+        Worldwide limiting magnitude datapoints showing global light pollution distribution.
+      </div>
+    </div>
+
+    <!-- RIGHT VISUALISATION -->
+    <div>
+      <div class="viz-box">
+        <img id="heatmap-img"
+             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
+             alt="Luminance Heatmap">
+      </div>
+      <div class="caption">
+        Heatmap of Australia showing luminance intensity and regional light pollution.
+      </div>
+    </div>
+
   </div>
 
   <script>
