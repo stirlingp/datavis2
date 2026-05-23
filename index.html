@@ -109,13 +109,19 @@
     <!-- RIGHT VISUALISATION -->
     <div>
       <div class="viz-box">
-        <img id="heatmap-img"
-             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
-             alt="Luminance Heatmap">
-      </div>
-      <div class="caption">
-        Heatmap of Australia showing luminance intensity and regional light pollution.
-      </div>
+  <!-- Base heatmap -->
+  <img id="heatmap-img"
+       src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
+       alt="Luminance Heatmap"
+       class="layer-img">
+
+  <!-- Transparent Australia states overlay -->
+  <img id="states-overlay"
+       src="https://raw.githubusercontent.com/stirlingp/datavis2/main/australia_states_blank.png"
+       alt="Australia States Overlay"
+       class="layer-img">
+</div>
+
     </div>
 
   </div>
