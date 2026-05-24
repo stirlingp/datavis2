@@ -61,8 +61,9 @@
     background: #333;
     border-radius: 8px;
     overflow: scroll;
-    cursor: grab;
+    cursor: grab
     position: relative;
+    
   }
 
 
@@ -125,7 +126,9 @@
     <!-- LEFT VISUALISATION -->
     <div>
       <div class="viz-box">
-        <div id="earth-vis" class="vega-layer"></div>
+        <div id="earth-wrapper" style="width:2000px; height:1500px;">
+  <div id="earth-vis"></div>
+</div>
       </div>
       <div class="caption">
         Worldwide limiting magnitude datapoints showing global light pollution distribution.
