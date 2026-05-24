@@ -58,17 +58,9 @@
       height: 500px;
       background: #333;
       border-radius: 8px;
-      overflow: scroll;   /* scroll enabled */
-      cursor: grab;       /* fixed missing semicolon */
+      overflow: scroll;
+      cursor: grab;
       position: relative;
-    }
-
-    .vega-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 90%;
-      height: 100%;
     }
 
     #heatmap-img {
@@ -87,12 +79,23 @@
       font-size: 15px;
       opacity: 0.85;
     }
+
+    /* Legend box inside the viz-box */
+    #earth-legend {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(20,20,20,0.85);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      z-index: 20;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- PAGE HEADER -->
   <header>
     <h1>Data Visualisation Two – Light Pollution</h1>
     <p>Stirling Perrott — Student Number: 34968253</p>
@@ -111,29 +114,23 @@
 
   <div class="viz-row">
 
-    <!-- LEFT VISUALISATION (scrollable + zoomable + draggable) -->
+    <!-- LEFT VISUALISATION (zoomable + draggable + fixed legend) -->
     <div>
-     <div class="viz-box" id="earth-box">
+      <div class="viz-box" id="earth-box">
 
-  <!-- Zoomable map only -->
-  <div id="earth-zoom-container" style="width:2000px; height:1500px;">
-    <div id="earth-vis"></div>
-  </div>
+        <!-- Zoomable map only -->
+        <div id="earth-zoom-container" style="width:2000px; height:1500px;">
+          <div id="earth-vis"></div>
+        </div>
 
-  <!-- Legend stays fixed -->
-  <div id="earth-legend" style="
-    position:absolute;
-    bottom:10px;
-    right:10px;
-    background:#222;
-    padding:8px 12px;
-    border-radius:6px;
-    border:1px solid #555;
-    z-index:10;
-  "></div>
+        <!-- Legend stays fixed -->
+        <div id="earth-legend"></div>
 
-</div>
+      </div>
 
+      <div class="caption">
+        Worldwide limiting magnitude datapoints showing global light pollution distribution.
+      </div>
     </div>
 
     <!-- RIGHT VISUALISATION -->
@@ -155,27 +152,41 @@
 
   <!-- Vega-Lite embed -->
   <script>
-    vegaEmbed('#earth-vis', 'visualisation.json');
+    vegaEmbed('#earth-vis', 'visualisation.json', {actions:false})
+      .then(res => {
+        // Extract legend and move it into the fixed legend box
+        const legendGroup = res.view._runtime.legends[0].items[0].mark.group;
+        document.getElementById('earth-legend').appendChild(legendGroup);
+      });
   </script>
 
   <!-- CLICK + DRAG + ZOOM LOGIC -->
   <script>
-    const wrapper = document.getElementById('earth-wrapper');
+    const zoomContainer = document.getElementById('earth-zoom-container');
     const box = document.getElementById('earth-box');
+
     let scale = 1;
 
-    /* Scroll wheel zoom */
-    wrapper.addEventListener('wheel', e => {
+    /* Scroll‑wheel zoom centred on cursor */
+    box.addEventListener('wheel', e => {
       e.preventDefault();
+
+      const rect = zoomContainer.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+
+      const oldScale = scale;
       scale += e.deltaY * -0.001;
       scale = Math.min(Math.max(0.5, scale), 5);
-      wrapper.style.transform = `scale(${scale})`;
-      wrapper.style.transformOrigin = "0 0";
+
+      const ratio = scale / oldScale;
+
+      zoomContainer.style.transformOrigin = `${offsetX}px ${offsetY}px`;
+      zoomContainer.style.transform = `scale(${scale})`;
     });
 
     /* Click + drag panning */
-    let isDown = false;
-    let startX, startY, scrollLeft, scrollTop;
+    let isDown = false, startX, startY, scrollLeft, scrollTop;
 
     box.addEventListener('mousedown', e => {
       isDown = true;
@@ -186,8 +197,12 @@
       scrollTop = box.scrollTop;
     });
 
-    box.addEventListener('mouseleave', () => isDown = false);
     box.addEventListener('mouseup', () => {
+      isDown = false;
+      box.style.cursor = 'grab';
+    });
+
+    box.addEventListener('mouseleave', () => {
       isDown = false;
       box.style.cursor = 'grab';
     });
