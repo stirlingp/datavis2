@@ -46,8 +46,6 @@
             "orient": "bottom",
             "direction": "horizontal"
           }
-        }
-          "title": "Limiting Magnitude"
         },
         "tooltip": [
           {"field": "ID"},
