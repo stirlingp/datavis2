@@ -1,56 +1,196 @@
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#bdbdc0",
-  "description": "Map of GAN observations colored by Limiting Magnitude",
-  "width": 700,
-  "height": 600,
-  "resolve": {"legend": {"color": "independent"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Visualisation Two – Light Pollution</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  "data": {
-    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {"type": "json"}
-  },
-
-  "transform": [
-    {"filter": "isValid(datum.LimitingMag)"},
-    {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
-    {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
-  ],
-
-  "projection": {"type": "mercator"},
-
-  "layer": [
-    {
-      "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
-      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
-    },
-    {
-      "mark": {"type": "circle", "size": 80, "opacity": 0.85},
-      "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
-        "color": {
-          "field": "LimitingMag",
-          "type": "quantitative",
-          "scale": {"scheme": "plasma", "domain": [0, 7]},
-          "title": "Limiting Magnitude"
-        },
-        "tooltip": [
-          {"field": "ID"},
-          {"field": "LocalDate"},
-          {"field": "LocalTime"},
-          {"field": "LimitingMag"},
-          {"field": "SQMReading"},
-          {"field": "CloudCover"},
-          {"field": "Constellation"},
-          {"field": "LocationComment"},
-          {"field": "Country"}
-        ]
-      }
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #222;
+      padding: 20px;
+      font-family: sans-serif;
+      color: #eee;
+      align-items: center;
     }
-  ]
-}
+
+    .viz-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .viz-box {
+      width: 650px;
+      height: 500px;
+      background: #333;
+      border-radius: 8px;
+      overflow: scroll;
+      cursor: grab;
+      position: relative;
+    }
+
+    #earth-legend {
+      margin-top: 10px;
+      background: rgba(20,20,20,0.85);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      width: fit-content;
+    }
+
+    .layer-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    #heatmap-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 95%;
+      max-height: 95%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Data Visualisation Two – Light Pollution</h1>
+    <p>Stirling Perrott — Student Number: 34968253</p>
+  </header>
+
+  <div style="background:#333; padding:18px 22px; border-radius:8px; 
+              max-width:1200px; margin:0 auto 20px auto; 
+              color:#eee; font-size:16px; line-height:1.55; 
+              border:1px solid #444;">
+    Light pollution is an increasingly significant environmental issue in Australia, affecting ecosystems,
+    wildlife behaviour, human health, and the visibility of the night sky.
+  </div>
+
+  <div class="viz-row">
+
+    <!-- LEFT VISUALISATION -->
+    <div>
+      <div class="viz-box" id="earth-box">
+        <div id="earth-zoom-container" style="width:2000px; height:1500px;">
+          <div id="earth-vis"></div>
+        </div>
+      </div>
+
+      <!-- Legend OUTSIDE -->
+      <div id="earth-legend"></div>
+
+      <div class="caption">
+        Worldwide limiting magnitude datapoints showing global light pollution distribution.
+      </div>
+    </div>
+
+    <!-- RIGHT VISUALISATION -->
+    <div>
+      <div class="viz-box">
+        <img id="heatmap-img"
+             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
+             class="layer-img">
+
+        <img id="states-overlay"
+             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
+             class="layer-img">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EMBED MAP -->
+  <script>
+    vegaEmbed('#earth-vis', 'visualisation.json', {actions:false})
+      .then(res => {
+        // SAFELY extract legend
+        const legend = res.view._runtime.legends[0]?.items?.[0]?.mark?.group;
+
+        if (legend) {
+          document.getElementById('earth-legend').appendChild(legend);
+        } else {
+          document.getElementById('earth-legend').innerHTML =
+            "<span style='color:#aaa'>Legend unavailable</span>";
+        }
+      })
+      .catch(err => console.error("Vega error:", err));
+  </script>
+
+  <!-- ZOOM + DRAG -->
+  <script>
+    const zoomContainer = document.getElementById('earth-zoom-container');
+    const box = document.getElementById('earth-box');
+
+    let scale = 1;
+
+    box.addEventListener('wheel', e => {
+      e.preventDefault();
+
+      const rect = zoomContainer.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+
+      const oldScale = scale;
+      scale += e.deltaY * -0.001;
+      scale = Math.min(Math.max(0.5, scale), 5);
+
+      zoomContainer.style.transformOrigin = `${offsetX}px ${offsetY}px`;
+      zoomContainer.style.transform = `scale(${scale})`;
+    });
+
+    let isDown = false, startX, startY, scrollLeft, scrollTop;
+
+    box.addEventListener('mousedown', e => {
+      isDown = true;
+      box.style.cursor = 'grabbing';
+      startX = e.pageX - box.offsetLeft;
+      startY = e.pageY - box.offsetTop;
+      scrollLeft = box.scrollLeft;
+      scrollTop = box.scrollTop;
+    });
+
+    box.addEventListener('mouseup', () => {
+      isDown = false;
+      box.style.cursor = 'grab';
+    });
+
+    box.addEventListener('mouseleave', () => {
+      isDown = false;
+      box.style.cursor = 'grab';
+    });
+
+    box.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - box.offsetLeft;
+      const y = e.pageY - box.offsetTop;
+      box.scrollLeft = scrollLeft - (x - startX);
+      box.scrollTop = scrollTop - (y - startY);
+    });
+  </script>
+
+</body>
+</html>
