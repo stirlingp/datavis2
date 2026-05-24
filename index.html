@@ -20,34 +20,6 @@
       align-items: center;
     }
 
-    .layer-img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 140%;
-      height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: contain;
-      pointer-events: none;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #fff;
-    }
-
-    header p {
-      margin: 4px 0;
-      font-size: 16px;
-      opacity: 0.8;
-    }
-
     .viz-row {
       display: flex;
       gap: 20px;
@@ -61,6 +33,26 @@
       overflow: scroll;
       cursor: grab;
       position: relative;
+    }
+
+    #earth-legend {
+      margin-top: 10px;
+      background: rgba(20,20,20,0.85);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      width: fit-content;
+    }
+
+    .layer-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      pointer-events: none;
     }
 
     #heatmap-img {
@@ -79,16 +71,6 @@
       font-size: 15px;
       opacity: 0.85;
     }
-
-    /* Legend OUTSIDE the box */
-    #earth-legend {
-      margin-top: 10px;
-      background: rgba(20,20,20,0.85);
-      padding: 10px 14px;
-      border-radius: 6px;
-      border: 1px solid #555;
-      width: fit-content;
-    }
   </style>
 </head>
 
@@ -104,26 +86,20 @@
               color:#eee; font-size:16px; line-height:1.55; 
               border:1px solid #444;">
     Light pollution is an increasingly significant environmental issue in Australia, affecting ecosystems,
-    wildlife behaviour, human health, and the visibility of the night sky. As urban areas expand and artificial
-    lighting intensifies, the natural darkness that many species rely on is disrupted, particularly in coastal
-    regions where sensitive habitats exist. Understanding how light is distributed across Australia helps reveal
-    where ecological pressures are highest and where conservation efforts can be most effective.
+    wildlife behaviour, human health, and the visibility of the night sky.
   </div>
 
   <div class="viz-row">
 
-    <!-- LEFT VISUALISATION (zoomable + draggable) -->
+    <!-- LEFT VISUALISATION -->
     <div>
       <div class="viz-box" id="earth-box">
-
-        <!-- Zoomable map only -->
         <div id="earth-zoom-container" style="width:2000px; height:1500px;">
           <div id="earth-vis"></div>
         </div>
-
       </div>
 
-      <!-- Legend OUTSIDE the box -->
+      <!-- Legend OUTSIDE -->
       <div id="earth-legend"></div>
 
       <div class="caption">
@@ -136,36 +112,40 @@
       <div class="viz-box">
         <img id="heatmap-img"
              src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
-             alt="Luminance Heatmap"
              class="layer-img">
 
         <img id="states-overlay"
              src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
-             alt="Australia States Overlay"
              class="layer-img">
       </div>
     </div>
 
   </div>
 
-  <!-- Vega-Lite embed -->
+  <!-- EMBED MAP -->
   <script>
     vegaEmbed('#earth-vis', 'visualisation.json', {actions:false})
       .then(res => {
-        // Extract legend and move it outside the box
-        const legendGroup = res.view._runtime.legends[0].items[0].mark.group;
-        document.getElementById('earth-legend').appendChild(legendGroup);
-      });
+        // SAFELY extract legend
+        const legend = res.view._runtime.legends[0]?.items?.[0]?.mark?.group;
+
+        if (legend) {
+          document.getElementById('earth-legend').appendChild(legend);
+        } else {
+          document.getElementById('earth-legend').innerHTML =
+            "<span style='color:#aaa'>Legend unavailable</span>";
+        }
+      })
+      .catch(err => console.error("Vega error:", err));
   </script>
 
-  <!-- CLICK + DRAG + ZOOM LOGIC -->
+  <!-- ZOOM + DRAG -->
   <script>
     const zoomContainer = document.getElementById('earth-zoom-container');
     const box = document.getElementById('earth-box');
 
     let scale = 1;
 
-    /* Scroll‑wheel zoom centred on cursor */
     box.addEventListener('wheel', e => {
       e.preventDefault();
 
@@ -181,7 +161,6 @@
       zoomContainer.style.transform = `scale(${scale})`;
     });
 
-    /* Click + drag panning */
     let isDown = false, startX, startY, scrollLeft, scrollTop;
 
     box.addEventListener('mousedown', e => {
