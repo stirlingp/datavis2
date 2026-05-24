@@ -85,6 +85,21 @@
   object-fit: contain;
 }
 
+    <div style="
+  width: 900px;
+  height: 500px;
+  overflow: scroll;
+  border: 2px solid #444;
+  resize: both;
+">
+  <div style="transform: scale(1); transform-origin: 0 0;">
+    <div id="vis"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  vegaEmbed('#vis', spec);
+</script>
 
     .caption {
       text-align: center;
