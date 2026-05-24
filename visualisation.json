@@ -40,10 +40,13 @@
         "color": {
           "field": "LimitingMag",
           "type": "quantitative",
-          "scale": {
-            "scheme": "plasma",
-            "domain": [0, 7]
-          },
+          "scale": {"scheme": "plasma", "domain": [0, 7]},
+          "title": "Limiting Magnitude",
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
+        }
           "title": "Limiting Magnitude"
         },
         "tooltip": [
