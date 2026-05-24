@@ -42,12 +42,21 @@
         "opacity": 0.85
       },
       "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        },
         "color": {
           "field": "LimitingMag",
           "type": "quantitative",
-          "scale": {"scheme": "plasma", "domain": [0, 7]},
+          "scale": {
+            "scheme": "plasma",
+            "domain": [0, 7]
+          },
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
