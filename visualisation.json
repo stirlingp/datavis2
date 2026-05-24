@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#bdbdc0",
-  "description": "Map of GAN observations colored by Limiting Magnitude",
   "width": 700,
   "height": 600,
 
-  "resolve": {"legend": {"color": "independent"}},
-
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {"type": "json"}
+    "format": {
+      "type": "json",
+      "property": "observations"
+    }
   },
 
   "transform": [
@@ -24,7 +24,10 @@
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
       },
       "mark": {
         "type": "geoshape",
@@ -33,7 +36,11 @@
       }
     },
     {
-      "mark": {"type": "circle", "size": 80, "opacity": 0.85},
+      "mark": {
+        "type": "circle",
+        "size": 80,
+        "opacity": 0.85
+      },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -41,23 +48,12 @@
           "field": "LimitingMag",
           "type": "quantitative",
           "scale": {"scheme": "plasma", "domain": [0, 7]},
-          "title": "Limiting Magnitude",
           "legend": {
             "orient": "bottom",
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "title": "Limiting Magnitude"
           }
-        },
-        "tooltip": [
-          {"field": "ID"},
-          {"field": "LocalDate"},
-          {"field": "LocalTime"},
-          {"field": "LimitingMag"},
-          {"field": "SQMReading"},
-          {"field": "CloudCover"},
-          {"field": "Constellation"},
-          {"field": "LocationComment"},
-          {"field": "Country"}
-        ]
+        }
       }
     }
   ]
