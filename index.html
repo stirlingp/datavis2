@@ -80,16 +80,14 @@
       opacity: 0.85;
     }
 
-    /* Legend box inside the viz-box */
+    /* Legend OUTSIDE the box */
     #earth-legend {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
+      margin-top: 10px;
       background: rgba(20,20,20,0.85);
       padding: 10px 14px;
       border-radius: 6px;
       border: 1px solid #555;
-      z-index: 20;
+      width: fit-content;
     }
   </style>
 </head>
@@ -114,7 +112,7 @@
 
   <div class="viz-row">
 
-    <!-- LEFT VISUALISATION (zoomable + draggable + fixed legend) -->
+    <!-- LEFT VISUALISATION (zoomable + draggable) -->
     <div>
       <div class="viz-box" id="earth-box">
 
@@ -123,10 +121,10 @@
           <div id="earth-vis"></div>
         </div>
 
-        <!-- Legend stays fixed -->
-        <div id="earth-legend"></div>
-
       </div>
+
+      <!-- Legend OUTSIDE the box -->
+      <div id="earth-legend"></div>
 
       <div class="caption">
         Worldwide limiting magnitude datapoints showing global light pollution distribution.
@@ -154,7 +152,7 @@
   <script>
     vegaEmbed('#earth-vis', 'visualisation.json', {actions:false})
       .then(res => {
-        // Extract legend and move it into the fixed legend box
+        // Extract legend and move it outside the box
         const legendGroup = res.view._runtime.legends[0].items[0].mark.group;
         document.getElementById('earth-legend').appendChild(legendGroup);
       });
@@ -178,8 +176,6 @@
       const oldScale = scale;
       scale += e.deltaY * -0.001;
       scale = Math.min(Math.max(0.5, scale), 5);
-
-      const ratio = scale / oldScale;
 
       zoomContainer.style.transformOrigin = `${offsetX}px ${offsetY}px`;
       zoomContainer.style.transform = `scale(${scale})`;
