@@ -123,21 +123,39 @@
   </div>
 
   <!-- EMBED MAP -->
-  <script>
-    vegaEmbed('#earth-vis', 'visualisation.json', {actions:false})
-      .then(res => {
-        // SAFELY extract legend
-        const legend = res.view._runtime.legends[0]?.items?.[0]?.mark?.group;
+<script>
+  vegaEmbed(
+    '#earth-vis',
+    'https://raw.githubusercontent.com/stirlingp/datavis2/main/visualisation.json',
+    { actions: false }
+  )
+  .then(res => {
+    console.log("Vega loaded ✅", res);
 
-        if (legend) {
-          document.getElementById('earth-legend').appendChild(legend);
-        } else {
-          document.getElementById('earth-legend').innerHTML =
-            "<span style='color:#aaa'>Legend unavailable</span>";
+    // safer legend extraction
+    try {
+      const legends = res.view._runtime.legends;
+      if (legends && legends.length > 0) {
+        const legendGroup = legends[0].items?.[0]?.mark?.group;
+        if (legendGroup) {
+          document.getElementById('earth-legend').appendChild(legendGroup);
         }
-      })
-      .catch(err => console.error("Vega error:", err));
-  </script>
+      } else {
+        document.getElementById('earth-legend').innerHTML =
+          "<span style='color:#aaa'>Legend unavailable</span>";
+      }
+    } catch (e) {
+      console.warn("Legend extraction failed:", e);
+      document.getElementById('earth-legend').innerHTML =
+        "<span style='color:#aaa'>Legend unavailable</span>";
+    }
+  })
+  .catch(err => {
+    console.error("Vega error:", err);
+    document.getElementById('earth-legend').innerHTML =
+      "<span style='color:red'>Failed to load visualisation</span>";
+  });
+</script>
 
   <!-- ZOOM + DRAG -->
   <script>
