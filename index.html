@@ -17,21 +17,19 @@
       padding: 20px;
       font-family: sans-serif;
       color: #eee;
-      align-items: center;   /* centres all page content */
-
+      align-items: center;
     }
-.layer-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  pointer-events: none;
-}
 
-
+    .layer-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      pointer-events: none;
+    }
 
     header {
       text-align: center;
@@ -55,17 +53,15 @@
       gap: 20px;
     }
 
-  .viz-box {
-    width: 650px;
-    height: 500px;
-    background: #333;
-    border-radius: 8px;
-    overflow: scroll;
-    cursor: grab
-    position: relative;
-    
-  }
-
+    .viz-box {
+      width: 650px;
+      height: 500px;
+      background: #333;
+      border-radius: 8px;
+      overflow: scroll;   /* scroll enabled */
+      cursor: grab;       /* fixed missing semicolon */
+      position: relative;
+    }
 
     .vega-layer {
       position: absolute;
@@ -76,17 +72,21 @@
     }
 
     #heatmap-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-width: 95%;
-  max-height: 95%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-}
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 95%;
+      max-height: 95%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+    }
 
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: 0.85;
+    }
   </style>
 </head>
 
@@ -97,38 +97,26 @@
     <h1>Data Visualisation Two – Light Pollution</h1>
     <p>Stirling Perrott — Student Number: 34968253</p>
   </header>
+
   <div style="background:#333; padding:18px 22px; border-radius:8px; 
-            max-width:1200px; margin:0 auto 20px auto; 
-            color:#eee; font-size:16px; line-height:1.55; 
-            border:1px solid #444;">
-  Light pollution is an increasingly significant environmental issue in Australia, affecting ecosystems,
-  wildlife behaviour, human health, and the visibility of the night sky. As urban areas expand and artificial
-  lighting intensifies, the natural darkness that many species rely on is disrupted, particularly in coastal
-  regions where sensitive habitats exist. Understanding how light is distributed across Australia helps reveal
-  where ecological pressures are highest and where conservation efforts can be most effective.
-</div>
-
-</div>
-
-<script type="text/javascript">
-  vegaEmbed('#vis', spec);
-</script>
-
-    .caption {
-      text-align: center;
-      margin-top: 8px;
-      font-size: 15px;
-      opacity: 0.85;
-    }
+              max-width:1200px; margin:0 auto 20px auto; 
+              color:#eee; font-size:16px; line-height:1.55; 
+              border:1px solid #444;">
+    Light pollution is an increasingly significant environmental issue in Australia, affecting ecosystems,
+    wildlife behaviour, human health, and the visibility of the night sky. As urban areas expand and artificial
+    lighting intensifies, the natural darkness that many species rely on is disrupted, particularly in coastal
+    regions where sensitive habitats exist. Understanding how light is distributed across Australia helps reveal
+    where ecological pressures are highest and where conservation efforts can be most effective.
+  </div>
 
   <div class="viz-row">
 
-    <!-- LEFT VISUALISATION -->
+    <!-- LEFT VISUALISATION (scrollable + zoomable + draggable) -->
     <div>
-      <div class="viz-box">
+      <div class="viz-box" id="earth-box">
         <div id="earth-wrapper" style="width:2000px; height:1500px;">
-  <div id="earth-vis"></div>
-</div>
+          <div id="earth-vis"></div>
+        </div>
       </div>
       <div class="caption">
         Worldwide limiting magnitude datapoints showing global light pollution distribution.
@@ -138,25 +126,67 @@
     <!-- RIGHT VISUALISATION -->
     <div>
       <div class="viz-box">
-  <!-- Base heatmap -->
-  <img id="heatmap-img"
-       src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
-       alt="Luminance Heatmap"
-       class="layer-img">
+        <img id="heatmap-img"
+             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
+             alt="Luminance Heatmap"
+             class="layer-img">
 
-  <!-- Transparent Australia states overlay -->
-  <img id="states-overlay"
-       src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
-       alt="Australia States Overlay"
-       class="layer-img">
-</div>
-
+        <img id="states-overlay"
+             src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
+             alt="Australia States Overlay"
+             class="layer-img">
+      </div>
     </div>
 
   </div>
 
+  <!-- Vega-Lite embed -->
   <script>
     vegaEmbed('#earth-vis', 'visualisation.json');
+  </script>
+
+  <!-- CLICK + DRAG + ZOOM LOGIC -->
+  <script>
+    const wrapper = document.getElementById('earth-wrapper');
+    const box = document.getElementById('earth-box');
+    let scale = 1;
+
+    /* Scroll wheel zoom */
+    wrapper.addEventListener('wheel', e => {
+      e.preventDefault();
+      scale += e.deltaY * -0.001;
+      scale = Math.min(Math.max(0.5, scale), 5);
+      wrapper.style.transform = `scale(${scale})`;
+      wrapper.style.transformOrigin = "0 0";
+    });
+
+    /* Click + drag panning */
+    let isDown = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    box.addEventListener('mousedown', e => {
+      isDown = true;
+      box.style.cursor = 'grabbing';
+      startX = e.pageX - box.offsetLeft;
+      startY = e.pageY - box.offsetTop;
+      scrollLeft = box.scrollLeft;
+      scrollTop = box.scrollTop;
+    });
+
+    box.addEventListener('mouseleave', () => isDown = false);
+    box.addEventListener('mouseup', () => {
+      isDown = false;
+      box.style.cursor = 'grab';
+    });
+
+    box.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - box.offsetLeft;
+      const y = e.pageY - box.offsetTop;
+      box.scrollLeft = scrollLeft - (x - startX);
+      box.scrollTop = scrollTop - (y - startY);
+    });
   </script>
 
 </body>
