@@ -31,13 +31,8 @@
       height: 500px;
       background: #333;
       border-radius: 8px;
-      overflow: scroll; /* IMPORTANT: scroll instead of transform scaling */
+      overflow: hidden;
       position: relative;
-      cursor: grab;
-    }
-
-    .viz-box:active {
-      cursor: grabbing;
     }
 
     .layer-img {
@@ -82,12 +77,10 @@
 
 <div class="viz-row">
 
-  <!-- LEFT VISUALISATION -->
+  <!-- LEFT VISUALISATION (TOOLTIPS WORK) -->
   <div>
-    <div class="viz-box" id="earth-box">
-      <div id="earth-zoom-container" style="width:2000px; height:1500px;">
-        <div id="earth-vis"></div>
-      </div>
+    <div class="viz-box">
+      <div id="earth-vis" style="width:100%; height:100%;"></div>
     </div>
 
     <div class="caption">
@@ -95,7 +88,7 @@
     </div>
   </div>
 
-  <!-- RIGHT VISUALISATION -->
+  <!-- RIGHT VISUALISATION (UNCHANGED) -->
   <div>
     <div class="viz-box">
       <img id="heatmap-img"
@@ -119,33 +112,6 @@
   )
   .then(() => console.log("Visualisation loaded"))
   .catch(err => alert(err.message));
-</script>
-
-<!-- DRAG PANNING -->
-<script>
-  const box = document.getElementById('earth-box');
-
-  let isDown = false, startX, startY, scrollLeft, scrollTop;
-
-  box.addEventListener('mousedown', e => {
-    isDown = true;
-    startX = e.pageX - box.offsetLeft;
-    startY = e.pageY - box.offsetTop;
-    scrollLeft = box.scrollLeft;
-    scrollTop = box.scrollTop;
-  });
-
-  box.addEventListener('mouseup', () => isDown = false);
-  box.addEventListener('mouseleave', () => isDown = false);
-
-  box.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - box.offsetLeft;
-    const y = e.pageY - box.offsetTop;
-    box.scrollLeft = scrollLeft - (x - startX);
-    box.scrollTop = scrollTop - (y - startY);
-  });
 </script>
 
 </body>
