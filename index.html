@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title>Data Visualisation Two – Light Pollution</title>
 
-  <!-- ✅ FIXED -->
-  <script src="https://cdn.jsdelivr.net/npm/vegasrc.jsdelivr.net/npm/vega-lite@5
-  /npm/vega-embed@6"></script>
+  <!-- ✅ FIXED: Correct Vega, Vega-Lite, Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <style>
     body {
@@ -98,7 +99,6 @@
       </div>
     </div>
 
-    <!-- ✅ Leave empty or remove entirely if you want -->
     <div id="earth-legend"></div>
 
     <div class="caption">
@@ -109,7 +109,6 @@
   <!-- RIGHT VISUALISATION -->
   <div>
     <div class="viz-box">
-      <!-- ✅ FIXED IMG TAGS -->
       <img id="heatmap-img"
            src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
            class="layer-img">
@@ -122,7 +121,7 @@
 
 </div>
 
-<!-- ✅ FIXED: no legend hacking -->
+<!-- Vega Embed -->
 <script>
   vegaEmbed(
     '#earth-vis',
@@ -138,7 +137,7 @@
   });
 </script>
 
-<!-- ZOOM + DRAG (unchanged) -->
+<!-- ZOOM + DRAG -->
 <script>
   const zoomContainer = document.getElementById('earth-zoom-container');
   const box = document.getElementById('earth-box');
