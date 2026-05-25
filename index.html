@@ -31,8 +31,13 @@
       height: 500px;
       background: #333;
       border-radius: 8px;
-      overflow: hidden;
+      overflow: scroll; /* IMPORTANT: scroll instead of transform scaling */
       position: relative;
+      cursor: grab;
+    }
+
+    .viz-box:active {
+      cursor: grabbing;
     }
 
     .layer-img {
@@ -79,17 +84,10 @@
 
   <!-- LEFT VISUALISATION -->
   <div>
-    <div class="viz-box" id="earth-box" style="cursor: grab;">
-
-      <!-- IMPORTANT: pointer-events enabled so Vega receives hover -->
-      <div id="earth-zoom-container" style="
-        width:2000px;
-        height:1500px;
-        pointer-events: auto;
-      ">
+    <div class="viz-box" id="earth-box">
+      <div id="earth-zoom-container" style="width:2000px; height:1500px;">
         <div id="earth-vis"></div>
       </div>
-
     </div>
 
     <div class="caption">
@@ -123,47 +121,22 @@
   .catch(err => alert(err.message));
 </script>
 
-<!-- ZOOM + DRAG -->
+<!-- DRAG PANNING -->
 <script>
-  const zoomContainer = document.getElementById('earth-zoom-container');
   const box = document.getElementById('earth-box');
-
-  let scale = 1;
-
-  box.addEventListener('wheel', e => {
-    e.preventDefault();
-
-    const rect = zoomContainer.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const offsetY = e.clientY - rect.top;
-
-    scale += e.deltaY * -0.001;
-    scale = Math.min(Math.max(0.5, scale), 5);
-
-    zoomContainer.style.transformOrigin = `${offsetX}px ${offsetY}px`;
-    zoomContainer.style.transform = `scale(${scale})`;
-  });
 
   let isDown = false, startX, startY, scrollLeft, scrollTop;
 
   box.addEventListener('mousedown', e => {
     isDown = true;
-    box.style.cursor = 'grabbing';
     startX = e.pageX - box.offsetLeft;
     startY = e.pageY - box.offsetTop;
     scrollLeft = box.scrollLeft;
     scrollTop = box.scrollTop;
   });
 
-  box.addEventListener('mouseup', () => {
-    isDown = false;
-    box.style.cursor = 'grab';
-  });
-
-  box.addEventListener('mouseleave', () => {
-    isDown = false;
-    box.style.cursor = 'grab';
-  });
+  box.addEventListener('mouseup', () => isDown = false);
+  box.addEventListener('mouseleave', () => isDown = false);
 
   box.addEventListener('mousemove', e => {
     if (!isDown) return;
