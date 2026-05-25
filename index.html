@@ -47,8 +47,8 @@
     }
 
     #heatmap-img {
-      max-width: 120%;
-      max-height: 140%;
+      max-width: 95%;
+      max-height: 95%;
     }
 
     .caption {
@@ -79,10 +79,17 @@
 
   <!-- LEFT VISUALISATION -->
   <div>
-    <div class="viz-box" id="earth-box">
-      <div id="earth-zoom-container" style="width:2000px; height:1500px;">
+    <div class="viz-box" id="earth-box" style="cursor: grab;">
+
+      <!-- IMPORTANT: pointer-events enabled so Vega receives hover -->
+      <div id="earth-zoom-container" style="
+        width:2000px;
+        height:1500px;
+        pointer-events: auto;
+      ">
         <div id="earth-vis"></div>
       </div>
+
     </div>
 
     <div class="caption">
