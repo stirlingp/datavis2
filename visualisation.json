@@ -1,15 +1,13 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "background": "#bdbdc0",
+  "description": "Map of GAN observations colored by Limiting Magnitude",
   "width": 700,
   "height": 600,
 
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {
-      "type": "json",
-      "property": "observations"
-    }
+    "format": {"type": "json"}
   },
 
   "transform": [
@@ -24,23 +22,12 @@
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "format": {"type": "topojson", "feature": "countries"}
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#e0e0e0",
-        "stroke": "white"
-      }
+      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
     },
     {
-      "mark": {
-        "type": "circle",
-        "size": 80,
-        "opacity": 0.85
-      },
+      "mark": {"type": "circle", "size": 80, "opacity": 0.85},
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -48,17 +35,18 @@
           "field": "LimitingMag",
           "type": "quantitative",
           "scale": {"scheme": "plasma", "domain": [0, 7]},
-          "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "title": "Limiting Magnitude"
-          }
+          "title": "Limiting Magnitude"
         },
-
         "tooltip": [
-          {"field": "LimitingMag", "type": "quantitative", "title": "Limiting Magnitude"},
-          {"field": "Latitude", "type": "quantitative"},
-          {"field": "Longitude", "type": "quantitative"}
+          {"field": "ID"},
+          {"field": "LocalDate"},
+          {"field": "LocalTime"},
+          {"field": "LimitingMag"},
+          {"field": "SQMReading"},
+          {"field": "CloudCover"},
+          {"field": "Constellation"},
+          {"field": "LocationComment"},
+          {"field": "Country"}
         ]
       }
     }
