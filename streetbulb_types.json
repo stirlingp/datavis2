@@ -1,17 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "Streetlight Types in the Outdoor Lighting Dataset",
-    "subtitle": "Bulb types grouped by environmental impact",
-    "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
+  "background": "transparent",
+  "description": "Streetlights grouped by bulb technology category",
+  "width": 760,
+  "height": 360,
+  "padding": {
+    "left": 10,
+    "right": 25,
+    "top": 10,
+    "bottom": 10
   },
-  "width": 820,
-  "height": 380,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/streetlight_type_grid_small.csv",
     "format": {
@@ -30,39 +32,95 @@
       "filter": "datum.bulb_type != null && datum.bulb_type != '' && datum.bulb_type != 'Unknown'"
     },
     {
-      "calculate": "indexof(lower(datum.bulb_type), 'led') >= 0 || indexof(lower(datum.bulb_type), 'light-emitting diode') >= 0 ? 'LED' : indexof(lower(datum.bulb_type), 'mercury') >= 0 || indexof(lower(datum.bulb_type), 'fluorescent') >= 0 ? 'Mercury / Fluorescent' : indexof(lower(datum.bulb_type), 'sodium') >= 0 ? 'Sodium' : 'Other'",
+      "calculate": "lower(datum.bulb_type)",
+      "as": "bulb_lower"
+    },
+    {
+      "calculate": "indexof(datum.bulb_lower, 'light-emitting diode') >= 0 || indexof(datum.bulb_lower, 'led') >= 0 ? 'LED' : indexof(datum.bulb_lower, 'mercury') >= 0 || indexof(datum.bulb_lower, 'fluorescent') >= 0 ? 'Mercury / Fluorescent' : indexof(datum.bulb_lower, 'sodium') >= 0 ? 'Sodium' : 'Other'",
       "as": "light_category"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "count",
+          "as": "total_lights"
+        }
+      ],
+      "groupby": [
+        "light_category"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "total_lights",
+          "as": "all_lights"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.total_lights / datum.all_lights * 100",
+      "as": "percent"
     }
   ],
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 8
+    "cornerRadiusEnd": 7,
+    "opacity": 0.95
   },
   "encoding": {
     "y": {
       "field": "light_category",
       "type": "nominal",
       "title": null,
-      "sort": ["LED", "Sodium", "Mercury / Fluorescent", "Other"],
+      "sort": [
+        "LED",
+        "Sodium",
+        "Mercury / Fluorescent",
+        "Other"
+      ],
       "axis": {
-        "labelLimit": 260,
-        "labelFontSize": 12
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "labelLimit": 220
       }
     },
     "x": {
-      "aggregate": "sum",
-      "field": "count",
+      "field": "total_lights",
       "type": "quantitative",
-      "title": "Number of streetlights"
+      "title": "Number of streetlights",
+      "axis": {
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "gridColor": "#3f424a",
+        "format": ","
+      }
     },
     "color": {
       "field": "light_category",
       "type": "nominal",
-      "legend": null,
+      "title": "Lighting category",
       "scale": {
-        "domain": ["LED", "Sodium", "Mercury / Fluorescent", "Other"],
-        "range": ["#2a9d8f", "#e9c46a", "#e76f51", "#577590"]
-      }
+        "domain": [
+          "LED",
+          "Sodium",
+          "Mercury / Fluorescent",
+          "Other"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e9c46a",
+          "#e76f51",
+          "#577590"
+        ]
+      },
+      "legend": null
     },
     "tooltip": [
       {
@@ -71,11 +129,16 @@
         "title": "Lighting category"
       },
       {
-        "aggregate": "sum",
-        "field": "count",
+        "field": "total_lights",
         "type": "quantitative",
         "title": "Streetlights",
         "format": ","
+      },
+      {
+        "field": "percent",
+        "type": "quantitative",
+        "title": "Share of total",
+        "format": ".1f"
       }
     ]
   },
@@ -84,13 +147,8 @@
       "stroke": null
     },
     "axis": {
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12
     }
   }
 }
