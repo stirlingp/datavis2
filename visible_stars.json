@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "#f7f3ea",
+  "title": {
+    "text": "How Light Pollution Reduces the Number of Visible Stars",
+    "subtitle": "Each Globe at Night observation is converted from limiting magnitude into an approximate visible-star count",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "color": "#243b35",
+    "subtitleColor": "#5b625e"
+  },
+  "width": 780,
+  "height": 420,
+  "data": {
+    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.LimitingMag)",
+      "as": "limiting_mag"
+    },
+    {
+      "filter": "datum.limiting_mag >= 0 && datum.limiting_mag <= 7"
+    },
+    {
+      "calculate": "datum.limiting_mag <= 0 ? 5 : datum.limiting_mag == 1 ? 15 : datum.limiting_mag == 2 ? 48 : datum.limiting_mag == 3 ? 171 : datum.limiting_mag == 4 ? 513 : datum.limiting_mag == 5 ? 1600 : datum.limiting_mag == 6 ? 4800 : 14000",
+      "as": "approx_visible_stars"
+    },
+    {
+      "calculate": "datum.limiting_mag <= 2 ? 'Very poor visibility' : datum.limiting_mag <= 4 ? 'Poor visibility' : datum.limiting_mag <= 5 ? 'Moderate visibility' : datum.limiting_mag <= 6 ? 'Good visibility' : 'Excellent visibility'",
+      "as": "visibility_level"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "count",
+          "as": "observations"
+        },
+        {
+          "op": "mean",
+          "field": "approx_visible_stars",
+          "as": "mean_visible_stars"
+        }
+      ],
+      "groupby": [
+        "limiting_mag",
+        "visibility_level"
+      ]
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "filled": true,
+    "opacity": 0.85,
+    "stroke": "#243b35",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "limiting_mag",
+      "type": "ordinal",
+      "title": "Limiting magnitude",
+      "sort": [0, 1, 2, 3, 4, 5, 6, 7],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "mean_visible_stars",
+      "type": "quantitative",
+      "title": "Approximate visible stars",
+      "scale": {
+        "type": "sqrt",
+        "zero": true
+      }
+    },
+    "size": {
+      "field": "observations",
+      "type": "quantitative",
+      "title": "Number of observations",
+      "scale": {
+        "range": [100, 2200]
+      }
+    },
+    "color": {
+      "field": "visibility_level",
+      "type": "nominal",
+      "title": "Visibility level",
+      "scale": {
+        "domain": [
+          "Very poor visibility",
+          "Poor visibility",
+          "Moderate visibility",
+          "Good visibility",
+          "Excellent visibility"
+        ],
+        "range": [
+          "#e76f51",
+          "#f4a261",
+          "#e9c46a",
+          "#2a9d8f",
+          "#577590"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "limiting_mag",
+        "type": "ordinal",
+        "title": "Limiting magnitude"
+      },
+      {
+        "field": "visibility_level",
+        "type": "nominal",
+        "title": "Visibility level"
+      },
+      {
+        "field": "mean_visible_stars",
+        "type": "quantitative",
+        "title": "Approx. visible stars",
+        "format": ",.0f"
+      },
+      {
+        "field": "observations",
+        "type": "quantitative",
+        "title": "Observations",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#ddd6c8",
+      "domainColor": "#9d9588",
+      "tickColor": "#9d9588",
+      "labelColor": "#333333",
+      "titleColor": "#333333",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}
