@@ -3,7 +3,7 @@
   "background": "#f7f3ea",
   "title": {
     "text": "Sleep Timing Differences Between Major Cities and Regional Australia",
-    "subtitle": "Dumbbell charts compare Major Cities and Regional/Remote Australia across age groups and sleep periods",
+    "subtitle": "Dumbbell chart comparing sleep and wake times across age groups",
     "anchor": "start",
     "fontSize": 22,
     "subtitleFontSize": 13,
@@ -11,50 +11,60 @@
     "subtitleColor": "#5b625e"
   },
   "data": {
-    "values": [
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","minutes":1354,"time_label":"10:34 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","minutes":1323,"time_label":"10:03 pm"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","minutes":1401,"time_label":"11:21 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","minutes":1377,"time_label":"10:57 pm"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","minutes":1377,"time_label":"10:57 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","minutes":1365,"time_label":"10:45 pm"},
-
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","minutes":1380,"time_label":"11:00 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","minutes":1347,"time_label":"10:27 pm"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","minutes":1422,"time_label":"11:42 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","minutes":1385,"time_label":"11:05 pm"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","minutes":1384,"time_label":"11:04 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","minutes":1368,"time_label":"10:48 pm"},
-
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","minutes":1361,"time_label":"10:41 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","minutes":1330,"time_label":"10:10 pm"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","minutes":1407,"time_label":"11:27 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","minutes":1381,"time_label":"11:01 pm"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","minutes":1379,"time_label":"10:59 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","minutes":1367,"time_label":"10:47 pm"},
-
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","minutes":420,"time_label":"07:00 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","minutes":409,"time_label":"06:49 am"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","minutes":405,"time_label":"06:45 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","minutes":387,"time_label":"06:27 am"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","minutes":404,"time_label":"06:44 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","minutes":404,"time_label":"06:44 am"},
-
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","minutes":450,"time_label":"07:30 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","minutes":427,"time_label":"07:07 am"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","minutes":452,"time_label":"07:32 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","minutes":424,"time_label":"07:04 am"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","minutes":421,"time_label":"07:01 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","minutes":414,"time_label":"06:54 am"},
-
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","minutes":427,"time_label":"07:07 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","minutes":413,"time_label":"06:53 am"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","minutes":415,"time_label":"06:55 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","minutes":395,"time_label":"06:35 am"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"All days","minutes":408,"time_label":"06:48 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"All days","minutes":406,"time_label":"06:46 am"}
-    ]
+    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/sleep_stats.csv",
+    "format": {
+      "type": "csv"
+    }
   },
+  "transform": [
+    {
+      "fold": [
+        "Weeknights",
+        "Weekend nights",
+        "All nights",
+        "Weekdays",
+        "Weekend days",
+        "All days"
+      ],
+      "as": ["period", "time_label"]
+    },
+    {
+      "filter": "datum.region != null && datum.region != ''"
+    },
+    {
+      "filter": "datum.age_group != null && datum.age_group != ''"
+    },
+    {
+      "filter": "datum.time_label != null && datum.time_label != ''"
+    },
+    {
+      "calculate": "trim(datum.time_label)",
+      "as": "time_clean"
+    },
+    {
+      "calculate": "toNumber(substring(datum.time_clean, 0, indexof(datum.time_clean, ':')))",
+      "as": "hour_raw"
+    },
+    {
+      "calculate": "toNumber(substring(datum.time_clean, indexof(datum.time_clean, ':') + 1, indexof(datum.time_clean, ' ')))",
+      "as": "minute_raw"
+    },
+    {
+      "calculate": "indexof(lower(datum.time_clean), 'pm') >= 0 && datum.hour_raw < 12 ? datum.hour_raw + 12 : indexof(lower(datum.time_clean), 'am') >= 0 && datum.hour_raw == 12 ? 0 : datum.hour_raw",
+      "as": "hour_24"
+    },
+    {
+      "calculate": "datum.hour_24 * 60 + datum.minute_raw",
+      "as": "minutes"
+    },
+    {
+      "calculate": "datum.period == 'Weeknights' || datum.period == 'Weekend nights' || datum.period == 'All nights' ? 'Bedtime' : 'Wake time'",
+      "as": "chart"
+    },
+    {
+      "filter": "isValid(datum.minutes) && isFinite(datum.minutes)"
+    }
+  ],
   "vconcat": [
     {
       "title": {
@@ -64,7 +74,9 @@
         "color": "#243b35"
       },
       "transform": [
-        {"filter": "datum.chart == 'Bedtime'"}
+        {
+          "filter": "datum.chart == 'Bedtime'"
+        }
       ],
       "facet": {
         "column": {
@@ -92,7 +104,7 @@
               "y": {
                 "field": "age_group",
                 "type": "nominal",
-                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "sort": ["5 - 17 years old", "18-64", "65+"],
                 "title": "Age group"
               },
               "x": {
@@ -121,13 +133,14 @@
             "mark": {
               "type": "point",
               "filled": true,
-              "size": 110
+              "size": 120,
+              "opacity": 0.95
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
-                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "sort": ["5 - 17 years old", "18-64", "65+"],
                 "title": "Age group"
               },
               "x": {
@@ -157,10 +170,26 @@
                 }
               },
               "tooltip": [
-                {"field": "period", "type": "nominal", "title": "Period"},
-                {"field": "age_group", "type": "nominal", "title": "Age group"},
-                {"field": "region", "type": "nominal", "title": "Region"},
-                {"field": "time_label", "type": "nominal", "title": "Time"}
+                {
+                  "field": "period",
+                  "type": "nominal",
+                  "title": "Period"
+                },
+                {
+                  "field": "age_group",
+                  "type": "nominal",
+                  "title": "Age group"
+                },
+                {
+                  "field": "region",
+                  "type": "nominal",
+                  "title": "Region"
+                },
+                {
+                  "field": "time_clean",
+                  "type": "nominal",
+                  "title": "Time"
+                }
               ]
             }
           }
@@ -175,7 +204,9 @@
         "color": "#243b35"
       },
       "transform": [
-        {"filter": "datum.chart == 'Wake time'"}
+        {
+          "filter": "datum.chart == 'Wake time'"
+        }
       ],
       "facet": {
         "column": {
@@ -203,7 +234,7 @@
               "y": {
                 "field": "age_group",
                 "type": "nominal",
-                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "sort": ["5 - 17 years old", "18-64", "65+"],
                 "title": "Age group"
               },
               "x": {
@@ -232,13 +263,14 @@
             "mark": {
               "type": "point",
               "filled": true,
-              "size": 110
+              "size": 120,
+              "opacity": 0.95
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
-                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "sort": ["5 - 17 years old", "18-64", "65+"],
                 "title": "Age group"
               },
               "x": {
@@ -258,8 +290,8 @@
                 "title": "Region",
                 "scale": {
                   "domain": [
-                    "Major Cities of Australia",
-                    "Regional and Remote Australia"
+                    "Major Cities",
+                    "Regional and Remote"
                   ],
                   "range": [
                     "#e76f51",
@@ -268,10 +300,26 @@
                 }
               },
               "tooltip": [
-                {"field": "period", "type": "nominal", "title": "Period"},
-                {"field": "age_group", "type": "nominal", "title": "Age group"},
-                {"field": "region", "type": "nominal", "title": "Region"},
-                {"field": "time_label", "type": "nominal", "title": "Time"}
+                {
+                  "field": "period",
+                  "type": "nominal",
+                  "title": "Period"
+                },
+                {
+                  "field": "age_group",
+                  "type": "nominal",
+                  "title": "Age group"
+                },
+                {
+                  "field": "region",
+                  "type": "nominal",
+                  "title": "Region"
+                },
+                {
+                  "field": "time_clean",
+                  "type": "nominal",
+                  "title": "Time"
+                }
               ]
             }
           }
