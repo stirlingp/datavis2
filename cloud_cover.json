@@ -1,17 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "Cloud Cover and Night-Sky Visibility",
-    "subtitle": "Globe at Night observations grouped by reported cloud cover and limiting magnitude",
-    "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
+  "background": "transparent",
+  "description": "Cloud cover compared with limiting magnitude observations",
+  "width": 760,
+  "height": 360,
+  "padding": {
+    "left": 10,
+    "right": 20,
+    "top": 10,
+    "bottom": 10
   },
-  "width": 780,
-  "height": 420,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
     "format": {
@@ -24,6 +26,9 @@
       "as": "limiting_mag"
     },
     {
+      "filter": "isValid(datum.limiting_mag) && isFinite(datum.limiting_mag)"
+    },
+    {
       "filter": "datum.limiting_mag >= 0 && datum.limiting_mag <= 7"
     },
     {
@@ -32,21 +37,26 @@
     {
       "calculate": "datum.CloudCover == 'clear' ? 1 : datum.CloudCover == '1/4 of sky' ? 2 : datum.CloudCover == '1/2 of sky' ? 3 : datum.CloudCover == 'over 1/2 of sky' ? 4 : 5",
       "as": "cloud_order"
-    },
-    {
-      "calculate": "datum.limiting_mag <= 2 ? 'Very poor visibility' : datum.limiting_mag <= 4 ? 'Poor visibility' : datum.limiting_mag <= 5 ? 'Moderate visibility' : datum.limiting_mag <= 6 ? 'Good visibility' : 'Excellent visibility'",
-      "as": "visibility_level"
     }
   ],
   "mark": {
-    "type": "rect"
+    "type": "rect",
+    "stroke": "#2c2d33",
+    "strokeWidth": 1
   },
   "encoding": {
     "x": {
       "field": "limiting_mag",
       "type": "ordinal",
       "title": "Limiting magnitude",
-      "sort": [0, 1, 2, 3, 4, 5, 6, 7]
+      "sort": [0, 1, 2, 3, 4, 5, 6, 7],
+      "axis": {
+        "labelAngle": 0,
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84"
+      }
     },
     "y": {
       "field": "CloudCover",
@@ -55,6 +65,13 @@
       "sort": {
         "field": "cloud_order",
         "order": "ascending"
+      },
+      "axis": {
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "labelLimit": 160
       }
     },
     "color": {
@@ -62,7 +79,15 @@
       "type": "quantitative",
       "title": "Observations",
       "scale": {
-        "scheme": "yellowgreenblue"
+        "scheme": "viridis"
+      },
+      "legend": {
+        "orient": "right",
+        "titleColor": "#eeeeee",
+        "labelColor": "#dddddd",
+        "titleFontSize": 11,
+        "labelFontSize": 10,
+        "gradientLength": 180
       }
     },
     "tooltip": [
@@ -88,17 +113,13 @@
       "stroke": null
     },
     "axis": {
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "grid": false
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleColor": "#eeeeee",
+      "labelColor": "#dddddd"
     }
   }
 }
