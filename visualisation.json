@@ -90,11 +90,9 @@
           {"field": "LocalDate"},
           {"field": "LocalTime"},
           {"field": "LimitingMag"},
-          {"field": "SQMReading"},
-          {"field": "CloudCover"},
-          {"field": "Constellation"},
-          {"field": "LocationComment"},
-          {"field": "Country"}
+          {"field": "Constellation"}
+
+
         ]
       }
     }
