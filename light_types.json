@@ -1,112 +1,172 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "Different Light Types Create Different Wildlife Risks",
-    "subtitle": "Conceptual risk ranking based on wavelength: blue/white-rich lights are more disruptive near turtle nesting beaches",
-    "anchor": "start",
-    "fontSize": 21,
-    "subtitleFontSize": 13,
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
-  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "transparent",
+  "description": "Streetlight technology composition across wattage bands",
   "width": 760,
-  "height": 360,
-  "data": {
-    "values": [
-      {
-        "lightType": "Amber / wildlife-sensitive lighting",
-        "risk": 1,
-        "blueContent": "Very low",
-        "note": "Longer wavelength, preferred near sensitive wildlife areas"
-      },
-      {
-        "lightType": "Warm LED",
-        "risk": 2,
-        "blueContent": "Low to moderate",
-        "note": "Lower risk if dimmed, shielded and warm-coloured"
-      },
-      {
-        "lightType": "High pressure sodium",
-        "risk": 2.5,
-        "blueContent": "Low to moderate",
-        "note": "Generally warmer than cool white lighting"
-      },
-      {
-        "lightType": "Fluorescent / mercury vapour",
-        "risk": 4,
-        "blueContent": "Higher",
-        "note": "Often contains shorter wavelengths"
-      },
-      {
-        "lightType": "Cool white LED",
-        "risk": 5,
-        "blueContent": "High",
-        "note": "Blue-rich white light can be more disruptive to wildlife"
-      }
-    ]
+  "height": 370,
+  "padding": {
+    "left": 10,
+    "right": 25,
+    "top": 10,
+    "bottom": 10
   },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/streetlight_type_grid_small.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.streetlight_count)",
+      "as": "count"
+    },
+    {
+      "calculate": "toNumber(datum.avg_bulb_watts)",
+      "as": "watts"
+    },
+    {
+      "filter": "isValid(datum.count) && isFinite(datum.count)"
+    },
+    {
+      "filter": "isValid(datum.watts) && isFinite(datum.watts)"
+    },
+    {
+      "filter": "datum.bulb_type != null && datum.bulb_type != '' && datum.bulb_type != 'Unknown'"
+    },
+    {
+      "calculate": "lower(datum.bulb_type)",
+      "as": "bulb_lower"
+    },
+    {
+      "calculate": "indexof(datum.bulb_lower, 'light-emitting diode') >= 0 || indexof(datum.bulb_lower, 'led') >= 0 ? 'LED' : indexof(datum.bulb_lower, 'mercury') >= 0 || indexof(datum.bulb_lower, 'fluorescent') >= 0 ? 'Mercury / Fluorescent' : indexof(datum.bulb_lower, 'sodium') >= 0 ? 'Sodium' : 'Other'",
+      "as": "light_category"
+    },
+    {
+      "calculate": "datum.watts < 40 ? 'Low wattage (<40W)' : datum.watts < 80 ? 'Medium wattage (40–79W)' : datum.watts < 150 ? 'High wattage (80–149W)' : 'Very high wattage (150W+)'",
+      "as": "wattage_band"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "count",
+          "as": "total_lights"
+        }
+      ],
+      "groupby": [
+        "wattage_band",
+        "light_category"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "total_lights",
+          "as": "band_total"
+        }
+      ],
+      "groupby": [
+        "wattage_band"
+      ]
+    },
+    {
+      "calculate": "datum.total_lights / datum.band_total",
+      "as": "proportion"
+    }
+  ],
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 6
+    "cornerRadiusEnd": 3,
+    "opacity": 0.96
   },
   "encoding": {
     "y": {
-      "field": "lightType",
+      "field": "wattage_band",
       "type": "nominal",
       "title": null,
       "sort": [
-        "Amber / wildlife-sensitive lighting",
-        "Warm LED",
-        "High pressure sodium",
-        "Fluorescent / mercury vapour",
-        "Cool white LED"
+        "Low wattage (<40W)",
+        "Medium wattage (40–79W)",
+        "High wattage (80–149W)",
+        "Very high wattage (150W+)"
       ],
       "axis": {
-        "labelFontSize": 12,
-        "labelLimit": 260
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "labelLimit": 240
       }
     },
     "x": {
-      "field": "risk",
+      "field": "proportion",
       "type": "quantitative",
-      "title": "Relative wildlife disruption risk",
-      "scale": {
-        "domain": [0, 5]
-      },
+      "title": "Share within wattage band",
+      "stack": "normalize",
       "axis": {
-        "values": [1, 2, 3, 4, 5],
-        "labelExpr": "datum.value == 1 ? 'Low' : datum.value == 5 ? 'High' : ''"
+        "format": ".0%",
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "gridColor": "#3f424a"
       }
     },
     "color": {
-      "field": "risk",
-      "type": "quantitative",
-      "legend": null,
+      "field": "light_category",
+      "type": "nominal",
+      "title": "Lighting category",
       "scale": {
-        "range": ["#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"]
+        "domain": [
+          "LED",
+          "Sodium",
+          "Mercury / Fluorescent",
+          "Other"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e9c46a",
+          "#e76f51",
+          "#577590"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "titleColor": "#eeeeee",
+        "labelColor": "#dddddd",
+        "titleFontSize": 11,
+        "labelFontSize": 10
       }
     },
     "tooltip": [
       {
-        "field": "lightType",
+        "field": "wattage_band",
         "type": "nominal",
-        "title": "Light type"
+        "title": "Wattage band"
       },
       {
-        "field": "blueContent",
+        "field": "light_category",
         "type": "nominal",
-        "title": "Blue/short wavelength content"
+        "title": "Lighting category"
       },
       {
-        "field": "risk",
+        "field": "total_lights",
         "type": "quantitative",
-        "title": "Relative risk"
+        "title": "Streetlights",
+        "format": ","
       },
       {
-        "field": "note",
-        "type": "nominal",
-        "title": "Why it matters"
+        "field": "proportion",
+        "type": "quantitative",
+        "title": "Share within band",
+        "format": ".1%"
       }
     ]
   },
@@ -115,13 +175,12 @@
       "stroke": null
     },
     "axis": {
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "titleColor": "#eeeeee",
+      "labelColor": "#dddddd"
     }
   }
 }
