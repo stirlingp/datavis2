@@ -8,7 +8,7 @@
   "width": 700,
   "height": 550,
 
-  "padding": 2,
+  "padding": 0,
 
   "autosize": {
     "type": "fit",
@@ -27,7 +27,9 @@
   ],
 
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [10, 20],
+    "scale": 115
   },
 
   "layer": [
@@ -40,6 +42,12 @@
         }
       },
 
+      "transform": [
+        {
+          "filter": "datum.properties.name != 'Antarctica'"
+        }
+      ],
+
       "mark": {
         "type": "geoshape",
         "fill": "#e0e0e0",
@@ -51,7 +59,7 @@
       "mark": {
         "type": "circle",
         "size": 80,
-        "opacity": 0.55
+        "opacity": 0.85
       },
 
       "encoding": {
@@ -71,14 +79,10 @@
 
           "scale": {
             "scheme": "plasma",
-            "domain": [7, 0]
+            "domain": [0, 7]
           },
 
-          "legend": {
-            "orient": "bottom-right"
-          },
-
-          "title": "Limiting Magnitude"
+          "legend": null
         },
 
         "tooltip": [
@@ -86,7 +90,11 @@
           {"field": "LocalDate"},
           {"field": "LocalTime"},
           {"field": "LimitingMag"},
-          {"field": "Constellation"}
+          {"field": "SQMReading"},
+          {"field": "CloudCover"},
+          {"field": "Constellation"},
+          {"field": "LocationComment"},
+          {"field": "Country"}
         ]
       }
     }
