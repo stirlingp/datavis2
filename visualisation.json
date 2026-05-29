@@ -1,37 +1,62 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-
-  "background": "#bdbdc0",
-
-  "description": "Map of GAN observations colored by Limiting Magnitude",
-
-  "width": 700,
-  "height": 550,
-
-  "padding": 3,
-
+  "background": "transparent",
+  "description": "Map of Globe at Night observations coloured by limiting magnitude",
+  "width": 620,
+  "height": 460,
+  "padding": {
+    "left": 5,
+    "right": 20,
+    "top": 10,
+    "bottom": 5
+  },
   "autosize": {
     "type": "fit",
     "contains": "padding"
   },
-
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
-    "format": {"type": "json"}
+    "format": {
+      "type": "json"
+    }
   },
-
   "transform": [
-    {"filter": "isValid(datum.LimitingMag)"},
-    {"filter": "datum.Latitude >= -60 && datum.Latitude <= 80"},
-    {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
+    {
+      "calculate": "toNumber(datum.Latitude)",
+      "as": "lat"
+    },
+    {
+      "calculate": "toNumber(datum.Longitude)",
+      "as": "lon"
+    },
+    {
+      "calculate": "toNumber(datum.LimitingMag)",
+      "as": "limiting_mag"
+    },
+    {
+      "filter": "isValid(datum.lat) && isFinite(datum.lat)"
+    },
+    {
+      "filter": "isValid(datum.lon) && isFinite(datum.lon)"
+    },
+    {
+      "filter": "isValid(datum.limiting_mag) && isFinite(datum.limiting_mag)"
+    },
+    {
+      "filter": "datum.lat >= -60 && datum.lat <= 80"
+    },
+    {
+      "filter": "datum.lon >= -170 && datum.lon <= 180"
+    },
+    {
+      "filter": "datum.limiting_mag >= 0 && datum.limiting_mag <= 7"
+    }
   ],
-
   "projection": {
     "type": "mercator",
     "center": [10, 20],
-    "scale": 115
+    "scale": 105
   },
-
   "layer": [
     {
       "data": {
@@ -41,60 +66,91 @@
           "feature": "countries"
         }
       },
-
       "transform": [
         {
           "filter": "datum.properties.name != 'Antarctica'"
         }
       ],
-
       "mark": {
         "type": "geoshape",
-        "fill": "#e0e0e0",
-        "stroke": "white"
+        "fill": "#3b3d45",
+        "stroke": "#686b75",
+        "strokeWidth": 0.45
       }
     },
-
     {
       "mark": {
         "type": "circle",
-        "size": 80,
-        "opacity": 0.85
+        "size": 42,
+        "opacity": 0.8,
+        "stroke": "#15161a",
+        "strokeWidth": 0.25
       },
-
       "encoding": {
         "longitude": {
-          "field": "Longitude",
+          "field": "lon",
           "type": "quantitative"
         },
-
         "latitude": {
-          "field": "Latitude",
+          "field": "lat",
           "type": "quantitative"
         },
-
         "color": {
-          "field": "LimitingMag",
+          "field": "limiting_mag",
           "type": "quantitative",
-
+          "title": "Limiting magnitude",
           "scale": {
             "scheme": "plasma",
             "domain": [0, 7]
           },
-
-          "legend": null
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "gradientThickness": 10,
+            "titleColor": "#eeeeee",
+            "labelColor": "#dddddd",
+            "titleFontSize": 11,
+            "labelFontSize": 10
+          }
         },
-
         "tooltip": [
-          {"field": "ID"},
-          {"field": "LocalDate"},
-          {"field": "LocalTime"},
-          {"field": "LimitingMag"},
-          {"field": "Constellation"}
-
-
+          {
+            "field": "ID",
+            "type": "nominal",
+            "title": "Observation ID"
+          },
+          {
+            "field": "LocalDate",
+            "type": "nominal",
+            "title": "Date"
+          },
+          {
+            "field": "LocalTime",
+            "type": "nominal",
+            "title": "Time"
+          },
+          {
+            "field": "limiting_mag",
+            "type": "quantitative",
+            "title": "Limiting magnitude"
+          },
+          {
+            "field": "Constellation",
+            "type": "nominal",
+            "title": "Constellation"
+          }
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "titleColor": "#eeeeee",
+      "labelColor": "#dddddd"
+    }
+  }
 }
