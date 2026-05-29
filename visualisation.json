@@ -75,7 +75,7 @@
           },
 
           "legend": {
-            "orient": "right"
+            "orient": "bottom-right"
           },
 
           "title": "Limiting Magnitude"
