@@ -1,40 +1,171 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Visualisation Two – Light Pollution</title>
 
   <!-- Vega Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <style>
+    :root {
+      --bg: #1f2024;
+      --panel: #2c2d33;
+      --panel-2: #34363d;
+      --text: #eeeeee;
+      --muted: #c8c8c8;
+      --line: #50525a;
+      --accent: #70c1b3;
+      --accent-2: #f4a261;
+      --danger: #e76f51;
+      --max-width: 1260px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      background: #222;
-      padding: 20px;
-      font-family: sans-serif;
-      color: #eee;
-      align-items: center;
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(112, 193, 179, 0.14), transparent 30%),
+        radial-gradient(circle at top right, rgba(244, 162, 97, 0.10), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
     }
 
-    .viz-row {
-      display: flex;
-      gap: 20px;
+    header {
+      width: 100%;
+      padding: 42px 22px 24px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-.viz-box {
-  width: 650px;
-  height: 500px;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  background: none;   /* ← removed the dark box background */
-}
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
 
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.02;
+      margin: 0 0 12px 0;
+      letter-spacing: -1.8px;
+    }
+
+    .subtitle {
+      max-width: 920px;
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 16px 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: #d8d8d8;
+      font-size: 14px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .section {
+      margin: 36px 0 52px 0;
+    }
+
+    .section-intro {
+      background: rgba(52, 54, 61, 0.88);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 42px rgba(0,0,0,0.16);
+    }
+
+    .section-intro h2 {
+      margin: 0 0 8px 0;
+      font-size: 26px;
+      letter-spacing: -0.4px;
+    }
+
+    .section-intro p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .grid.single {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: rgba(44, 45, 51, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    }
+
+    .card-header {
+      padding: 16px 18px 8px 18px;
+    }
+
+    .card-header h3 {
+      margin: 0 0 5px 0;
+      font-size: 19px;
+      letter-spacing: -0.15px;
+    }
+
+    .card-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .viz {
+      width: 100%;
+      min-height: 430px;
+      padding: 8px 10px 14px 10px;
+    }
+
+    .viz.tall { min-height: 560px; }
+    .viz.short { min-height: 360px; }
+
+    .image-viz {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: #17181c;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
 
     .layer-img {
       position: absolute;
@@ -52,11 +183,62 @@
       max-height: 145%;
     }
 
+    .legend-img {
+      display: block;
+      width: 180px;
+      max-width: 80%;
+      margin: 12px auto 0 auto;
+      opacity: 0.95;
+    }
+
     .caption {
-      text-align: center;
-      margin-top: 8px;
-      font-size: 15px;
-      opacity: 0.85;
+      padding: 12px 18px 14px 18px;
+      color: #dddddd;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.12);
+    }
+
+    .caption strong { color: #ffffff; }
+
+    .source-note {
+      display: block;
+      margin-top: 6px;
+      color: #bcbcbc;
+      font-size: 12px;
+    }
+
+    .callout {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: rgba(112, 193, 179, 0.10);
+      border: 1px solid rgba(112, 193, 179, 0.35);
+      color: #e8fffb;
+    }
+
+    .callout strong { color: #ffffff; }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 22px 44px 22px;
+      color: var(--muted);
+    }
+
+    footer h2 {
+      color: var(--text);
+      margin-top: 0;
+    }
+
+    a { color: #8bd8cc; }
+
+    .vega-actions { display: none !important; }
+
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+      .viz { min-height: 390px; }
+      .image-viz { height: 430px; }
     }
   </style>
 </head>
@@ -64,80 +246,278 @@
 <body>
 
 <header>
-  <h1>Data Visualisation Two – Light Pollution</h1>
-  <p>Stirling Perrott — Student Number: 34968253</p>
+  <div class="hero">
+    <h1>Light Pollution: Losing the Night</h1>
+    <p class="subtitle">
+      Artificial light at night changes what people can see, when animals behave, and how urban environments shape the night.
+      This visualisation follows the story from global sky visibility, to Australian light exposure, to wildlife and human sleep patterns.
+    </p>
+    <div class="meta">
+      <span class="pill">FIT2179 Data Visualisation 2</span>
+      <span class="pill">Stirling Perrott — 34968253</span>
+      <span class="pill">May 2026</span>
+      <span class="pill">Built with Vega-Lite</span>
+    </div>
+  </div>
 </header>
 
-<div style="background:#333; padding:18px 22px; border-radius:8px; 
-            max-width:1200px; margin:0 auto 20px auto; 
-            color:#eee; font-size:16px; line-height:1.55; 
-            border:1px solid #444;">
-  Light pollution is an increasingly significant environmental issue in Australia, affecting ecosystems,
-  wildlife behaviour, human health, and the visibility of the night sky.
-</div>
+<main>
 
-<!-- HEATMAP LEGEND -->
-<div style="text-align:center; margin-bottom:6px;">
-  <img 
-    src="https://raw.githubusercontent.com/stirlingp/datavis2/main/heatmap_legend.png"
-    alt="Heatmap Legend"
-    style="width:180px; height:auto; opacity:0.95;"
-  >
-</div>
-
-<div class="viz-row">
-
-<div class="viz-row">
-
-  <!-- LEFT VISUALISATION (TOOLTIPS WORK) -->
-  <div>
-    <div class="viz-box">
-      <div id="earth-vis" style="width:100%; height:100%;"></div>
+  <section class="section" id="section-sky">
+    <div class="section-intro">
+      <h2>1. The night sky is not equally dark everywhere</h2>
+      <p>
+        Light pollution can be seen through reduced night-sky visibility. Lower limiting magnitude means fewer stars are visible,
+        while higher values indicate darker skies. The first visuals show global observations and an Australian luminance-style heatmap.
+      </p>
     </div>
 
-    <div class="caption">
-      Worldwide limiting magnitude datapoints showing global light pollution distribution.
-    </div>
-  </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header">
+          <h3>Global night-sky visibility observations</h3>
+          <p>Globe at Night observations mapped by limiting magnitude.</p>
+        </div>
+        <div id="earth-vis" class="viz tall"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> low limiting magnitude points highlight areas where fewer stars are visible.
+          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+        </div>
+      </article>
 
-  <!-- RIGHT VISUALISATION (UNCHANGED) -->
-  <div>
-    <div class="viz-box">
-      <img id="heatmap-img"
-           src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
-           class="layer-img">
+      <article class="card">
+        <div class="card-header">
+          <h3>Australia luminance heatmap</h3>
+          <p>Approximate light-pollution surface created from available night-sky data.</p>
+          <img class="legend-img"
+               src="https://raw.githubusercontent.com/stirlingp/datavis2/main/heatmap_legend.png"
+               alt="Heatmap legend">
+        </div>
+        <div class="image-viz">
+          <img id="heatmap-img"
+               src="https://raw.githubusercontent.com/stirlingp/datavis2/main/luminance_heatmap.png"
+               class="layer-img"
+               alt="Australia luminance heatmap">
+          <img id="states-overlay"
+               src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
+               class="layer-img"
+               alt="Australian state boundaries overlay">
+        </div>
+        <div class="caption">
+          <strong>What this shows:</strong> artificial light is concentrated around populated regions and coastal corridors.
+          <span class="source-note">Source placeholder: derived luminance image and Australian state overlay from repository assets.</span>
+        </div>
+      </article>
+    </div>
 
-      <img id="states-overlay"
-           src="https://raw.githubusercontent.com/stirlingp/datavis2/main/Australia_states_blank.png"
-           class="layer-img">
-    </div>
-    <div class="caption">
-      Heatmap of Australia showing approximate limiting magnitude based on nearest datapoint
-    </div>
-  </div>
-  </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header">
+          <h3>Visibility levels by limiting magnitude</h3>
+          <p>Counts of observations grouped by visible-star quality.</p>
+        </div>
+        <div id="night-visibility" class="viz"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> lower magnitudes indicate worse visibility, making limiting magnitude easier to interpret as a light-pollution signal.
+          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+        </div>
+      </article>
 
-    
-</div>
-<div class="viz-row">
-  <div style="background:#333; padding:18px 22px; border-radius:8px; 
-              max-width:1200px; margin:0 auto 20px auto; 
-              color:#eee; font-size:16px; line-height:1.55; 
-              border:1px solid #444;">
-    Clearly light pollution is widespread in Australia with even lower limiting magnitudes being responsible for environmental changes for our coastal species
+      <article class="card">
+        <div class="card-header">
+          <h3>Cloud cover and visibility</h3>
+          <p>A check on whether poor visibility is caused by clouds or brightened skies.</p>
+        </div>
+        <div id="cloud-cover" class="viz"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> cloud cover affects visibility, so clear-sky observations with low limiting magnitude are especially important.
+          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+        </div>
+      </article>
     </div>
-</div>
-  
-<!-- Vega Embed -->
+
+    <div class="grid single">
+      <article class="card">
+        <div class="card-header">
+          <h3>What limiting magnitude means in visible stars</h3>
+          <p>Approximate number of stars visible under different limiting magnitudes.</p>
+        </div>
+        <div id="visible-stars" class="viz"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> magnitude is converted into an approximate number of visible stars, making the loss of dark skies easier to understand.
+          <span class="source-note">Source placeholder: Globe at Night 2025 dataset plus approximate visible-star conversion table.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="section-wildlife">
+    <div class="section-intro">
+      <h2>2. Wildlife interacts with the night, not just the land</h2>
+      <p>
+        Artificial light can affect animals by changing the timing, direction, or safety of night-time behaviour.
+        The penguin visualisation focuses on arrival timing after sunset, while the turtle graph uses city proximity as a proxy for likely urban light exposure.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-header">
+          <h3>Penguin arrival timing after sunset</h3>
+          <p>Nightly arrival timing compared with sunset and cloud cover.</p>
+        </div>
+        <div id="penguins-vis" class="viz tall"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> animal behaviour is linked to night-time conditions, with arrival timing compared against sunset and cloud cover.
+          <span class="source-note">Source placeholder: <code>nightly_penguin_counts.csv</code>, embedded via <code>penguins_visualisation.json</code>.</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Turtle records near urban light sources</h3>
+          <p>Cumulative proximity of Flatback Turtle records to major coastal cities.</p>
+        </div>
+        <div id="turtle-vis" class="viz tall"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> city proximity is used as a simple proxy for likely exposure to urban coastal lighting.
+          <span class="source-note">Source placeholder: Atlas of Living Australia Flatback Turtle occurrence records, <code>turtle_data.csv</code>.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="section-infrastructure">
+    <div class="section-intro">
+      <h2>3. Outdoor lighting is infrastructure, not just brightness</h2>
+      <p>
+        The effects of artificial light depend on where lights are placed, what technology they use, and how bright they are.
+        The streetlight graphs use a reduced Western Power dataset so the page loads quickly while preserving bulb type and wattage.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-header">
+          <h3>Streetlight bulb categories</h3>
+          <p>Streetlights grouped by lighting technology.</p>
+        </div>
+        <div id="streetbulb-types" class="viz"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> different outdoor lighting technologies are present in the streetlight dataset, including LED and older lamp types.
+          <span class="source-note">Source placeholder: Western Power Streetlights WP-043, reduced to <code>streetlight_type_grid_small.csv</code>.</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Light type and wattage</h3>
+          <p>Lighting technology compared through wattage or type-based groupings.</p>
+        </div>
+        <div id="light-types" class="viz"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> technology and wattage both matter because light pollution is influenced by spectrum and intensity.
+          <span class="source-note">Source placeholder: Western Power Streetlights WP-043, reduced to <code>streetlight_type_grid_small.csv</code>.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="section-people">
+    <div class="section-intro">
+      <h2>4. The urban night also affects people</h2>
+      <p>
+        This section shifts from animals to people. It compares sleep timing in Major Cities and Regional/Remote Australia.
+        It does not prove light pollution causes later sleep, but it shows that urban and regional night-time patterns differ.
+      </p>
+    </div>
+
+    <div class="grid single">
+      <article class="card">
+        <div class="card-header">
+          <h3>Sleep timing in major cities and regional Australia</h3>
+          <p>Dumbbell chart comparing bedtime and wake time across age groups.</p>
+        </div>
+        <div id="sleep-stats" class="viz tall"></div>
+        <div class="caption">
+          <strong>What this shows:</strong> sleep and wake times differ between Major Cities and Regional/Remote Australia across age groups.
+          <span class="source-note">Source placeholder: Australian sleep statistics, <code>sleep_stats.csv</code>.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="section-ending">
+    <div class="section-intro">
+      <h2>5. What the data suggests</h2>
+      <p>
+        Together, the visuals show that artificial light is measurable, spatially concentrated, and relevant to both wildlife and people.
+        The project does not claim direct causation for every pattern, but it highlights where light exposure, animal behaviour,
+        lighting infrastructure and sleep timing intersect.
+      </p>
+    </div>
+
+    <div class="callout">
+      <strong>Main argument:</strong> light pollution is not just an astronomy issue. It is an environmental and public-health issue
+      shaped by urban infrastructure, coastal exposure, lighting technology, and the loss of natural darkness.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <h2>Sources and acknowledgements</h2>
+  <p>Created by Stirling Perrott, May 2026. Built for FIT2179 Data Visualisation 2 using Vega-Lite.</p>
+  <ul>
+    <li>Globe at Night 2025 observations — edit with final URL.</li>
+    <li>Australian luminance heatmap / derived image — edit with final method/source.</li>
+    <li>Penguin nightly counts dataset — edit with final URL.</li>
+    <li>Atlas of Living Australia Flatback Turtle records — edit with final URL.</li>
+    <li>Western Power Streetlights WP-043 — edit with final URL.</li>
+    <li>Australian sleep statistics dataset — edit with final URL.</li>
+    <li>National Light Pollution Guidelines for Wildlife — edit with final URL.</li>
+  </ul>
+  <p>
+    AI acknowledgement: coding assistance, debugging and wording support were provided using ChatGPT.
+    Final design decisions and submission are the author’s responsibility.
+  </p>
+</footer>
+
 <script>
-  vegaEmbed(
-    '#earth-vis',
-    'https://raw.githubusercontent.com/stirlingp/datavis2/main/visualisation.json',
-    { actions: false }
-  )
-  .then(() => console.log("Visualisation loaded"))
-  .catch(err => alert(err.message));
+  const RAW_BASE = "https://raw.githubusercontent.com/stirlingp/datavis2/main/";
+
+  function embedSpec(elementId, filename) {
+    vegaEmbed(elementId, RAW_BASE + filename, {
+      actions: false,
+      renderer: "canvas"
+    }).catch(error => {
+      console.error("Could not load " + filename, error);
+      const el = document.querySelector(elementId);
+      if (el) {
+        el.innerHTML =
+          '<div style="padding:18px;color:#ffcccc;background:#3a2020;border:1px solid #8a4444;border-radius:8px;">' +
+          '<strong>Could not load:</strong> ' + filename + '<br>' +
+          '<span style="font-size:13px;">Check that this JSON file exists in the GitHub repository and is publicly accessible.</span>' +
+          '</div>';
+      }
+    });
+  }
+
+  embedSpec("#earth-vis", "visualisation.json");
+  embedSpec("#night-visibility", "night_visibility.json");
+  embedSpec("#cloud-cover", "cloud_cover.json");
+  embedSpec("#visible-stars", "visible_stars.json");
+  embedSpec("#penguins-vis", "penguins_visualisation.json");
+  embedSpec("#turtle-vis", "turtle_graph.json");
+  embedSpec("#streetbulb-types", "streetbulb_types.json");
+  embedSpec("#light-types", "light_types.json");
+  embedSpec("#sleep-stats", "sleep_stats.json");
 </script>
 
 </body>
 </html>
+'''
+
+out = Path('/mnt/data/index.html')
+out.write_text(html, encoding='utf-8')
+print(f"Created {out} ({out.stat().st_size:,} bytes)")
