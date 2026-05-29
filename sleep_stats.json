@@ -1,14 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "Sleep Timing Differences Between Major Cities and Regional Australia",
-    "subtitle": "Dumbbell chart comparing sleep and wake times across age groups",
-    "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
+  "background": "transparent",
+  "description": "Sleep timing differences between Major Cities and Regional and Remote Australia",
+  "width": 980,
+  "height": 620,
+  "padding": {
+    "left": 10,
+    "right": 35,
+    "top": 10,
+    "bottom": 20
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/sleep_stats.csv",
@@ -70,8 +74,8 @@
       "title": {
         "text": "Bedtime",
         "anchor": "start",
-        "fontSize": 16,
-        "color": "#243b35"
+        "fontSize": 15,
+        "color": "#eeeeee"
       },
       "transform": [
         {
@@ -85,27 +89,33 @@
           "sort": ["Weeknights", "Weekend nights", "All nights"],
           "header": {
             "title": null,
-            "labelFontSize": 13,
-            "labelColor": "#243b35"
+            "labelFontSize": 12,
+            "labelColor": "#eeeeee"
           }
         }
       },
       "spec": {
-        "width": 220,
-        "height": 180,
+        "width": 280,
+        "height": 210,
         "layer": [
           {
             "mark": {
               "type": "rule",
               "strokeWidth": 3,
-              "color": "#b8b0a3"
+              "color": "#777a84"
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
                 "sort": ["5 - 17 years old", "18-64", "65+"],
-                "title": "Age group"
+                "title": "Age group",
+                "axis": {
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84"
+                }
               },
               "x": {
                 "aggregate": "min",
@@ -117,7 +127,12 @@
                 },
                 "axis": {
                   "values": [1320, 1350, 1380, 1410, 1440],
-                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')",
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84",
+                  "gridColor": "#3f424a"
                 }
               },
               "x2": {
@@ -133,15 +148,23 @@
             "mark": {
               "type": "point",
               "filled": true,
-              "size": 120,
-              "opacity": 0.95
+              "size": 115,
+              "opacity": 0.95,
+              "stroke": "#111217",
+              "strokeWidth": 0.5
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
                 "sort": ["5 - 17 years old", "18-64", "65+"],
-                "title": "Age group"
+                "title": "Age group",
+                "axis": {
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84"
+                }
               },
               "x": {
                 "field": "minutes",
@@ -151,7 +174,12 @@
                 },
                 "axis": {
                   "values": [1320, 1350, 1380, 1410, 1440],
-                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')",
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84",
+                  "gridColor": "#3f424a"
                 }
               },
               "color": {
@@ -167,6 +195,14 @@
                     "#e76f51",
                     "#2a9d8f"
                   ]
+                },
+                "legend": {
+                  "orient": "bottom",
+                  "direction": "horizontal",
+                  "titleColor": "#eeeeee",
+                  "labelColor": "#dddddd",
+                  "titleFontSize": 11,
+                  "labelFontSize": 10
                 }
               },
               "tooltip": [
@@ -198,10 +234,10 @@
     },
     {
       "title": {
-        "text": "Wake Time",
+        "text": "Wake time",
         "anchor": "start",
-        "fontSize": 16,
-        "color": "#243b35"
+        "fontSize": 15,
+        "color": "#eeeeee"
       },
       "transform": [
         {
@@ -215,27 +251,33 @@
           "sort": ["Weekdays", "Weekend days", "All days"],
           "header": {
             "title": null,
-            "labelFontSize": 13,
-            "labelColor": "#243b35"
+            "labelFontSize": 12,
+            "labelColor": "#eeeeee"
           }
         }
       },
       "spec": {
-        "width": 220,
-        "height": 180,
+        "width": 280,
+        "height": 210,
         "layer": [
           {
             "mark": {
               "type": "rule",
               "strokeWidth": 3,
-              "color": "#b8b0a3"
+              "color": "#777a84"
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
                 "sort": ["5 - 17 years old", "18-64", "65+"],
-                "title": "Age group"
+                "title": "Age group",
+                "axis": {
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84"
+                }
               },
               "x": {
                 "aggregate": "min",
@@ -247,7 +289,12 @@
                 },
                 "axis": {
                   "values": [390, 420, 450],
-                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')",
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84",
+                  "gridColor": "#3f424a"
                 }
               },
               "x2": {
@@ -263,15 +310,23 @@
             "mark": {
               "type": "point",
               "filled": true,
-              "size": 120,
-              "opacity": 0.95
+              "size": 115,
+              "opacity": 0.95,
+              "stroke": "#111217",
+              "strokeWidth": 0.5
             },
             "encoding": {
               "y": {
                 "field": "age_group",
                 "type": "nominal",
                 "sort": ["5 - 17 years old", "18-64", "65+"],
-                "title": "Age group"
+                "title": "Age group",
+                "axis": {
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84"
+                }
               },
               "x": {
                 "field": "minutes",
@@ -281,7 +336,12 @@
                 },
                 "axis": {
                   "values": [390, 420, 450],
-                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')",
+                  "labelColor": "#dddddd",
+                  "titleColor": "#eeeeee",
+                  "domainColor": "#777a84",
+                  "tickColor": "#777a84",
+                  "gridColor": "#3f424a"
                 }
               },
               "color": {
@@ -297,6 +357,14 @@
                     "#e76f51",
                     "#2a9d8f"
                   ]
+                },
+                "legend": {
+                  "orient": "bottom",
+                  "direction": "horizontal",
+                  "titleColor": "#eeeeee",
+                  "labelColor": "#dddddd",
+                  "titleFontSize": 11,
+                  "labelFontSize": 10
                 }
               },
               "tooltip": [
@@ -337,17 +405,12 @@
       "stroke": null
     },
     "axis": {
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleColor": "#eeeeee",
+      "labelColor": "#dddddd"
     }
   }
 }
