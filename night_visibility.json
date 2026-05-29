@@ -1,17 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "Night Sky Visibility at Different Light Pollution Levels",
-    "subtitle": "Lower limiting magnitude means fewer visible stars and stronger light pollution",
-    "anchor": "start",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
+  "background": "transparent",
+  "description": "Distribution of Globe at Night observations by limiting magnitude",
+  "width": 760,
+  "height": 360,
+  "padding": {
+    "left": 10,
+    "right": 20,
+    "top": 10,
+    "bottom": 10
   },
-  "width": 780,
-  "height": 420,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
     "format": {
@@ -24,6 +26,9 @@
       "as": "limiting_mag"
     },
     {
+      "filter": "isValid(datum.limiting_mag) && isFinite(datum.limiting_mag)"
+    },
+    {
       "filter": "datum.limiting_mag >= 0 && datum.limiting_mag <= 7"
     },
     {
@@ -33,7 +38,8 @@
   ],
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 4
+    "cornerRadiusEnd": 5,
+    "opacity": 0.95
   },
   "encoding": {
     "x": {
@@ -42,13 +48,25 @@
       "title": "Limiting magnitude",
       "sort": [0, 1, 2, 3, 4, 5, 6, 7],
       "axis": {
-        "labelAngle": 0
+        "labelAngle": 0,
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "grid": false
       }
     },
     "y": {
       "aggregate": "count",
       "type": "quantitative",
-      "title": "Number of observations"
+      "title": "Number of observations",
+      "axis": {
+        "labelColor": "#dddddd",
+        "titleColor": "#eeeeee",
+        "domainColor": "#777a84",
+        "tickColor": "#777a84",
+        "gridColor": "#3f424a"
+      }
     },
     "color": {
       "field": "visibility_level",
@@ -69,6 +87,15 @@
           "#2a9d8f",
           "#577590"
         ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "titleColor": "#eeeeee",
+        "labelColor": "#dddddd",
+        "titleFontSize": 11,
+        "labelFontSize": 10,
+        "columns": 3
       }
     },
     "tooltip": [
@@ -94,17 +121,12 @@
       "stroke": null
     },
     "axis": {
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleColor": "#eeeeee",
+      "labelColor": "#dddddd"
     }
   }
 }
