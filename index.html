@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -126,7 +126,7 @@
       background: rgba(44, 45, 51, 0.94);
       border: 1px solid var(--line);
       border-radius: 14px;
-      overflow: hidden;
+      overflow: visible;
       box-shadow: 0 18px 45px rgba(0,0,0,0.18);
     }
 
@@ -148,12 +148,26 @@
 
     .viz {
       width: 100%;
-      min-height: 430px;
-      padding: 8px 10px 14px 10px;
+      min-height: 520px;
+      height: auto;
+      padding: 8px 10px 18px 10px;
+      overflow: visible;
     }
 
-    .viz.tall { min-height: 560px; }
-    .viz.short { min-height: 360px; }
+    .viz.tall { min-height: 680px; }
+    .viz.short { min-height: 440px; }
+
+    .viz .vega-embed,
+    .viz .vega-embed > div,
+    .viz canvas,
+    .viz svg {
+      max-width: 100%;
+      overflow: visible !important;
+    }
+
+    .wide-card .viz {
+      min-height: 720px;
+    }
 
     .image-viz {
       position: relative;
@@ -308,8 +322,8 @@
       </article>
     </div>
 
-    <div class="grid">
-      <article class="card">
+    <div class="grid single">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>Visibility levels by limiting magnitude</h3>
           <p>Counts of observations grouped by visible-star quality.</p>
@@ -321,7 +335,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>Cloud cover and visibility</h3>
           <p>A check on whether poor visibility is caused by clouds or brightened skies.</p>
@@ -335,7 +349,7 @@
     </div>
 
     <div class="grid single">
-      <article class="card">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>What limiting magnitude means in visible stars</h3>
           <p>Approximate number of stars visible under different limiting magnitudes.</p>
@@ -358,8 +372,8 @@
       </p>
     </div>
 
-    <div class="grid">
-      <article class="card">
+    <div class="grid single">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>Penguin arrival timing after sunset</h3>
           <p>Nightly arrival timing compared with sunset and cloud cover.</p>
@@ -371,7 +385,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>Turtle records near urban light sources</h3>
           <p>Cumulative proximity of Flatback Turtle records to major coastal cities.</p>
@@ -431,7 +445,7 @@
     </div>
 
     <div class="grid single">
-      <article class="card">
+      <article class="card wide-card">
         <div class="card-header">
           <h3>Sleep timing in major cities and regional Australia</h3>
           <p>Dumbbell chart comparing bedtime and wake time across age groups.</p>
@@ -487,7 +501,8 @@
   function embedSpec(elementId, filename) {
     vegaEmbed(elementId, RAW_BASE + filename, {
       actions: false,
-      renderer: "canvas"
+      renderer: "canvas",
+      defaultStyle: true
     }).catch(error => {
       console.error("Could not load " + filename, error);
       const el = document.querySelector(elementId);
@@ -514,4 +529,3 @@
 
 </body>
 </html>
-
