@@ -13,10 +13,11 @@
       "name": "arrivalChoice",
       "value": "First",
       "bind": {
+        "element": "#penguin-arrival-control",
         "input": "select",
         "options": ["First", "Cross"],
-        "labels": ["First Arrival at Beach", "First Cross Beach"],
-        "name": "Arrival Field: "
+        "labels": ["First arrival at beach", "First cross beach"],
+        "name": "Arrival field: "
       }
     }
   ],
