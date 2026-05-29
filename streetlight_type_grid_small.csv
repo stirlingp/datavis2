@@ -1,0 +1,1333 @@
+lat_bin,lon_bin,bulb_type,streetlight_count,avg_bulb_watts
+-35.1,117.8,Compact Fluorescent,4,42.0
+-35.1,117.9,Compact Fluorescent,100,42.0
+-35.1,117.9,High Pressure Sodium,4,150.0
+-35.1,117.9,Light-Emitting Diode,167,24.676646706586826
+-35.1,117.9,Mercury Vapour/Universal,205,98.65853658536585
+-35.0,116.7,Compact Fluorescent,8,42.0
+-35.0,116.7,Light-Emitting Diode,504,18.325396825396826
+-35.0,116.7,Mercury Vapour/Universal,16,91.25
+-35.0,117.3,Compact Fluorescent,176,42.0
+-35.0,117.3,Light-Emitting Diode,151,31.28476821192053
+-35.0,117.3,Mercury Vapour/Universal,133,96.2406015037594
+-35.0,117.4,Compact Fluorescent,308,42.0
+-35.0,117.4,High Pressure Sodium,88,209.0909090909091
+-35.0,117.4,Light-Emitting Diode,502,36.657370517928285
+-35.0,117.4,Mercury Vapour/Universal,294,104.74489795918367
+-35.0,117.4,Unknown,4,
+-35.0,117.5,Compact Fluorescent,4,42.0
+-35.0,117.5,Light-Emitting Diode,4,16.0
+-35.0,117.7,Compact Fluorescent,8,42.0
+-35.0,117.7,Light-Emitting Diode,20,23.8
+-35.0,117.7,Mercury Vapour/Universal,8,102.5
+-35.0,117.8,Compact Fluorescent,235,42.0
+-35.0,117.8,High Pressure Sodium,32,150.0
+-35.0,117.8,Light-Emitting Diode,761,25.270696452036795
+-35.0,117.8,Mercury Vapour/Universal,1082,93.6829944547135
+-35.0,117.8,Metal Halide,32,70.0
+-35.0,117.8,Unknown,6,
+-35.0,117.9,Compact Fluorescent,2127,42.0
+-35.0,117.9,High Pressure Sodium,1206,201.92371475953564
+-35.0,117.9,Light-Emitting Diode,6130,51.98694942903752
+-35.0,117.9,Mercury Vapour/Universal,3157,99.10991447576814
+-35.0,117.9,Metal Halide,64,188.75
+-35.0,117.9,Unknown,52,
+-35.0,118.0,Mercury Vapour/Universal,24,125.0
+-34.9,117.3,Mercury Vapour/Universal,4,80.0
+-34.9,117.4,High Pressure Sodium,32,150.0
+-34.9,117.4,Light-Emitting Diode,16,70.0
+-34.9,117.4,Mercury Vapour/Universal,8,102.5
+-34.9,117.7,Compact Fluorescent,1,42.0
+-34.9,117.7,Light-Emitting Diode,7,18.285714285714285
+-34.9,117.7,Mercury Vapour/Universal,16,80.0
+-34.9,117.8,Compact Fluorescent,4,42.0
+-34.9,117.8,Mercury Vapour/Universal,8,80.0
+-34.9,117.9,Compact Fluorescent,12,42.0
+-34.9,117.9,High Pressure Sodium,4,150.0
+-34.9,117.9,Light-Emitting Diode,36,31.11111111111111
+-34.9,117.9,Mercury Vapour/Universal,40,125.0
+-34.9,118.0,Compact Fluorescent,8,42.0
+-34.9,118.0,Light-Emitting Diode,21,22.666666666666668
+-34.9,118.0,Mercury Vapour/Universal,51,97.6470588235294
+-34.8,117.7,Compact Fluorescent,28,42.0
+-34.8,117.7,Mercury Vapour/Universal,12,80.0
+-34.8,118.2,Compact Fluorescent,4,42.0
+-34.8,118.2,Light-Emitting Diode,28,28.571428571428573
+-34.8,118.2,Mercury Vapour/Universal,12,80.0
+-34.7,117.7,Mercury Vapour/Universal,4,125.0
+-34.7,117.9,Light-Emitting Diode,8,31.5
+-34.7,117.9,Mercury Vapour/Universal,20,80.0
+-34.6,116.1,Light-Emitting Diode,240,28.4
+-34.6,117.7,Compact Fluorescent,264,42.0
+-34.6,117.7,High Pressure Sodium,132,216.66666666666666
+-34.6,117.7,Light-Emitting Diode,512,56.1953125
+-34.6,117.7,Mercury Vapour/Universal,284,102.46478873239437
+-34.6,117.7,Metal Halide,72,141.11111111111111
+-34.6,117.7,Unknown,4,
+-34.5,116.0,Compact Fluorescent,4,42.0
+-34.5,116.0,Mercury Vapour/Universal,12,80.0
+-34.5,117.0,Compact Fluorescent,8,42.0
+-34.5,117.0,Light-Emitting Diode,32,50.125
+-34.5,117.0,Mercury Vapour/Universal,16,80.0
+-34.5,117.6,Compact Fluorescent,20,42.0
+-34.5,117.6,Light-Emitting Diode,36,26.22222222222222
+-34.5,117.6,Mercury Vapour/Universal,8,125.0
+-34.5,118.6,Light-Emitting Diode,12,29.666666666666668
+-34.5,118.6,Mercury Vapour/Universal,4,80.0
+-34.4,116.0,Compact Fluorescent,124,42.0
+-34.4,116.0,High Pressure Sodium,80,236.0
+-34.4,116.0,Light-Emitting Diode,12,31.666666666666668
+-34.4,116.0,Mercury Vapour/Universal,348,98.62068965517241
+-34.4,116.0,Metal Halide,8,110.0
+-34.4,116.0,Unknown,4,
+-34.4,116.2,Light-Emitting Diode,24,16.0
+-34.4,116.3,Light-Emitting Diode,24,16.0
+-34.4,117.1,Light-Emitting Diode,108,20.925925925925927
+-34.4,119.4,Light-Emitting Diode,820,27.302439024390242
+-34.4,119.4,Mercury Vapour/Universal,20,80.0
+-34.3,115.1,Compact Fluorescent,20,42.0
+-34.3,115.1,Light-Emitting Diode,141,37.702127659574465
+-34.3,115.1,Mercury Vapour/Universal,67,111.56716417910448
+-34.3,115.2,Compact Fluorescent,413,42.0
+-34.3,115.2,High Pressure Sodium,20,142.0
+-34.3,115.2,Light-Emitting Diode,165,25.327272727272728
+-34.3,115.2,Mercury Vapour/Universal,278,93.43525179856115
+-34.3,115.2,Metal Halide,4,250.0
+-34.3,115.2,Unknown,4,
+-34.3,116.1,Compact Fluorescent,148,42.0
+-34.3,116.1,High Pressure Sodium,4,70.0
+-34.3,116.1,Light-Emitting Diode,96,29.916666666666668
+-34.3,116.1,Mercury Vapour/Universal,136,87.94117647058823
+-34.3,116.2,Compact Fluorescent,4,42.0
+-34.3,116.2,Mercury Vapour/Universal,28,99.28571428571429
+-34.3,117.5,Compact Fluorescent,58,42.0
+-34.3,117.5,High Pressure Sodium,12,156.66666666666666
+-34.3,117.5,Light-Emitting Diode,42,17.238095238095237
+-34.3,117.5,Mercury Vapour/Universal,16,102.5
+-34.3,117.6,Compact Fluorescent,110,42.0
+-34.3,117.6,High Pressure Sodium,60,163.33333333333334
+-34.3,117.6,Light-Emitting Diode,50,22.8
+-34.3,117.6,Mercury Vapour/Universal,28,118.57142857142857
+-34.3,117.6,Unknown,3,
+-34.2,115.1,Compact Fluorescent,4,42.0
+-34.2,115.1,Light-Emitting Diode,40,57.4
+-34.2,115.1,Mercury Vapour/Universal,16,156.25
+-34.2,116.1,Compact Fluorescent,518,42.0
+-34.2,116.1,High Pressure Sodium,191,173.35078534031413
+-34.2,116.1,Light-Emitting Diode,167,44.34730538922156
+-34.2,116.1,Mercury Vapour/Universal,459,89.80392156862744
+-34.2,116.1,Metal Halide,8,110.0
+-34.2,116.2,Compact Fluorescent,164,42.0
+-34.2,116.2,High Pressure Sodium,4,250.0
+-34.2,116.2,Light-Emitting Diode,209,22.411483253588518
+-34.2,116.2,Mercury Vapour/Universal,231,87.79220779220779
+-34.2,116.2,Metal Halide,4,150.0
+-34.1,116.0,Compact Fluorescent,72,42.0
+-34.1,116.0,Mercury Vapour/Universal,8,80.0
+-34.1,116.2,Compact Fluorescent,8,42.0
+-34.1,116.2,Mercury Vapour/Universal,4,80.0
+-34.1,118.3,Light-Emitting Diode,116,33.55172413793103
+-34.0,115.0,High Pressure Sodium,8,200.0
+-34.0,115.0,Light-Emitting Diode,8,18.0
+-34.0,115.0,Mercury Vapour/Universal,68,87.94117647058823
+-34.0,115.1,Compact Fluorescent,665,42.0
+-34.0,115.1,High Pressure Sodium,337,227.44807121661722
+-34.0,115.1,Light-Emitting Diode,1691,44.432288586635124
+-34.0,115.1,Mercury Vapour/Universal,1552,93.98195876288659
+-34.0,115.1,Metal Halide,12,250.0
+-34.0,115.1,Unknown,40,
+-34.0,115.8,Compact Fluorescent,168,42.0
+-34.0,115.8,High Pressure Sodium,16,250.0
+-34.0,115.8,Light-Emitting Diode,12,29.666666666666668
+-34.0,115.8,Mercury Vapour/Universal,292,107.12328767123287
+-34.0,116.1,Compact Fluorescent,333,42.0
+-34.0,116.1,High Pressure Sodium,123,231.3008130081301
+-34.0,116.1,Light-Emitting Diode,155,47.2
+-34.0,116.1,Mercury Vapour/Universal,301,96.76079734219269
+-34.0,116.1,Metal Halide,56,191.42857142857142
+-34.0,116.2,Compact Fluorescent,60,42.0
+-34.0,116.2,Mercury Vapour/Universal,48,95.0
+-34.0,117.6,Compact Fluorescent,216,42.0
+-34.0,117.6,High Pressure Sodium,12,216.66666666666666
+-34.0,117.6,Light-Emitting Diode,112,36.285714285714285
+-34.0,117.6,Mercury Vapour/Universal,108,106.66666666666667
+-34.0,118.5,Compact Fluorescent,24,42.0
+-34.0,118.5,High Pressure Sodium,12,216.66666666666666
+-34.0,118.5,Light-Emitting Diode,20,85.8
+-34.0,118.5,Mercury Vapour/Universal,88,100.0
+-34.0,118.5,Metal Halide,4,250.0
+-34.0,118.9,Light-Emitting Diode,44,30.727272727272727
+-34.0,118.9,Mercury Vapour/Universal,4,125.0
+-33.9,115.0,Compact Fluorescent,4,42.0
+-33.9,115.1,Compact Fluorescent,185,42.0
+-33.9,115.1,High Pressure Sodium,308,221.6883116883117
+-33.9,115.1,Light-Emitting Diode,536,67.38805970149254
+-33.9,115.1,Mercury Vapour/Universal,404,97.37623762376238
+-33.9,115.1,Metal Halide,16,115.0
+-33.9,115.1,Unknown,11,
+-33.9,116.1,Compact Fluorescent,4,42.0
+-33.9,116.1,Mercury Vapour/Universal,36,100.0
+-33.9,116.2,Compact Fluorescent,4,42.0
+-33.9,116.2,Light-Emitting Diode,8,20.0
+-33.9,116.2,Mercury Vapour/Universal,8,80.0
+-33.9,118.0,Compact Fluorescent,208,42.0
+-33.9,118.0,High Pressure Sodium,60,226.0
+-33.9,118.0,Light-Emitting Diode,175,69.97142857142858
+-33.9,118.0,Mercury Vapour/Universal,177,114.68926553672317
+-33.9,118.0,Metal Halide,12,250.0
+-33.9,118.9,Compact Fluorescent,4,42.0
+-33.9,118.9,High Pressure Sodium,4,150.0
+-33.9,118.9,Light-Emitting Diode,251,28.45019920318725
+-33.9,118.9,Mercury Vapour/Universal,49,116.73469387755102
+-33.8,115.1,Compact Fluorescent,60,42.0
+-33.8,115.1,High Pressure Sodium,12,183.33333333333334
+-33.8,115.1,Light-Emitting Diode,343,40.05830903790088
+-33.8,115.1,Mercury Vapour/Universal,185,106.51351351351352
+-33.8,115.7,Compact Fluorescent,12,42.0
+-33.8,115.7,Mercury Vapour/Universal,36,80.0
+-33.8,116.0,Compact Fluorescent,84,42.0
+-33.8,116.0,High Pressure Sodium,52,236.15384615384616
+-33.8,116.0,Light-Emitting Diode,4,20.0
+-33.8,116.0,Mercury Vapour/Universal,112,89.64285714285714
+-33.8,116.1,Compact Fluorescent,88,42.0
+-33.8,116.1,Light-Emitting Diode,36,27.77777777777778
+-33.8,116.1,Mercury Vapour/Universal,120,99.5
+-33.8,116.4,Compact Fluorescent,312,42.0
+-33.8,116.4,High Pressure Sodium,104,246.15384615384616
+-33.8,116.4,Light-Emitting Diode,40,22.5
+-33.8,116.4,Mercury Vapour/Universal,192,107.1875
+-33.8,117.0,Compact Fluorescent,32,42.0
+-33.8,117.0,High Pressure Sodium,8,150.0
+-33.8,117.0,Mercury Vapour/Universal,20,89.0
+-33.8,117.2,Compact Fluorescent,312,42.0
+-33.8,117.2,High Pressure Sodium,165,186.96969696969697
+-33.8,117.2,Light-Emitting Diode,406,102.73645320197045
+-33.8,117.2,Mercury Vapour/Universal,193,88.70466321243524
+-33.8,117.2,Metal Halide,28,164.28571428571428
+-33.8,117.6,Compact Fluorescent,76,42.0
+-33.8,117.6,High Pressure Sodium,24,166.66666666666666
+-33.8,117.6,Light-Emitting Diode,143,16.111888111888113
+-33.8,117.6,Mercury Vapour/Universal,20,107.0
+-33.8,117.6,Metal Halide,4,1000.0
+-33.7,115.0,High Pressure Sodium,4,150.0
+-33.7,115.0,Light-Emitting Diode,4,160.0
+-33.7,115.0,Mercury Vapour/Universal,28,80.0
+-33.7,115.1,High Pressure Sodium,24,166.66666666666666
+-33.7,115.1,Light-Emitting Diode,32,133.875
+-33.7,115.2,Compact Fluorescent,401,42.0
+-33.7,115.2,High Pressure Sodium,158,239.873417721519
+-33.7,115.2,Light-Emitting Diode,1021,40.155729676787466
+-33.7,115.2,Mercury Vapour/Universal,420,122.76190476190476
+-33.7,115.2,Metal Halide,32,150.0
+-33.7,115.2,Unknown,24,
+-33.7,115.3,Compact Fluorescent,1098,42.0
+-33.7,115.3,High Pressure Sodium,785,214.40764331210192
+-33.7,115.3,Light-Emitting Diode,3052,55.75131061598952
+-33.7,115.3,Low Pressure Sodium,4,360.0
+-33.7,115.3,Mercury Vapour/Universal,3749,96.38970392104561
+-33.7,115.3,Metal Halide,84,117.61904761904762
+-33.7,115.3,Unknown,116,
+-33.7,115.4,Compact Fluorescent,231,42.0
+-33.7,115.4,High Pressure Sodium,88,166.36363636363637
+-33.7,115.4,Light-Emitting Diode,1099,34.50409463148317
+-33.7,115.4,Mercury Vapour/Universal,941,93.77258235919234
+-33.7,115.4,Metal Halide,282,71.13475177304964
+-33.7,115.4,Unknown,3,
+-33.7,115.9,Compact Fluorescent,32,42.0
+-33.7,115.9,High Pressure Sodium,40,240.0
+-33.7,115.9,Light-Emitting Diode,24,70.33333333333333
+-33.7,115.9,Mercury Vapour/Universal,28,101.42857142857143
+-33.7,115.9,Metal Halide,4,250.0
+-33.7,117.5,Compact Fluorescent,145,42.0
+-33.7,117.5,High Pressure Sodium,68,232.35294117647058
+-33.7,117.5,Light-Emitting Diode,107,135.47663551401868
+-33.7,117.5,Mercury Vapour/Universal,212,95.28301886792453
+-33.7,117.6,Compact Fluorescent,569,42.0
+-33.7,117.6,High Pressure Sodium,312,181.4102564102564
+-33.7,117.6,Light-Emitting Diode,317,56.34069400630915
+-33.7,117.6,Mercury Vapour/Universal,826,97.10653753026634
+-33.7,117.6,Metal Halide,16,155.0
+-33.6,115.0,Light-Emitting Diode,60,158.66666666666666
+-33.6,115.1,Compact Fluorescent,821,42.0
+-33.6,115.1,High Pressure Sodium,232,171.0344827586207
+-33.6,115.1,Light-Emitting Diode,2319,42.517895644674425
+-33.6,115.1,Mercury Vapour/Universal,2015,89.91811414392059
+-33.6,115.1,Metal Halide,76,130.0
+-33.6,115.1,Unknown,157,
+-33.6,115.2,Light-Emitting Diode,40,53.5
+-33.6,115.2,Mercury Vapour/Universal,24,80.0
+-33.6,115.3,Compact Fluorescent,84,42.0
+-33.6,115.3,High Pressure Sodium,36,262.22222222222223
+-33.6,115.3,Light-Emitting Diode,160,34.5
+-33.6,115.3,Mercury Vapour/Universal,120,98.83333333333333
+-33.6,115.3,Metal Halide,16,130.0
+-33.6,115.4,Compact Fluorescent,154,42.0
+-33.6,115.4,High Pressure Sodium,382,161.9371727748691
+-33.6,115.4,Light-Emitting Diode,1723,31.189204875217644
+-33.6,115.4,Mercury Vapour/Universal,509,91.2278978388998
+-33.6,115.4,Metal Halide,12,190.0
+-33.6,115.4,Unknown,36,
+-33.6,115.6,Compact Fluorescent,253,42.0
+-33.6,115.6,High Pressure Sodium,64,246.875
+-33.6,115.6,Light-Emitting Diode,323,42.10526315789474
+-33.6,115.6,Mercury Vapour/Universal,620,95.03225806451613
+-33.6,115.6,Metal Halide,4,150.0
+-33.6,115.8,Compact Fluorescent,522,42.0
+-33.6,115.8,High Pressure Sodium,156,229.48717948717947
+-33.6,115.8,Light-Emitting Diode,349,42.33810888252149
+-33.6,115.8,Mercury Vapour/Universal,485,96.49484536082474
+-33.6,115.8,Metal Halide,4,150.0
+-33.6,115.9,Light-Emitting Diode,4,16.0
+-33.6,115.9,Mercury Vapour/Universal,40,80.0
+-33.6,117.4,Compact Fluorescent,20,42.0
+-33.6,117.4,High Pressure Sodium,4,150.0
+-33.6,117.4,Light-Emitting Diode,32,16.0
+-33.6,117.4,Mercury Vapour/Universal,80,99.75
+-33.6,120.0,Light-Emitting Diode,268,39.507462686567166
+-33.6,120.1,Compact Fluorescent,4,42.0
+-33.6,120.1,Light-Emitting Diode,104,22.115384615384617
+-33.5,115.5,Compact Fluorescent,60,42.0
+-33.5,115.5,High Pressure Sodium,1,250.0
+-33.5,115.5,Light-Emitting Diode,79,31.40506329113924
+-33.5,115.5,Mercury Vapour/Universal,272,95.73529411764706
+-33.5,115.6,Compact Fluorescent,24,42.0
+-33.5,115.6,High Pressure Sodium,24,150.0
+-33.5,115.6,Light-Emitting Diode,16,26.0
+-33.5,115.6,Mercury Vapour/Universal,72,100.0
+-33.5,115.7,Compact Fluorescent,16,42.0
+-33.5,115.7,High Pressure Sodium,12,216.66666666666666
+-33.5,115.7,Light-Emitting Diode,220,32.49090909090909
+-33.5,115.7,Mercury Vapour/Universal,48,106.25
+-33.5,115.7,Metal Halide,4,70.0
+-33.5,115.8,Compact Fluorescent,8,42.0
+-33.5,115.8,Light-Emitting Diode,8,20.0
+-33.5,115.8,Mercury Vapour/Universal,4,125.0
+-33.5,115.9,Mercury Vapour/Universal,20,125.0
+-33.5,116.8,Compact Fluorescent,16,42.0
+-33.5,116.8,Light-Emitting Diode,18,29.666666666666668
+-33.5,116.8,Mercury Vapour/Universal,6,80.0
+-33.5,117.4,Light-Emitting Diode,4,80.0
+-33.5,117.4,Mercury Vapour/Universal,24,125.0
+-33.5,118.1,Compact Fluorescent,4,42.0
+-33.5,118.1,Light-Emitting Diode,64,42.1875
+-33.5,118.1,Mercury Vapour/Universal,8,80.0
+-33.5,118.2,Light-Emitting Diode,20,45.0
+-33.5,118.2,Mercury Vapour/Universal,20,80.0
+-33.5,118.5,Light-Emitting Diode,100,25.72
+-33.5,118.5,Mercury Vapour/Universal,24,87.5
+-33.4,115.6,Compact Fluorescent,1873,42.0
+-33.4,115.6,High Pressure Sodium,1687,211.63604030823947
+-33.4,115.6,Light-Emitting Diode,2870,43.901742160278744
+-33.4,115.6,Mercury Vapour/Universal,3893,94.00077061392243
+-33.4,115.6,Metal Halide,372,145.91397849462365
+-33.4,115.6,Unknown,13,400.0
+-33.4,115.7,Compact Fluorescent,330,42.0
+-33.4,115.7,High Pressure Sodium,425,230.23529411764707
+-33.4,115.7,Light-Emitting Diode,672,44.78422619047619
+-33.4,115.7,Low Pressure Sodium,8,360.0
+-33.4,115.7,Mercury Vapour/Universal,1257,96.25696101829753
+-33.4,115.7,Metal Halide,60,174.0
+-33.4,115.7,Unknown,11,
+-33.4,115.8,Compact Fluorescent,100,42.0
+-33.4,115.8,High Pressure Sodium,12,216.66666666666666
+-33.4,115.8,Light-Emitting Diode,52,24.23076923076923
+-33.4,115.8,Mercury Vapour/Universal,116,95.51724137931035
+-33.4,116.1,Compact Fluorescent,480,42.0
+-33.4,116.1,High Pressure Sodium,40,210.0
+-33.4,116.1,Light-Emitting Diode,211,35.38388625592417
+-33.4,116.1,Mercury Vapour/Universal,201,95.92039800995025
+-33.4,116.2,Compact Fluorescent,977,42.0
+-33.4,116.2,High Pressure Sodium,351,195.58404558404558
+-33.4,116.2,Light-Emitting Diode,416,55.18269230769231
+-33.4,116.2,Mercury Vapour/Universal,276,107.35507246376811
+-33.4,116.2,Metal Halide,4,250.0
+-33.3,115.6,Compact Fluorescent,1238,42.0
+-33.3,115.6,High Pressure Sodium,1094,252.0475319926874
+-33.3,115.6,Light-Emitting Diode,1376,91.5123546511628
+-33.3,115.6,Mercury Vapour/Universal,1612,114.13151364764268
+-33.3,115.6,Metal Halide,84,420.0
+-33.3,115.7,Compact Fluorescent,2504,42.0
+-33.3,115.7,High Pressure Sodium,3050,230.15737704918033
+-33.3,115.7,Light-Emitting Diode,6420,49.98785046728972
+-33.3,115.7,Mercury Vapour/Universal,7531,95.78342849555172
+-33.3,115.7,Metal Halide,184,139.7826086956522
+-33.3,115.7,Unknown,89,
+-33.3,115.8,Compact Fluorescent,228,42.0
+-33.3,115.8,High Pressure Sodium,84,226.66666666666666
+-33.3,115.8,Light-Emitting Diode,412,36.86407766990291
+-33.3,115.8,Mercury Vapour/Universal,320,90.0
+-33.3,115.8,Unknown,4,
+-33.3,116.1,Compact Fluorescent,308,42.0
+-33.3,116.1,High Pressure Sodium,12,716.6666666666666
+-33.3,116.1,Light-Emitting Diode,56,23.857142857142858
+-33.3,116.1,Mercury Vapour/Universal,112,105.71428571428571
+-33.3,116.2,Compact Fluorescent,812,42.0
+-33.3,116.2,High Pressure Sodium,12,250.0
+-33.3,116.2,Light-Emitting Diode,183,26.404371584699454
+-33.3,116.2,Mercury Vapour/Universal,217,97.41935483870968
+-33.3,116.7,Compact Fluorescent,110,42.0
+-33.3,116.7,High Pressure Sodium,11,250.0
+-33.3,116.7,Light-Emitting Diode,127,62.1496062992126
+-33.3,116.7,Mercury Vapour/Universal,52,97.3076923076923
+-33.3,117.0,High Pressure Sodium,20,250.0
+-33.3,117.3,Compact Fluorescent,557,42.0
+-33.3,117.3,High Pressure Sodium,180,217.55555555555554
+-33.3,117.3,Light-Emitting Diode,155,86.34838709677419
+-33.3,117.3,Mercury Vapour/Universal,236,114.15254237288136
+-33.3,117.3,Metal Halide,84,245.23809523809524
+-33.3,117.4,Compact Fluorescent,93,42.0
+-33.3,117.4,High Pressure Sodium,4,250.0
+-33.3,117.4,Light-Emitting Diode,11,26.0
+-33.3,117.4,Mercury Vapour/Universal,16,125.0
+-33.3,117.7,Compact Fluorescent,98,42.0
+-33.3,117.7,High Pressure Sodium,24,216.66666666666666
+-33.3,117.7,Light-Emitting Diode,73,65.4931506849315
+-33.3,117.7,Mercury Vapour/Universal,37,94.5945945945946
+-33.2,115.7,Compact Fluorescent,69,42.0
+-33.2,115.7,High Pressure Sodium,24,216.66666666666666
+-33.2,115.7,Light-Emitting Diode,130,58.83076923076923
+-33.2,115.7,Mercury Vapour/Universal,269,86.85873605947955
+-33.2,115.7,Metal Halide,4,70.0
+-33.2,115.8,High Pressure Sodium,20,250.0
+-33.2,115.8,Light-Emitting Diode,12,165.0
+-33.2,115.9,Light-Emitting Diode,8,31.5
+-33.2,115.9,Mercury Vapour/Universal,4,80.0
+-33.2,118.1,Compact Fluorescent,48,42.0
+-33.2,118.1,Light-Emitting Diode,44,22.363636363636363
+-33.2,118.1,Mercury Vapour/Universal,20,98.0
+-33.1,115.7,Compact Fluorescent,132,42.0
+-33.1,115.7,High Pressure Sodium,4,250.0
+-33.1,115.7,Light-Emitting Diode,120,28.533333333333335
+-33.1,115.7,Mercury Vapour/Universal,176,85.11363636363636
+-33.1,115.7,Metal Halide,8,150.0
+-33.1,115.8,Light-Emitting Diode,12,45.666666666666664
+-33.1,115.8,Mercury Vapour/Universal,4,125.0
+-33.1,115.9,Compact Fluorescent,391,42.0
+-33.1,115.9,High Pressure Sodium,140,218.57142857142858
+-33.1,115.9,Light-Emitting Diode,406,38.108374384236456
+-33.1,115.9,Mercury Vapour/Universal,751,104.16111850865512
+-33.1,115.9,Metal Halide,12,250.0
+-33.1,115.9,Unknown,4,
+-33.1,117.2,Compact Fluorescent,16,42.0
+-33.1,117.2,Light-Emitting Diode,24,20.0
+-33.1,117.2,Mercury Vapour/Universal,28,92.85714285714286
+-33.1,118.5,Compact Fluorescent,12,42.0
+-33.1,118.5,High Pressure Sodium,12,250.0
+-33.1,118.5,Light-Emitting Diode,464,40.10344827586207
+-33.1,118.5,Mercury Vapour/Universal,72,97.5
+-33.1,119.0,High Pressure Sodium,64,162.5
+-33.1,119.0,Light-Emitting Diode,168,53.404761904761905
+-33.1,119.7,Light-Emitting Diode,80,39.4
+-33.1,119.7,Mercury Vapour/Universal,20,182.0
+-33.0,115.9,Compact Fluorescent,183,42.0
+-33.0,115.9,High Pressure Sodium,36,172.22222222222223
+-33.0,115.9,Light-Emitting Diode,39,84.05128205128206
+-33.0,115.9,Mercury Vapour/Universal,86,95.17441860465117
+-33.0,115.9,Metal Halide,4,150.0
+-33.0,116.6,Mercury Vapour/Universal,16,113.75
+-33.0,116.9,Compact Fluorescent,168,42.0
+-33.0,116.9,High Pressure Sodium,108,250.0
+-33.0,116.9,Light-Emitting Diode,80,63.85
+-33.0,116.9,Mercury Vapour/Universal,124,100.0
+-33.0,116.9,Metal Halide,64,193.75
+-33.0,117.2,Compact Fluorescent,4,42.0
+-33.0,117.2,Mercury Vapour/Universal,84,97.14285714285714
+-33.0,117.8,Light-Emitting Diode,4,16.0
+-33.0,117.8,Mercury Vapour/Universal,4,80.0
+-32.9,115.7,Compact Fluorescent,264,42.0
+-32.9,115.7,High Pressure Sodium,12,250.0
+-32.9,115.7,Light-Emitting Diode,89,24.651685393258425
+-32.9,115.7,Mercury Vapour/Universal,63,95.47619047619048
+-32.9,115.9,Compact Fluorescent,196,42.0
+-32.9,115.9,High Pressure Sodium,76,155.26315789473685
+-32.9,115.9,Light-Emitting Diode,112,38.285714285714285
+-32.9,115.9,Mercury Vapour/Universal,176,93.29545454545455
+-32.9,115.9,Unknown,4,
+-32.9,117.2,Compact Fluorescent,1207,42.0
+-32.9,117.2,High Pressure Sodium,353,208.07365439093485
+-32.9,117.2,Light-Emitting Diode,767,82.90091264667537
+-32.9,117.2,Mercury Vapour/Universal,444,114.50450450450451
+-32.9,117.2,Metal Halide,8,187.5
+-32.9,117.2,Unknown,8,
+-32.9,117.9,Light-Emitting Diode,4,43.0
+-32.9,117.9,Mercury Vapour/Universal,36,85.0
+-32.8,115.7,High Pressure Sodium,8,150.0
+-32.8,115.7,Light-Emitting Diode,16,50.5
+-32.8,115.7,Mercury Vapour/Universal,20,125.0
+-32.8,115.9,Compact Fluorescent,369,42.0
+-32.8,115.9,High Pressure Sodium,104,238.46153846153845
+-32.8,115.9,Light-Emitting Diode,283,63.30742049469965
+-32.8,115.9,Mercury Vapour/Universal,344,103.54651162790698
+-32.8,115.9,Metal Halide,4,70.0
+-32.8,115.9,Unknown,4,
+-32.8,116.5,Compact Fluorescent,137,42.0
+-32.8,116.5,High Pressure Sodium,52,250.0
+-32.8,116.5,Light-Emitting Diode,371,47.25876010781671
+-32.8,116.5,Mercury Vapour/Universal,296,92.97297297297297
+-32.8,117.2,Compact Fluorescent,28,42.0
+-32.8,117.2,Light-Emitting Diode,64,23.125
+-32.8,117.2,Mercury Vapour/Universal,28,101.42857142857143
+-32.8,117.5,Compact Fluorescent,96,42.0
+-32.8,117.5,High Pressure Sodium,56,237.14285714285714
+-32.8,117.5,Light-Emitting Diode,168,18.761904761904763
+-32.8,117.5,Mercury Vapour/Universal,28,99.28571428571429
+-32.8,118.6,Mercury Vapour/Universal,20,89.0
+-32.8,119.5,Light-Emitting Diode,40,16.0
+-32.8,119.5,Mercury Vapour/Universal,4,80.0
+-32.7,115.6,Compact Fluorescent,8,42.0
+-32.7,115.6,High Pressure Sodium,8,200.0
+-32.7,115.6,Light-Emitting Diode,4,16.0
+-32.7,115.6,Mercury Vapour/Universal,60,89.0
+-32.7,115.7,Compact Fluorescent,117,42.0
+-32.7,115.7,High Pressure Sodium,4,150.0
+-32.7,115.7,Light-Emitting Diode,66,23.12121212121212
+-32.7,115.7,Mercury Vapour/Universal,365,89.86301369863014
+-32.7,115.8,Light-Emitting Diode,12,53.0
+-32.7,115.9,Light-Emitting Diode,32,23.25
+-32.7,115.9,Mercury Vapour/Universal,16,91.25
+-32.7,116.1,Compact Fluorescent,73,42.0
+-32.7,116.1,High Pressure Sodium,8,250.0
+-32.7,116.1,Light-Emitting Diode,119,24.369747899159663
+-32.7,116.1,Mercury Vapour/Universal,112,86.42857142857143
+-32.7,116.7,Compact Fluorescent,64,42.0
+-32.7,116.7,High Pressure Sodium,16,250.0
+-32.7,116.7,Light-Emitting Diode,13,80.0
+-32.7,116.7,Mercury Vapour/Universal,56,122.14285714285714
+-32.7,116.7,Metal Halide,24,250.0
+-32.7,116.7,Unknown,39,
+-32.7,117.1,Compact Fluorescent,20,42.0
+-32.7,117.1,High Pressure Sodium,4,250.0
+-32.7,117.1,Light-Emitting Diode,16,22.75
+-32.7,117.1,Mercury Vapour/Universal,12,208.33333333333334
+-32.7,118.1,Compact Fluorescent,4,42.0
+-32.7,118.1,High Pressure Sodium,4,250.0
+-32.7,118.1,Light-Emitting Diode,12,34.666666666666664
+-32.7,118.1,Mercury Vapour/Universal,20,107.0
+-32.7,118.2,Compact Fluorescent,20,42.0
+-32.7,118.2,High Pressure Sodium,4,150.0
+-32.7,118.2,Light-Emitting Diode,208,52.28846153846154
+-32.7,118.2,Mercury Vapour/Universal,80,102.0
+-32.6,115.6,Compact Fluorescent,759,42.0
+-32.6,115.6,High Pressure Sodium,418,90.66985645933015
+-32.6,115.6,Light-Emitting Diode,2477,32.80702462656439
+-32.6,115.6,Mercury Vapour/Universal,2525,98.33861386138614
+-32.6,115.6,Metal Halide,200,124.4
+-32.6,115.6,Unknown,41,
+-32.6,115.7,Compact Fluorescent,1616,42.0
+-32.6,115.7,High Pressure Sodium,244,172.54098360655738
+-32.6,115.7,Light-Emitting Diode,2636,34.71130500758726
+-32.6,115.7,Mercury Vapour/Universal,4770,99.05660377358491
+-32.6,115.7,Metal Halide,96,116.66666666666667
+-32.6,115.7,Unknown,6,
+-32.6,115.8,Compact Fluorescent,618,42.0
+-32.6,115.8,High Pressure Sodium,787,139.1740787801779
+-32.6,115.8,Light-Emitting Diode,3106,41.811654861558274
+-32.6,115.8,Mercury Vapour/Universal,1331,99.92111194590534
+-32.6,115.8,Metal Halide,48,113.33333333333333
+-32.6,115.8,Unknown,3,
+-32.6,115.9,Compact Fluorescent,312,42.0
+-32.6,115.9,High Pressure Sodium,444,204.4144144144144
+-32.6,115.9,Light-Emitting Diode,808,57.1509900990099
+-32.6,115.9,Mercury Vapour/Universal,1176,94.75340136054422
+-32.6,115.9,Metal Halide,28,144.28571428571428
+-32.6,115.9,Unknown,20,
+-32.6,117.6,Compact Fluorescent,44,42.0
+-32.6,117.6,Light-Emitting Diode,4,16.0
+-32.6,117.6,Mercury Vapour/Universal,40,136.5
+-32.5,115.7,Compact Fluorescent,2254,42.0
+-32.5,115.7,High Pressure Sodium,1508,235.83554376657824
+-32.5,115.7,Light-Emitting Diode,4077,43.51189600196223
+-32.5,115.7,Mercury Vapour/Universal,5453,100.29891802677426
+-32.5,115.7,Metal Halide,422,162.4170616113744
+-32.5,115.7,Unknown,36,
+-32.5,115.8,Compact Fluorescent,2415,42.0
+-32.5,115.8,High Pressure Sodium,1020,214.11764705882354
+-32.5,115.8,Light-Emitting Diode,6336,39.55366161616162
+-32.5,115.8,Mercury Vapour/Universal,6067,100.57524311850997
+-32.5,115.8,Metal Halide,683,123.87994143484627
+-32.5,115.8,Unknown,28,
+-32.5,115.9,Compact Fluorescent,12,42.0
+-32.5,115.9,Light-Emitting Diode,192,54.416666666666664
+-32.5,115.9,Mercury Vapour/Universal,128,123.59375
+-32.5,116.0,Compact Fluorescent,24,42.0
+-32.5,116.0,High Pressure Sodium,76,250.0
+-32.5,116.0,Light-Emitting Diode,52,42.0
+-32.5,116.0,Mercury Vapour/Universal,68,90.58823529411765
+-32.5,117.1,Compact Fluorescent,464,42.0
+-32.5,117.1,High Pressure Sodium,36,227.77777777777777
+-32.5,117.1,Light-Emitting Diode,124,43.153225806451616
+-32.5,117.1,Mercury Vapour/Universal,160,104.5
+-32.5,117.1,Metal Halide,8,250.0
+-32.5,117.7,Light-Emitting Diode,4,68.0
+-32.5,117.7,Mercury Vapour/Universal,20,182.0
+-32.5,118.3,Compact Fluorescent,8,42.0
+-32.5,118.3,High Pressure Sodium,44,240.9090909090909
+-32.5,118.3,Light-Emitting Diode,204,79.52941176470588
+-32.5,118.3,Mercury Vapour/Universal,76,107.36842105263158
+-32.5,118.3,Metal Halide,4,250.0
+-32.5,118.7,Compact Fluorescent,24,42.0
+-32.5,118.7,Light-Emitting Diode,12,16.666666666666668
+-32.5,118.7,Mercury Vapour/Universal,44,80.0
+-32.5,118.8,Compact Fluorescent,8,42.0
+-32.5,118.8,Mercury Vapour/Universal,4,125.0
+-32.5,118.9,High Pressure Sodium,8,200.0
+-32.5,118.9,Light-Emitting Diode,16,69.5
+-32.5,118.9,Mercury Vapour/Universal,44,92.27272727272727
+-32.4,115.7,Compact Fluorescent,124,42.0
+-32.4,115.7,High Pressure Sodium,4,250.0
+-32.4,115.7,Light-Emitting Diode,984,26.954268292682926
+-32.4,115.7,Mercury Vapour/Universal,422,90.77014218009478
+-32.4,115.7,Metal Halide,108,70.0
+-32.4,115.7,Unknown,2,
+-32.4,115.8,Compact Fluorescent,2857,42.0
+-32.4,115.8,High Pressure Sodium,2315,228.52267818574515
+-32.4,115.8,Light-Emitting Diode,7396,42.503515413737155
+-32.4,115.8,Mercury Vapour/Universal,3882,95.57058217413704
+-32.4,115.8,Metal Halide,2222,97.45274527452746
+-32.4,115.8,Unknown,132,
+-32.4,115.9,Compact Fluorescent,4,42.0
+-32.4,115.9,Light-Emitting Diode,8,61.0
+-32.4,115.9,Metal Halide,4,70.0
+-32.4,116.0,Compact Fluorescent,70,42.0
+-32.4,116.0,High Pressure Sodium,64,250.0
+-32.4,116.0,Light-Emitting Diode,332,41.355421686746986
+-32.4,116.0,Mercury Vapour/Universal,326,100.84355828220859
+-32.4,116.0,Metal Halide,8,200.0
+-32.4,116.1,High Pressure Sodium,16,250.0
+-32.4,117.0,Compact Fluorescent,16,42.0
+-32.4,117.0,High Pressure Sodium,8,150.0
+-32.4,117.0,Light-Emitting Diode,688,74.62209302325581
+-32.4,117.0,Mercury Vapour/Universal,16,113.75
+-32.4,117.0,Metal Halide,4,250.0
+-32.4,117.3,Compact Fluorescent,4,42.0
+-32.4,117.3,Light-Emitting Diode,4,16.0
+-32.4,118.9,Compact Fluorescent,24,42.0
+-32.4,118.9,High Pressure Sodium,8,200.0
+-32.4,118.9,Light-Emitting Diode,56,37.857142857142854
+-32.4,118.9,Mercury Vapour/Universal,48,117.5
+-32.3,115.7,Compact Fluorescent,2614,42.0
+-32.3,115.7,High Pressure Sodium,1789,216.88652878703186
+-32.3,115.7,Light-Emitting Diode,4934,36.34150790433725
+-32.3,115.7,Mercury Vapour/Universal,4494,96.89808633733867
+-32.3,115.7,Metal Halide,953,98.4784889821616
+-32.3,115.7,Unknown,11,
+-32.3,115.8,Compact Fluorescent,4373,42.0
+-32.3,115.8,High Pressure Sodium,5496,223.63173216885008
+-32.3,115.8,Light-Emitting Diode,18991,47.82439050076352
+-32.3,115.8,Low Pressure Sodium,4,360.0
+-32.3,115.8,Mercury Vapour/Universal,11409,95.34446489613462
+-32.3,115.8,Metal Halide,4191,107.93843951324266
+-32.3,115.8,Unknown,193,
+-32.3,115.9,Compact Fluorescent,399,42.0
+-32.3,115.9,High Pressure Sodium,36,216.66666666666666
+-32.3,115.9,Light-Emitting Diode,807,42.0817843866171
+-32.3,115.9,Mercury Vapour/Universal,323,119.86068111455108
+-32.3,115.9,Metal Halide,163,86.1963190184049
+-32.3,115.9,Unknown,4,
+-32.3,116.0,Compact Fluorescent,421,42.0
+-32.3,116.0,High Pressure Sodium,300,194.0
+-32.3,116.0,Light-Emitting Diode,1002,50.99800399201597
+-32.3,116.0,Mercury Vapour/Universal,333,102.16216216216216
+-32.3,116.0,Metal Halide,332,132.40963855421685
+-32.3,116.0,Unknown,78,
+-32.3,116.1,Compact Fluorescent,68,42.0
+-32.3,116.1,High Pressure Sodium,20,214.0
+-32.3,116.1,Light-Emitting Diode,184,28.652173913043477
+-32.3,116.1,Mercury Vapour/Universal,260,90.38461538461539
+-32.3,116.1,Metal Halide,8,160.0
+-32.3,117.9,High Pressure Sodium,227,243.3920704845815
+-32.3,117.9,Light-Emitting Diode,181,67.66850828729282
+-32.3,117.9,Mercury Vapour/Universal,360,102.83333333333333
+-32.2,115.8,Compact Fluorescent,746,42.0
+-32.2,115.8,High Pressure Sodium,1387,211.35544340302812
+-32.2,115.8,Light-Emitting Diode,11962,53.859053669954854
+-32.2,115.8,Mercury Vapour/Universal,2143,102.29118058796081
+-32.2,115.8,Metal Halide,728,116.53846153846153
+-32.2,115.8,Unknown,55,
+-32.2,115.9,Compact Fluorescent,823,42.0
+-32.2,115.9,High Pressure Sodium,656,194.96951219512195
+-32.2,115.9,Light-Emitting Diode,6913,60.94011283089831
+-32.2,115.9,Mercury Vapour/Universal,4505,103.35516093229745
+-32.2,115.9,Metal Halide,151,144.7019867549669
+-32.2,115.9,Unknown,87,
+-32.2,116.0,Compact Fluorescent,4568,42.0
+-32.2,116.0,High Pressure Sodium,3083,208.15115147583523
+-32.2,116.0,Light-Emitting Diode,9469,47.19716971169078
+-32.2,116.0,Mercury Vapour/Universal,6733,107.7053319471261
+-32.2,116.0,Metal Halide,569,109.78910369068541
+-32.2,116.0,Unknown,108,
+-32.2,116.1,Compact Fluorescent,88,42.0
+-32.2,116.1,High Pressure Sodium,188,247.87234042553192
+-32.2,116.1,Light-Emitting Diode,249,37.7429718875502
+-32.2,116.1,Mercury Vapour/Universal,747,100.66265060240964
+-32.1,115.7,Compact Fluorescent,12,42.0
+-32.1,115.7,High Pressure Sodium,472,251.27118644067798
+-32.1,115.7,Light-Emitting Diode,188,105.31914893617021
+-32.1,115.7,Metal Halide,36,135.55555555555554
+-32.1,115.7,Unknown,4,
+-32.1,115.8,Compact Fluorescent,8835,42.0
+-32.1,115.8,High Pressure Sodium,9143,242.99573444164935
+-32.1,115.8,Light-Emitting Diode,23018,48.99413502476323
+-32.1,115.8,Low Pressure Sodium,12,360.0
+-32.1,115.8,Mercury Vapour/Universal,14080,98.953125
+-32.1,115.8,Metal Halide,1425,128.97543859649122
+-32.1,115.8,Unknown,223,400.0
+-32.1,115.9,Compact Fluorescent,7302,42.0
+-32.1,115.9,High Pressure Sodium,9108,235.03185413005272
+-32.1,115.9,Light-Emitting Diode,23095,47.68382766832648
+-32.1,115.9,Mercury Vapour/Universal,16054,99.86265105269715
+-32.1,115.9,Metal Halide,4291,99.31717548357027
+-32.1,115.9,Unknown,291,
+-32.1,116.0,Compact Fluorescent,5440,42.0
+-32.1,116.0,High Pressure Sodium,10154,224.0624384479023
+-32.1,116.0,Light-Emitting Diode,18021,48.23877698240941
+-32.1,116.0,Low Pressure Sodium,12,373.3333333333333
+-32.1,116.0,Mercury Vapour/Universal,10409,94.62100105677779
+-32.1,116.0,Metal Halide,2753,109.28804940065383
+-32.1,116.0,Unknown,106,
+-32.1,116.1,Compact Fluorescent,854,42.0
+-32.1,116.1,High Pressure Sodium,188,243.82978723404256
+-32.1,116.1,Light-Emitting Diode,669,41.865470852017935
+-32.1,116.1,Mercury Vapour/Universal,1493,98.12793034159411
+-32.1,116.1,Metal Halide,4,70.0
+-32.1,116.1,Unknown,4,
+-32.1,116.9,Compact Fluorescent,301,42.0
+-32.1,116.9,High Pressure Sodium,16,225.0
+-32.1,116.9,Light-Emitting Diode,95,35.863157894736844
+-32.1,116.9,Mercury Vapour/Universal,164,96.09756097560975
+-32.1,116.9,Metal Halide,4,250.0
+-32.1,118.0,Mercury Vapour/Universal,16,80.0
+-32.1,118.4,Compact Fluorescent,140,42.0
+-32.1,118.4,High Pressure Sodium,4,400.0
+-32.1,118.4,Light-Emitting Diode,44,34.09090909090909
+-32.1,118.4,Mercury Vapour/Universal,128,96.875
+-32.0,115.7,High Pressure Sodium,216,246.2962962962963
+-32.0,115.7,Light-Emitting Diode,48,141.08333333333334
+-32.0,115.7,Mercury Vapour/Universal,12,95.0
+-32.0,115.8,Compact Fluorescent,5056,42.0
+-32.0,115.8,High Pressure Sodium,9865,204.39229599594526
+-32.0,115.8,Light-Emitting Diode,20406,52.15671861217289
+-32.0,115.8,Low Pressure Sodium,8,360.0
+-32.0,115.8,Mercury Vapour/Universal,10790,108.70945319740501
+-32.0,115.8,Metal Halide,3494,83.32570120206067
+-32.0,115.8,Unknown,156,
+-32.0,115.9,Compact Fluorescent,7101,42.0
+-32.0,115.9,High Pressure Sodium,15095,225.43623716462406
+-32.0,115.9,Light-Emitting Diode,32347,48.19290815222432
+-32.0,115.9,Low Pressure Sodium,8,380.0
+-32.0,115.9,Mercury Vapour/Universal,13191,99.370783109696
+-32.0,115.9,Metal Halide,2023,148.64557587740978
+-32.0,115.9,Unknown,343,400.0
+-32.0,116.0,Compact Fluorescent,5644,42.0
+-32.0,116.0,High Pressure Sodium,4488,249.53654188948306
+-32.0,116.0,Light-Emitting Diode,13758,55.82439308038959
+-32.0,116.0,Low Pressure Sodium,16,360.0
+-32.0,116.0,Mercury Vapour/Universal,8431,95.97260111493298
+-32.0,116.0,Metal Halide,562,247.864768683274
+-32.0,116.0,Unknown,59,380.0
+-32.0,116.1,Compact Fluorescent,2451,42.0
+-32.0,116.1,High Pressure Sodium,263,238.97338403041826
+-32.0,116.1,Light-Emitting Diode,1962,50.05555555555556
+-32.0,116.1,Mercury Vapour/Universal,1621,97.10055521283158
+-32.0,116.1,Metal Halide,4,70.0
+-32.0,116.1,Unknown,4,
+-32.0,116.2,Light-Emitting Diode,84,39.142857142857146
+-32.0,117.4,Compact Fluorescent,76,42.0
+-32.0,117.4,High Pressure Sodium,68,244.11764705882354
+-32.0,117.4,Light-Emitting Diode,104,24.884615384615383
+-32.0,117.4,Mercury Vapour/Universal,376,87.07446808510639
+-32.0,117.4,Metal Halide,4,70.0
+-32.0,118.1,Light-Emitting Diode,4,20.0
+-32.0,118.1,Mercury Vapour/Universal,20,80.0
+-31.9,115.8,Compact Fluorescent,7045,42.0
+-31.9,115.8,High Pressure Sodium,18420,241.42290988056462
+-31.9,115.8,Light-Emitting Diode,27962,59.712323868106715
+-31.9,115.8,Mercury Vapour/Universal,18700,100.67540106951871
+-31.9,115.8,Metal Halide,1703,144.40986494421608
+-31.9,115.8,Unknown,166,
+-31.9,115.9,Compact Fluorescent,7663,42.0
+-31.9,115.9,High Pressure Sodium,17455,245.65683185333717
+-31.9,115.9,Light-Emitting Diode,26161,53.07377393830511
+-31.9,115.9,Low Pressure Sodium,4,360.0
+-31.9,115.9,Mercury Vapour/Universal,19267,100.08402968806769
+-31.9,115.9,Metal Halide,1767,170.8715336728919
+-31.9,115.9,Unknown,275,
+-31.9,116.0,Compact Fluorescent,5036,42.0
+-31.9,116.0,High Pressure Sodium,5516,229.95286439448876
+-31.9,116.0,Light-Emitting Diode,21125,48.635881656804735
+-31.9,116.0,Low Pressure Sodium,4,360.0
+-31.9,116.0,Mercury Vapour/Universal,8336,99.64371401151631
+-31.9,116.0,Metal Halide,900,158.57777777777778
+-31.9,116.0,Unknown,183,400.0
+-31.9,116.1,Compact Fluorescent,250,42.0
+-31.9,116.1,High Pressure Sodium,100,173.0
+-31.9,116.1,Light-Emitting Diode,6783,59.17927170868347
+-31.9,116.1,Mercury Vapour/Universal,354,98.55932203389831
+-31.9,116.1,Metal Halide,4,70.0
+-31.9,116.1,Unknown,20,
+-31.9,116.2,Light-Emitting Diode,3099,46.47531461761859
+-31.9,116.2,Mercury Vapour/Universal,21,112.14285714285714
+-31.9,116.3,Compact Fluorescent,4,42.0
+-31.9,116.3,High Pressure Sodium,14,171.42857142857142
+-31.9,116.3,Light-Emitting Diode,402,29.8681592039801
+-31.9,116.3,Mercury Vapour/Universal,12,80.0
+-31.9,116.8,Compact Fluorescent,536,42.0
+-31.9,116.8,High Pressure Sodium,196,232.6530612244898
+-31.9,116.8,Light-Emitting Diode,332,42.855421686746986
+-31.9,116.8,Mercury Vapour/Universal,552,106.66666666666667
+-31.9,116.8,Metal Halide,20,670.0
+-31.9,117.0,High Pressure Sodium,4,150.0
+-31.9,117.8,Compact Fluorescent,12,42.0
+-31.9,117.8,Light-Emitting Diode,44,17.454545454545453
+-31.9,117.8,Mercury Vapour/Universal,32,80.0
+-31.9,118.1,Compact Fluorescent,84,42.0
+-31.9,118.1,High Pressure Sodium,188,250.0
+-31.9,118.1,Light-Emitting Diode,48,102.83333333333333
+-31.9,118.1,Mercury Vapour/Universal,128,101.875
+-31.9,118.2,Compact Fluorescent,76,42.0
+-31.9,118.2,High Pressure Sodium,4,250.0
+-31.9,118.2,Light-Emitting Diode,20,16.0
+-31.9,118.2,Mercury Vapour/Universal,48,98.75
+-31.8,115.7,Compact Fluorescent,1539,42.0
+-31.8,115.7,High Pressure Sodium,1644,239.28223844282238
+-31.8,115.7,Light-Emitting Diode,2724,46.016886930983844
+-31.8,115.7,Mercury Vapour/Universal,3733,99.03160996517546
+-31.8,115.7,Metal Halide,16,287.5
+-31.8,115.7,Unknown,48,
+-31.8,115.8,Compact Fluorescent,9317,42.0
+-31.8,115.8,High Pressure Sodium,14158,230.3905918915101
+-31.8,115.8,Light-Emitting Diode,20745,51.070330200048204
+-31.8,115.8,Mercury Vapour/Universal,23669,99.92479614685875
+-31.8,115.8,Metal Halide,1005,154.13930348258705
+-31.8,115.8,Unknown,192,400.0
+-31.8,115.9,Compact Fluorescent,1645,42.0
+-31.8,115.9,High Pressure Sodium,5585,232.68218442256043
+-31.8,115.9,Light-Emitting Diode,8798,50.291884519208914
+-31.8,115.9,Mercury Vapour/Universal,5423,103.21685413977504
+-31.8,115.9,Metal Halide,1816,92.19162995594714
+-31.8,115.9,Unknown,84,
+-31.8,116.0,Compact Fluorescent,3367,42.0
+-31.8,116.0,High Pressure Sodium,4205,218.9512485136742
+-31.8,116.0,Light-Emitting Diode,15287,51.24026951004121
+-31.8,116.0,Mercury Vapour/Universal,10790,111.95875810936052
+-31.8,116.0,Metal Halide,1692,117.15130023640661
+-31.8,116.0,Unknown,79,
+-31.8,116.1,Compact Fluorescent,4,42.0
+-31.8,116.1,High Pressure Sodium,124,208.06451612903226
+-31.8,116.1,Light-Emitting Diode,356,40.550561797752806
+-31.8,116.1,Mercury Vapour/Universal,220,124.18181818181819
+-31.8,116.1,Metal Halide,4,250.0
+-31.8,116.2,Compact Fluorescent,20,42.0
+-31.8,116.2,High Pressure Sodium,320,245.0
+-31.8,116.2,Light-Emitting Diode,116,94.69827586206897
+-31.8,116.2,Mercury Vapour/Universal,88,118.35227272727273
+-31.8,116.3,Compact Fluorescent,13,42.0
+-31.8,116.3,Light-Emitting Diode,274,30.656934306569344
+-31.8,116.3,Mercury Vapour/Universal,34,91.91176470588235
+-31.8,116.4,Compact Fluorescent,140,42.0
+-31.8,116.4,High Pressure Sodium,16,115.0
+-31.8,116.4,Light-Emitting Diode,120,47.733333333333334
+-31.8,116.4,Mercury Vapour/Universal,136,114.41176470588235
+-31.8,116.4,Metal Halide,4,70.0
+-31.8,116.5,High Pressure Sodium,4,250.0
+-31.8,116.5,Light-Emitting Diode,52,47.38461538461539
+-31.8,118.6,Mercury Vapour/Universal,36,120.0
+-31.7,115.7,Compact Fluorescent,2562,42.0
+-31.7,115.7,High Pressure Sodium,7257,232.48863166597766
+-31.7,115.7,Light-Emitting Diode,10085,49.869112543381256
+-31.7,115.7,Mercury Vapour/Universal,11951,99.19169943937746
+-31.7,115.7,Metal Halide,2444,92.8150572831424
+-31.7,115.7,Unknown,162,
+-31.7,115.8,Compact Fluorescent,893,42.0
+-31.7,115.8,High Pressure Sodium,6045,234.59884201819685
+-31.7,115.8,Light-Emitting Diode,8011,55.02159530645363
+-31.7,115.8,Mercury Vapour/Universal,7903,95.19802606605087
+-31.7,115.8,Metal Halide,2965,96.88701517706576
+-31.7,115.8,Unknown,65,400.0
+-31.7,115.9,Compact Fluorescent,4,42.0
+-31.7,115.9,High Pressure Sodium,4,250.0
+-31.7,115.9,Light-Emitting Diode,28,57.0
+-31.7,115.9,Mercury Vapour/Universal,40,119.5
+-31.7,115.9,Unknown,4,
+-31.7,116.0,Compact Fluorescent,749,42.0
+-31.7,116.0,High Pressure Sodium,446,233.85650224215246
+-31.7,116.0,Light-Emitting Diode,2985,59.39731993299832
+-31.7,116.0,Mercury Vapour/Universal,1540,121.43831168831169
+-31.7,116.0,Metal Halide,188,92.97872340425532
+-31.7,116.0,Unknown,145,
+-31.7,116.1,Compact Fluorescent,4,42.0
+-31.7,116.1,Light-Emitting Diode,67,35.37313432835821
+-31.7,116.1,Mercury Vapour/Universal,77,117.98701298701299
+-31.7,116.1,Unknown,3,
+-31.7,116.3,High Pressure Sodium,12,216.66666666666666
+-31.7,116.3,Light-Emitting Diode,4,70.0
+-31.7,116.3,Mercury Vapour/Universal,12,125.0
+-31.7,116.4,Light-Emitting Diode,20,42.6
+-31.7,116.4,Mercury Vapour/Universal,72,125.0
+-31.7,116.5,Compact Fluorescent,4,42.0
+-31.7,116.5,High Pressure Sodium,44,204.54545454545453
+-31.7,116.5,Light-Emitting Diode,72,64.77777777777777
+-31.7,116.5,Mercury Vapour/Universal,24,250.0
+-31.7,116.5,Metal Halide,8,250.0
+-31.7,116.6,Compact Fluorescent,40,42.0
+-31.7,116.6,Light-Emitting Diode,16,17.0
+-31.7,116.6,Mercury Vapour/Universal,16,91.25
+-31.7,116.7,Compact Fluorescent,1037,42.0
+-31.7,116.7,High Pressure Sodium,581,242.42685025817556
+-31.7,116.7,Light-Emitting Diode,598,64.5
+-31.7,116.7,Mercury Vapour/Universal,884,108.36538461538461
+-31.7,116.7,Metal Halide,44,222.72727272727272
+-31.7,117.2,Compact Fluorescent,28,42.0
+-31.7,117.2,High Pressure Sodium,132,256.6666666666667
+-31.7,117.2,Light-Emitting Diode,100,33.32
+-31.7,117.2,Mercury Vapour/Universal,252,95.55555555555556
+-31.7,117.2,Metal Halide,4,150.0
+-31.6,115.6,Compact Fluorescent,336,42.0
+-31.6,115.6,High Pressure Sodium,249,174.09638554216866
+-31.6,115.6,Light-Emitting Diode,848,78.75471698113208
+-31.6,115.6,Mercury Vapour/Universal,441,104.08163265306122
+-31.6,115.6,Metal Halide,302,78.74172185430463
+-31.6,115.7,Compact Fluorescent,1760,42.0
+-31.6,115.7,High Pressure Sodium,2640,195.81060606060606
+-31.6,115.7,Light-Emitting Diode,15274,57.05984025140762
+-31.6,115.7,Mercury Vapour/Universal,3332,102.23139255702282
+-31.6,115.7,Metal Halide,7447,99.31113199946287
+-31.6,115.7,Unknown,205,
+-31.6,116.0,Compact Fluorescent,36,42.0
+-31.6,116.0,High Pressure Sodium,116,243.10344827586206
+-31.6,116.0,Light-Emitting Diode,432,82.66666666666667
+-31.6,116.0,Mercury Vapour/Universal,224,105.80357142857143
+-31.6,116.0,Metal Halide,4,250.0
+-31.6,116.1,Light-Emitting Diode,96,49.166666666666664
+-31.6,116.1,Mercury Vapour/Universal,172,116.62790697674419
+-31.6,116.5,Compact Fluorescent,132,42.0
+-31.6,116.5,High Pressure Sodium,116,183.10344827586206
+-31.6,116.5,Light-Emitting Diode,160,87.75
+-31.6,116.5,Mercury Vapour/Universal,116,109.48275862068965
+-31.6,116.5,Metal Halide,140,95.14285714285714
+-31.6,116.6,High Pressure Sodium,4,150.0
+-31.6,116.7,Compact Fluorescent,277,42.0
+-31.6,116.7,High Pressure Sodium,292,239.04109589041096
+-31.6,116.7,Light-Emitting Diode,417,66.9400479616307
+-31.6,116.7,Mercury Vapour/Universal,410,110.34146341463415
+-31.6,116.7,Metal Halide,12,216.66666666666666
+-31.6,116.8,Compact Fluorescent,24,42.0
+-31.6,116.8,High Pressure Sodium,4,250.0
+-31.6,116.8,Light-Emitting Diode,4,18.0
+-31.6,116.8,Mercury Vapour/Universal,12,80.0
+-31.6,117.0,Compact Fluorescent,20,42.0
+-31.6,117.0,High Pressure Sodium,40,230.0
+-31.6,117.0,Light-Emitting Diode,100,43.32
+-31.6,117.0,Mercury Vapour/Universal,28,105.71428571428571
+-31.6,117.2,Compact Fluorescent,4,42.0
+-31.6,117.2,Light-Emitting Diode,32,25.5
+-31.6,117.2,Mercury Vapour/Universal,96,111.875
+-31.6,117.5,Compact Fluorescent,8,42.0
+-31.6,117.5,High Pressure Sodium,60,250.0
+-31.6,117.5,Light-Emitting Diode,108,34.111111111111114
+-31.6,117.5,Mercury Vapour/Universal,204,113.13725490196079
+-31.6,117.7,Compact Fluorescent,279,42.0
+-31.6,117.7,High Pressure Sodium,164,237.8048780487805
+-31.6,117.7,Light-Emitting Diode,274,89.32846715328468
+-31.6,117.7,Mercury Vapour/Universal,227,90.1101321585903
+-31.6,117.7,Metal Halide,24,70.0
+-31.6,117.9,Light-Emitting Diode,12,28.666666666666668
+-31.6,117.9,Mercury Vapour/Universal,36,85.0
+-31.5,115.6,Compact Fluorescent,688,42.0
+-31.5,115.6,High Pressure Sodium,995,175.7286432160804
+-31.5,115.6,Light-Emitting Diode,4861,50.63382020160461
+-31.5,115.6,Mercury Vapour/Universal,2265,105.17439293598234
+-31.5,115.6,Metal Halide,962,91.53846153846153
+-31.5,115.6,Unknown,85,
+-31.5,115.7,Compact Fluorescent,64,42.0
+-31.5,115.7,High Pressure Sodium,140,244.28571428571428
+-31.5,115.7,Light-Emitting Diode,794,37.97229219143577
+-31.5,115.7,Mercury Vapour/Universal,93,105.64516129032258
+-31.5,115.7,Metal Halide,659,85.53869499241274
+-31.5,115.7,Unknown,60,
+-31.5,115.9,High Pressure Sodium,4,250.0
+-31.5,115.9,Light-Emitting Diode,8,170.0
+-31.5,116.0,High Pressure Sodium,52,250.0
+-31.5,116.0,Light-Emitting Diode,127,39.98425196850393
+-31.5,116.0,Mercury Vapour/Universal,4,80.0
+-31.5,116.1,Light-Emitting Diode,160,33.8125
+-31.5,116.1,Mercury Vapour/Universal,49,125.0
+-31.5,116.5,Compact Fluorescent,112,42.0
+-31.5,116.5,High Pressure Sodium,4,150.0
+-31.5,116.5,Light-Emitting Diode,60,26.733333333333334
+-31.5,116.5,Mercury Vapour/Universal,112,99.28571428571429
+-31.5,116.5,Metal Halide,20,86.0
+-31.5,118.1,High Pressure Sodium,4,250.0
+-31.5,118.1,Light-Emitting Diode,12,163.33333333333334
+-31.5,118.1,Metal Halide,24,250.0
+-31.5,118.3,Compact Fluorescent,116,42.0
+-31.5,118.3,High Pressure Sodium,527,204.61100569259963
+-31.5,118.3,Light-Emitting Diode,1455,61.205498281786944
+-31.5,118.3,Mercury Vapour/Universal,1014,106.20808678500987
+-31.5,118.3,Metal Halide,36,483.3333333333333
+-31.5,118.3,Unknown,1,
+-31.5,119.5,Light-Emitting Diode,48,34.5
+-31.5,119.5,Mercury Vapour/Universal,216,107.5
+-31.4,115.5,Compact Fluorescent,32,42.0
+-31.4,115.5,Light-Emitting Diode,24,35.333333333333336
+-31.4,115.5,Mercury Vapour/Universal,32,108.125
+-31.4,115.9,Compact Fluorescent,8,42.0
+-31.4,115.9,High Pressure Sodium,80,250.0
+-31.4,115.9,Light-Emitting Diode,60,37.53333333333333
+-31.4,115.9,Mercury Vapour/Universal,80,113.75
+-31.4,116.1,Compact Fluorescent,24,42.0
+-31.4,116.1,High Pressure Sodium,36,238.88888888888889
+-31.4,116.1,Light-Emitting Diode,108,57.370370370370374
+-31.4,116.1,Mercury Vapour/Universal,120,125.0
+-31.4,116.1,Metal Halide,24,190.0
+-31.4,116.7,Mercury Vapour/Universal,8,125.0
+-31.4,118.5,High Pressure Sodium,24,233.33333333333334
+-31.4,118.5,Light-Emitting Diode,12,49.666666666666664
+-31.4,118.5,Mercury Vapour/Universal,28,99.28571428571429
+-31.4,118.9,Light-Emitting Diode,20,165.0
+-31.3,115.4,Compact Fluorescent,44,42.0
+-31.3,115.4,High Pressure Sodium,4,150.0
+-31.3,115.4,Light-Emitting Diode,116,32.44827586206897
+-31.3,115.4,Mercury Vapour/Universal,16,113.75
+-31.3,115.5,Compact Fluorescent,120,42.0
+-31.3,115.5,High Pressure Sodium,24,173.33333333333334
+-31.3,115.5,Light-Emitting Diode,104,55.11538461538461
+-31.3,115.5,Mercury Vapour/Universal,168,105.71428571428571
+-31.3,115.6,High Pressure Sodium,8,250.0
+-31.3,115.6,Light-Emitting Diode,12,80.0
+-31.3,115.9,Compact Fluorescent,68,42.0
+-31.3,115.9,High Pressure Sodium,44,214.54545454545453
+-31.3,115.9,Light-Emitting Diode,276,42.09782608695652
+-31.3,115.9,Mercury Vapour/Universal,100,117.4
+-31.3,115.9,Unknown,9,
+-31.3,116.1,High Pressure Sodium,32,250.0
+-31.3,116.1,Light-Emitting Diode,32,161.25
+-31.3,116.2,High Pressure Sodium,16,150.0
+-31.3,116.2,Light-Emitting Diode,12,170.0
+-31.3,116.5,High Pressure Sodium,4,150.0
+-31.3,116.5,Light-Emitting Diode,28,37.57142857142857
+-31.3,116.5,Mercury Vapour/Universal,44,104.54545454545455
+-31.3,116.8,Compact Fluorescent,56,42.0
+-31.3,116.8,High Pressure Sodium,49,239.79591836734693
+-31.3,116.8,Light-Emitting Diode,244,42.82377049180328
+-31.3,116.8,Mercury Vapour/Universal,127,110.8267716535433
+-31.3,118.7,Compact Fluorescent,8,42.0
+-31.3,118.7,High Pressure Sodium,20,250.0
+-31.3,118.7,Light-Emitting Diode,52,46.15384615384615
+-31.3,118.7,Mercury Vapour/Universal,52,104.23076923076923
+-31.3,119.1,High Pressure Sodium,8,250.0
+-31.3,119.1,Light-Emitting Diode,20,165.0
+-31.3,119.5,Compact Fluorescent,4,42.0
+-31.2,117.0,Compact Fluorescent,148,42.0
+-31.2,117.0,High Pressure Sodium,72,238.88888888888889
+-31.2,117.0,Light-Emitting Diode,52,29.0
+-31.2,117.0,Mercury Vapour/Universal,168,135.47619047619048
+-31.2,117.0,Metal Halide,4,70.0
+-31.2,117.4,Compact Fluorescent,108,42.0
+-31.2,117.4,High Pressure Sodium,220,237.27272727272728
+-31.2,117.4,Light-Emitting Diode,60,59.8
+-31.2,117.4,Mercury Vapour/Universal,136,113.23529411764706
+-31.2,117.4,Metal Halide,8,250.0
+-31.2,117.7,Compact Fluorescent,8,42.0
+-31.2,117.7,Mercury Vapour/Universal,8,102.5
+-31.2,118.1,Compact Fluorescent,77,42.0
+-31.2,118.1,High Pressure Sodium,24,250.0
+-31.2,118.1,Light-Emitting Diode,63,50.666666666666664
+-31.2,118.1,Mercury Vapour/Universal,24,250.0
+-31.2,119.3,Compact Fluorescent,48,42.0
+-31.2,119.3,High Pressure Sodium,229,183.1877729257642
+-31.2,119.3,Light-Emitting Diode,159,51.742138364779876
+-31.2,119.3,Mercury Vapour/Universal,420,88.14285714285714
+-31.2,121.6,Compact Fluorescent,315,42.0
+-31.2,121.6,High Pressure Sodium,296,202.7027027027027
+-31.2,121.6,Light-Emitting Diode,478,60.92259414225941
+-31.2,121.6,Mercury Vapour/Universal,551,111.09800362976407
+-31.2,121.6,Metal Halide,4,250.0
+-31.2,121.7,Compact Fluorescent,341,42.0
+-31.2,121.7,High Pressure Sodium,103,178.15533980582524
+-31.2,121.7,Light-Emitting Diode,136,37.845588235294116
+-31.2,121.7,Mercury Vapour/Universal,336,92.91666666666667
+-31.1,115.4,Compact Fluorescent,12,42.0
+-31.1,115.4,High Pressure Sodium,8,200.0
+-31.1,115.4,Light-Emitting Diode,460,47.15652173913043
+-31.1,115.4,Mercury Vapour/Universal,56,99.28571428571429
+-31.1,116.4,Compact Fluorescent,12,42.0
+-31.1,116.4,High Pressure Sodium,13,250.0
+-31.1,116.4,Light-Emitting Diode,37,34.054054054054056
+-31.1,116.4,Mercury Vapour/Universal,18,112.5
+-31.1,116.4,Metal Halide,4,250.0
+-31.1,116.5,Compact Fluorescent,8,42.0
+-31.1,116.5,High Pressure Sodium,5,170.0
+-31.1,116.5,Light-Emitting Diode,51,40.490196078431374
+-31.1,116.5,Mercury Vapour/Universal,4,102.5
+-31.1,117.2,Compact Fluorescent,12,42.0
+-31.1,117.2,Mercury Vapour/Universal,12,80.0
+-31.1,117.8,Compact Fluorescent,96,42.0
+-31.1,117.8,High Pressure Sodium,64,250.0
+-31.1,117.8,Light-Emitting Diode,63,74.3015873015873
+-31.1,117.8,Mercury Vapour/Universal,33,144.3939393939394
+-31.1,117.9,Compact Fluorescent,68,42.0
+-31.1,117.9,Light-Emitting Diode,72,29.22222222222222
+-31.1,117.9,Mercury Vapour/Universal,32,119.375
+-31.0,115.3,Compact Fluorescent,16,42.0
+-31.0,115.3,Light-Emitting Diode,900,31.546666666666667
+-31.0,115.3,Mercury Vapour/Universal,8,80.0
+-31.0,115.4,Light-Emitting Diode,164,41.68292682926829
+-31.0,115.4,Mercury Vapour/Universal,4,125.0
+-31.0,116.0,Compact Fluorescent,5,42.0
+-31.0,116.0,Light-Emitting Diode,6,16.0
+-31.0,116.0,Mercury Vapour/Universal,5,125.0
+-31.0,117.1,Compact Fluorescent,12,42.0
+-31.0,119.1,High Pressure Sodium,8,250.0
+-31.0,119.1,Light-Emitting Diode,28,59.42857142857143
+-31.0,119.1,Mercury Vapour/Universal,36,95.0
+-31.0,121.2,Compact Fluorescent,52,42.0
+-31.0,121.2,High Pressure Sodium,180,175.55555555555554
+-31.0,121.2,Light-Emitting Diode,169,56.437869822485204
+-31.0,121.2,Mercury Vapour/Universal,351,97.47863247863248
+-31.0,121.2,Metal Halide,4,400.0
+-30.9,116.4,Compact Fluorescent,4,42.0
+-30.9,116.4,Light-Emitting Diode,48,24.25
+-30.9,116.4,Mercury Vapour/Universal,36,125.0
+-30.9,116.7,Compact Fluorescent,177,42.0
+-30.9,116.7,High Pressure Sodium,192,237.5
+-30.9,116.7,Light-Emitting Diode,131,58.70229007633588
+-30.9,116.7,Mercury Vapour/Universal,344,110.91569767441861
+-30.9,118.2,Compact Fluorescent,92,42.0
+-30.9,118.2,High Pressure Sodium,39,250.0
+-30.9,118.2,Light-Emitting Diode,98,78.78571428571429
+-30.9,118.2,Mercury Vapour/Universal,163,120.98159509202453
+-30.9,118.2,Metal Halide,4,150.0
+-30.9,121.2,Compact Fluorescent,8,42.0
+-30.9,121.2,High Pressure Sodium,16,150.0
+-30.9,121.2,Light-Emitting Diode,48,54.583333333333336
+-30.9,121.2,Mercury Vapour/Universal,72,92.5
+-30.8,116.4,High Pressure Sodium,4,250.0
+-30.8,116.4,Light-Emitting Diode,4,170.0
+-30.8,116.4,Mercury Vapour/Universal,4,125.0
+-30.8,117.1,Compact Fluorescent,12,42.0
+-30.8,117.1,High Pressure Sodium,20,250.0
+-30.8,117.1,Light-Emitting Diode,16,27.75
+-30.8,117.5,Compact Fluorescent,76,42.0
+-30.8,117.5,High Pressure Sodium,103,230.58252427184465
+-30.8,117.5,Light-Emitting Diode,98,76.12244897959184
+-30.8,117.5,Mercury Vapour/Universal,143,119.93006993006993
+-30.8,117.5,Metal Halide,4,250.0
+-30.8,117.7,Light-Emitting Diode,12,20.0
+-30.8,117.9,Compact Fluorescent,64,42.0
+-30.8,117.9,High Pressure Sodium,36,238.88888888888889
+-30.8,117.9,Light-Emitting Diode,48,50.083333333333336
+-30.8,117.9,Mercury Vapour/Universal,132,140.3030303030303
+-30.8,117.9,Metal Halide,20,70.0
+-30.8,121.4,Compact Fluorescent,95,42.0
+-30.8,121.4,High Pressure Sodium,148,240.67567567567568
+-30.8,121.4,Light-Emitting Diode,996,102.95381526104417
+-30.8,121.4,Low Pressure Sodium,4,400.0
+-30.8,121.4,Mercury Vapour/Universal,629,105.2543720190779
+-30.8,121.4,Metal Halide,8,400.0
+-30.8,121.5,Compact Fluorescent,730,42.0
+-30.8,121.5,High Pressure Sodium,1977,179.65098634294387
+-30.8,121.5,Light-Emitting Diode,5937,51.35539834933468
+-30.8,121.5,Mercury Vapour/Universal,3821,94.74352263805287
+-30.8,121.5,Metal Halide,38,339.4736842105263
+-30.8,121.5,Unknown,1,
+-30.7,115.5,High Pressure Sodium,4,150.0
+-30.7,115.5,Light-Emitting Diode,12,168.33333333333334
+-30.7,115.7,Compact Fluorescent,12,42.0
+-30.7,115.7,High Pressure Sodium,32,250.0
+-30.7,115.7,Light-Emitting Diode,20,63.0
+-30.7,115.7,Mercury Vapour/Universal,44,80.0
+-30.7,121.4,Compact Fluorescent,66,42.0
+-30.7,121.4,High Pressure Sodium,16,193.75
+-30.7,121.4,Light-Emitting Diode,330,30.37878787878788
+-30.7,121.4,Mercury Vapour/Universal,128,86.328125
+-30.7,121.4,Metal Halide,64,192.1875
+-30.7,121.4,Unknown,12,
+-30.7,121.5,Compact Fluorescent,242,42.0
+-30.7,121.5,High Pressure Sodium,822,182.4817518248175
+-30.7,121.5,Light-Emitting Diode,3212,48.98381070983811
+-30.7,121.5,Mercury Vapour/Universal,1909,92.81299109481404
+-30.7,121.5,Metal Halide,81,247.53086419753086
+-30.7,121.5,Unknown,1,
+-30.6,115.5,Light-Emitting Diode,20,168.0
+-30.6,116.0,Compact Fluorescent,269,42.0
+-30.6,116.0,High Pressure Sodium,198,193.43434343434345
+-30.6,116.0,Light-Emitting Diode,353,52.053824362606235
+-30.6,116.0,Mercury Vapour/Universal,372,101.30376344086021
+-30.6,116.0,Metal Halide,16,175.0
+-30.6,116.4,Mercury Vapour/Universal,20,125.0
+-30.6,116.8,Compact Fluorescent,37,42.0
+-30.6,116.8,High Pressure Sodium,28,250.0
+-30.6,116.8,Light-Emitting Diode,25,43.0
+-30.6,116.8,Mercury Vapour/Universal,22,86.13636363636364
+-30.5,115.1,Compact Fluorescent,128,42.0
+-30.5,115.1,High Pressure Sodium,28,252.85714285714286
+-30.5,115.1,Light-Emitting Diode,344,34.06976744186046
+-30.5,115.1,Mercury Vapour/Universal,252,104.28571428571429
+-30.5,116.0,High Pressure Sodium,4,250.0
+-30.5,116.0,Mercury Vapour/Universal,4,125.0
+-30.5,116.4,Compact Fluorescent,68,42.0
+-30.5,116.4,Light-Emitting Diode,12,35.333333333333336
+-30.5,116.4,Mercury Vapour/Universal,36,125.0
+-30.5,117.5,Mercury Vapour/Universal,4,80.0
+-30.5,117.9,Light-Emitting Diode,36,16.0
+-30.4,115.5,Light-Emitting Diode,44,50.63636363636363
+-30.4,115.5,Mercury Vapour/Universal,16,113.75
+-30.4,116.7,High Pressure Sodium,48,250.0
+-30.4,116.7,Light-Emitting Diode,36,25.444444444444443
+-30.4,117.1,Light-Emitting Diode,192,18.375
+-30.4,117.9,Compact Fluorescent,4,42.0
+-30.4,117.9,Light-Emitting Diode,80,16.2
+-30.4,121.1,Light-Emitting Diode,4,53.0
+-30.4,121.1,Mercury Vapour/Universal,20,98.0
+-30.3,115.0,Compact Fluorescent,196,42.0
+-30.3,115.0,High Pressure Sodium,60,180.0
+-30.3,115.0,Light-Emitting Diode,1015,32.55369458128079
+-30.3,115.0,Mercury Vapour/Universal,1869,85.81861958266452
+-30.3,115.1,Compact Fluorescent,12,42.0
+-30.3,115.1,Light-Emitting Diode,76,71.26315789473684
+-30.3,115.1,Mercury Vapour/Universal,68,101.17647058823529
+-30.3,116.1,Compact Fluorescent,4,42.0
+-30.3,116.1,High Pressure Sodium,4,250.0
+-30.3,116.1,Light-Emitting Diode,60,30.133333333333333
+-30.3,116.1,Mercury Vapour/Universal,44,92.27272727272727
+-30.3,116.7,Compact Fluorescent,4,42.0
+-30.3,116.7,High Pressure Sodium,56,250.0
+-30.3,116.7,Light-Emitting Diode,872,62.03669724770642
+-30.3,116.7,Mercury Vapour/Universal,16,102.5
+-30.1,115.0,Compact Fluorescent,32,42.0
+-30.1,115.0,High Pressure Sodium,3,150.0
+-30.1,115.0,Light-Emitting Diode,400,33.6675
+-30.1,115.0,Mercury Vapour/Universal,126,97.85714285714286
+-30.1,115.0,Unknown,4,
+-30.1,116.6,High Pressure Sodium,8,250.0
+-30.1,116.6,Light-Emitting Diode,188,130.5531914893617
+-30.0,115.0,Light-Emitting Diode,68,31.470588235294116
+-30.0,116.6,Compact Fluorescent,4,42.0
+-30.0,116.6,Light-Emitting Diode,52,36.53846153846154
+-30.0,116.6,Mercury Vapour/Universal,12,110.0
+-29.9,115.0,Compact Fluorescent,3,42.0
+-29.9,115.0,High Pressure Sodium,4,150.0
+-29.9,115.0,Light-Emitting Diode,332,31.867469879518072
+-29.9,115.0,Mercury Vapour/Universal,9,105.0
+-29.9,115.0,Unknown,2,
+-29.9,115.3,High Pressure Sodium,20,250.0
+-29.9,115.3,Light-Emitting Diode,12,168.33333333333334
+-29.9,116.0,Compact Fluorescent,104,42.0
+-29.9,116.0,High Pressure Sodium,36,238.88888888888889
+-29.9,116.0,Light-Emitting Diode,68,53.1764705882353
+-29.9,116.0,Mercury Vapour/Universal,108,117.5925925925926
+-29.8,115.3,Compact Fluorescent,73,42.0
+-29.8,115.3,High Pressure Sodium,112,210.71428571428572
+-29.8,115.3,Light-Emitting Diode,42,40.476190476190474
+-29.8,115.3,Mercury Vapour/Universal,129,115.23255813953489
+-29.8,116.4,Compact Fluorescent,12,42.0
+-29.8,116.4,Light-Emitting Diode,40,45.3
+-29.8,116.4,Mercury Vapour/Universal,12,125.0
+-29.7,115.9,Compact Fluorescent,73,42.0
+-29.7,115.9,High Pressure Sodium,72,194.44444444444446
+-29.7,115.9,Light-Emitting Diode,327,58.37003058103976
+-29.7,115.9,Mercury Vapour/Universal,60,106.33333333333333
+-29.5,115.8,Compact Fluorescent,53,42.0
+-29.5,115.8,High Pressure Sodium,135,173.7037037037037
+-29.5,115.8,Light-Emitting Diode,276,50.427536231884055
+-29.5,115.8,Mercury Vapour/Universal,168,105.47619047619048
+-29.4,115.6,Light-Emitting Diode,4,80.0
+-29.4,116.3,Compact Fluorescent,8,42.0
+-29.4,116.3,High Pressure Sodium,4,250.0
+-29.4,116.3,Light-Emitting Diode,364,67.46153846153847
+-29.4,116.3,Mercury Vapour/Universal,56,96.07142857142857
+-29.3,114.9,Compact Fluorescent,240,42.0
+-29.3,114.9,High Pressure Sodium,152,230.52631578947367
+-29.3,114.9,Light-Emitting Diode,560,49.59285714285714
+-29.3,114.9,Mercury Vapour/Universal,564,100.60283687943263
+-29.3,114.9,Metal Halide,8,250.0
+-29.3,115.0,High Pressure Sodium,24,233.33333333333334
+-29.3,115.0,Light-Emitting Diode,76,154.3684210526316
+-29.3,115.0,Mercury Vapour/Universal,8,125.0
+-29.2,114.9,Compact Fluorescent,144,42.0
+-29.2,114.9,High Pressure Sodium,52,211.53846153846155
+-29.2,114.9,Light-Emitting Diode,200,35.74
+-29.2,114.9,Mercury Vapour/Universal,328,100.85365853658537
+-29.2,115.4,Compact Fluorescent,88,42.0
+-29.2,115.4,High Pressure Sodium,120,250.0
+-29.2,115.4,Light-Emitting Diode,232,66.84482758620689
+-29.2,115.4,Mercury Vapour/Universal,136,123.08823529411765
+-29.2,116.0,Compact Fluorescent,220,42.0
+-29.2,116.0,High Pressure Sodium,232,241.3793103448276
+-29.2,116.0,Light-Emitting Diode,268,52.55223880597015
+-29.2,116.0,Mercury Vapour/Universal,176,111.70454545454545
+-29.2,116.0,Metal Halide,4,150.0
+-28.9,114.6,Compact Fluorescent,19,42.0
+-28.9,114.6,Light-Emitting Diode,232,28.685344827586206
+-28.9,114.6,Mercury Vapour/Universal,57,107.63157894736842
+-28.9,114.7,High Pressure Sodium,4,250.0
+-28.9,114.7,Light-Emitting Diode,38,108.26315789473684
+-28.9,114.7,Mercury Vapour/Universal,62,125.0
+-28.9,114.8,Compact Fluorescent,32,42.0
+-28.9,114.8,High Pressure Sodium,12,183.33333333333334
+-28.9,114.8,Light-Emitting Diode,48,34.583333333333336
+-28.9,114.8,Mercury Vapour/Universal,20,98.0
+-28.8,114.6,Compact Fluorescent,2256,42.0
+-28.8,114.6,High Pressure Sodium,1755,241.57834757834758
+-28.8,114.6,Light-Emitting Diode,5122,70.23857868020305
+-28.8,114.6,Mercury Vapour/Universal,3792,104.41587552742617
+-28.8,114.6,Metal Halide,127,243.85826771653544
+-28.8,114.6,Unknown,4,
+-28.8,114.7,Compact Fluorescent,91,42.0
+-28.8,114.7,High Pressure Sodium,128,200.78125
+-28.8,114.7,Light-Emitting Diode,695,41.33381294964029
+-28.8,114.7,Mercury Vapour/Universal,233,106.45922746781116
+-28.8,114.7,Metal Halide,25,90.0
+-28.7,114.6,Compact Fluorescent,687,42.0
+-28.7,114.6,High Pressure Sodium,432,234.44444444444446
+-28.7,114.6,Light-Emitting Diode,2180,54.972018348623855
+-28.7,114.6,Mercury Vapour/Universal,2602,100.60914681014604
+-28.7,114.6,Metal Halide,80,167.0
+-28.7,114.7,Compact Fluorescent,20,42.0
+-28.7,114.7,High Pressure Sodium,8,200.0
+-28.7,114.7,Light-Emitting Diode,223,55.946188340807176
+-28.7,114.7,Mercury Vapour/Universal,72,100.0
+-28.7,114.7,Metal Halide,61,144.75409836065575
+-28.6,114.8,Light-Emitting Diode,28,17.142857142857142
+-28.6,114.8,Mercury Vapour/Universal,4,125.0
+-28.5,114.8,Compact Fluorescent,12,42.0
+-28.5,114.8,Light-Emitting Diode,24,28.0
+-28.5,114.8,Mercury Vapour/Universal,52,86.92307692307692
+-28.5,115.5,Compact Fluorescent,36,42.0
+-28.5,115.5,High Pressure Sodium,8,250.0
+-28.5,115.5,Light-Emitting Diode,532,59.59398496240601
+-28.5,115.5,Mercury Vapour/Universal,76,119.21052631578948
+-28.5,115.5,Metal Halide,4,250.0
+-28.4,114.4,Compact Fluorescent,30,42.0
+-28.4,114.4,Light-Emitting Diode,165,17.575757575757574
+-28.4,114.4,Mercury Vapour/Universal,37,84.86486486486487
+-28.4,114.6,Compact Fluorescent,156,42.0
+-28.4,114.6,High Pressure Sodium,20,250.0
+-28.4,114.6,Light-Emitting Diode,168,34.142857142857146
+-28.4,114.6,Mercury Vapour/Universal,176,117.1590909090909
+-28.3,114.6,Compact Fluorescent,44,42.0
+-28.3,114.6,High Pressure Sodium,48,233.33333333333334
+-28.3,114.6,Light-Emitting Diode,60,67.53333333333333
+-28.3,114.6,Mercury Vapour/Universal,92,99.56521739130434
+-28.3,115.0,Compact Fluorescent,20,42.0
+-28.3,115.0,Light-Emitting Diode,8,29.5
+-28.3,115.0,Mercury Vapour/Universal,8,125.0
+-28.2,114.3,Compact Fluorescent,12,42.0
+-28.2,114.3,High Pressure Sodium,1,150.0
+-28.2,114.3,Light-Emitting Diode,47,38.59574468085106
+-28.2,114.3,Mercury Vapour/Universal,20,98.0
+-28.0,114.6,Light-Emitting Diode,4,43.0
+-28.0,114.7,Light-Emitting Diode,40,34.2
+-27.8,114.1,Compact Fluorescent,4,42.0
+-27.8,114.1,High Pressure Sodium,8,150.0
+-27.8,114.1,Light-Emitting Diode,484,35.02479338842975
+-27.8,114.1,Mercury Vapour/Universal,144,125.0
+-27.8,114.2,Light-Emitting Diode,48,34.166666666666664
+-27.8,114.2,Mercury Vapour/Universal,8,125.0
+-27.7,114.1,High Pressure Sodium,8,150.0
+-27.7,114.1,Light-Emitting Diode,60,47.46666666666667
+-27.7,114.1,Mercury Vapour/Universal,96,125.0
+-27.7,114.2,Compact Fluorescent,36,42.0
+-27.7,114.2,Light-Emitting Diode,1100,29.425454545454546
+-27.7,114.2,Mercury Vapour/Universal,52,97.3076923076923
