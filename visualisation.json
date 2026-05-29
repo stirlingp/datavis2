@@ -1,9 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
   "background": "#bdbdc0",
+
   "description": "Map of GAN observations colored by Limiting Magnitude",
+
   "width": 700,
-  "height": 600,
+  "height": 550,
+
+  "padding": 5,
+
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
 
   "data": {
     "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/GaN2025.json",
@@ -16,27 +26,61 @@
     {"filter": "datum.Longitude >= -170 && datum.Longitude <= 180"}
   ],
 
-  "projection": {"type": "mercator"},
+  "projection": {
+    "type": "mercator"
+  },
 
   "layer": [
     {
       "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
       },
-      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e0e0e0",
+        "stroke": "white"
+      }
     },
+
     {
-      "mark": {"type": "circle", "size": 80, "opacity": 0.85},
+      "mark": {
+        "type": "circle",
+        "size": 80,
+        "opacity": 0.85
+      },
+
       "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        },
+
         "color": {
           "field": "LimitingMag",
           "type": "quantitative",
-          "scale": {"scheme": "plasma", "domain": [0, 7]},
+
+          "scale": {
+            "scheme": "plasma",
+            "domain": [0, 7]
+          },
+
+          "legend": {
+            "orient": "right"
+          },
+
           "title": "Limiting Magnitude"
         },
+
         "tooltip": [
           {"field": "ID"},
           {"field": "LocalDate"},
