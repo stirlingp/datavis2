@@ -1,0 +1,127 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f7f3ea",
+  "title": {
+    "text": "Different Light Types Create Different Wildlife Risks",
+    "subtitle": "Conceptual risk ranking based on wavelength: blue/white-rich lights are more disruptive near turtle nesting beaches",
+    "anchor": "start",
+    "fontSize": 21,
+    "subtitleFontSize": 13,
+    "color": "#243b35",
+    "subtitleColor": "#5b625e"
+  },
+  "width": 760,
+  "height": 360,
+  "data": {
+    "values": [
+      {
+        "lightType": "Amber / wildlife-sensitive lighting",
+        "risk": 1,
+        "blueContent": "Very low",
+        "note": "Longer wavelength, preferred near sensitive wildlife areas"
+      },
+      {
+        "lightType": "Warm LED",
+        "risk": 2,
+        "blueContent": "Low to moderate",
+        "note": "Lower risk if dimmed, shielded and warm-coloured"
+      },
+      {
+        "lightType": "High pressure sodium",
+        "risk": 2.5,
+        "blueContent": "Low to moderate",
+        "note": "Generally warmer than cool white lighting"
+      },
+      {
+        "lightType": "Fluorescent / mercury vapour",
+        "risk": 4,
+        "blueContent": "Higher",
+        "note": "Often contains shorter wavelengths"
+      },
+      {
+        "lightType": "Cool white LED",
+        "risk": 5,
+        "blueContent": "High",
+        "note": "Blue-rich white light can be more disruptive to wildlife"
+      }
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 6
+  },
+  "encoding": {
+    "y": {
+      "field": "lightType",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Amber / wildlife-sensitive lighting",
+        "Warm LED",
+        "High pressure sodium",
+        "Fluorescent / mercury vapour",
+        "Cool white LED"
+      ],
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 260
+      }
+    },
+    "x": {
+      "field": "risk",
+      "type": "quantitative",
+      "title": "Relative wildlife disruption risk",
+      "scale": {
+        "domain": [0, 5]
+      },
+      "axis": {
+        "values": [1, 2, 3, 4, 5],
+        "labelExpr": "datum.value == 1 ? 'Low' : datum.value == 5 ? 'High' : ''"
+      }
+    },
+    "color": {
+      "field": "risk",
+      "type": "quantitative",
+      "legend": null,
+      "scale": {
+        "range": ["#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "lightType",
+        "type": "nominal",
+        "title": "Light type"
+      },
+      {
+        "field": "blueContent",
+        "type": "nominal",
+        "title": "Blue/short wavelength content"
+      },
+      {
+        "field": "risk",
+        "type": "quantitative",
+        "title": "Relative risk"
+      },
+      {
+        "field": "note",
+        "type": "nominal",
+        "title": "Why it matters"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#ddd6c8",
+      "domainColor": "#9d9588",
+      "tickColor": "#9d9588",
+      "labelColor": "#333333",
+      "titleColor": "#333333",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}
