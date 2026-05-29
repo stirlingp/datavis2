@@ -147,8 +147,8 @@
                 "title": "Region",
                 "scale": {
                   "domain": [
-                    "Major Cities of Australia",
-                    "Regional and Remote Australia"
+                    "Major Cities",
+                    "Regional and Remote"
                   ],
                   "range": [
                     "#e76f51",
