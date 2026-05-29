@@ -122,6 +122,25 @@
       grid-template-columns: 1fr;
     }
 
+    .grid.compact-two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid.compact-two .viz {
+      min-height: 340px;
+    }
+
+    .grid.compact-two .card-header {
+      padding: 12px 14px 6px 14px;
+    }
+
+    .grid.compact-two .caption {
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 9px 12px 11px 12px;
+    }
+
     .card {
       background: rgba(44, 45, 51, 0.94);
       border: 1px solid var(--line);
@@ -148,14 +167,14 @@
 
     .viz {
       width: 100%;
-      min-height: 455px;
+      min-height: 520px;
       height: auto;
       padding: 8px 10px 18px 10px;
       overflow: visible;
     }
 
-    .viz.tall { min-height: 620px; }
-    .viz.short { min-height: 390px; }
+    .viz.tall { min-height: 680px; }
+    .viz.short { min-height: 440px; }
 
     .viz .vega-embed,
     .viz .vega-embed > div,
@@ -166,15 +185,7 @@
     }
 
     .wide-card .viz {
-      min-height: 560px;
-    }
-
-    #penguins-vis {
-      min-height: 560px;
-    }
-
-    #sleep-stats {
-      min-height: 760px;
+      min-height: 720px;
     }
 
     .image-viz {
@@ -228,49 +239,6 @@
       font-size: 12px;
     }
 
-    .shared-legend {
-      background: rgba(44, 45, 51, 0.88);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 16px;
-      margin: 0 0 22px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .shared-legend img {
-      width: 210px;
-      max-width: 48vw;
-      height: auto;
-      opacity: 0.96;
-    }
-
-    .chart-control {
-      padding: 10px 18px 12px 18px;
-      color: #eeeeee;
-      background: rgba(0,0,0,0.16);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 14px;
-    }
-
-    .chart-control label {
-      color: #eeeeee;
-      font-weight: 600;
-      margin-right: 8px;
-    }
-
-    .chart-control select {
-      background: #1f2024;
-      color: #eeeeee;
-      border: 1px solid #666a75;
-      border-radius: 6px;
-      padding: 6px 8px;
-    }
-
     .callout {
       margin: 24px 0;
       padding: 18px 20px;
@@ -296,7 +264,103 @@
 
     a { color: #8bd8cc; }
 
+
+    /* Final compact layout sizing */
+    .viz {
+      min-height: 340px;
+      padding: 4px 8px 8px 8px;
+    }
+
+    .viz.tall {
+      min-height: 470px;
+    }
+
+    .wide-card .viz {
+      min-height: 460px;
+    }
+
+    #earth-vis {
+      min-height: 500px;
+    }
+
+    #penguins-vis,
+    #turtle-vis {
+      min-height: 500px;
+    }
+
+    #sleep-stats {
+      min-height: 680px;
+    }
+
+    #night-visibility,
+    #cloud-cover {
+      min-height: 330px;
+    }
+
+    #visible-stars {
+      min-height: 400px;
+    }
+
+    #streetbulb-types,
+    #light-types {
+      min-height: 340px;
+    }
+
+    .image-viz {
+      height: 440px;
+    }
+
+
+    /* Final alignment/layout fixes */
+    .grid.compact-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .grid.single {
+      display: grid;
+      grid-template-columns: minmax(0, 1080px);
+      justify-content: center;
+    }
+
+    .grid.single .card {
+      width: 100%;
+    }
+
+    .grid.single .wide-card {
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #section-sky .grid.compact-two .viz {
+      min-height: 340px;
+    }
+
+    @media (max-width: 980px) {
+      .grid.compact-two,
+      .grid.single {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.single .wide-card {
+        max-width: 100%;
+      }
+    }
+
     .vega-actions { display: none !important; }
+
+
+    #night-visibility,
+    #cloud-cover {
+      min-height: 360px;
+    }
+
+    #visible-stars {
+      min-height: 430px;
+    }
 
     @media (max-width: 980px) {
       .grid { grid-template-columns: 1fr; }
@@ -310,16 +374,15 @@
 
 <header>
   <div class="hero">
-    <h1>Light Pollution: Losing the Night</h1>
+    <h1>Light Pollution: worth losing sleep?</h1>
     <p class="subtitle">
-      Artificial light at night changes what people can see, when animals behave, and how urban environments shape the night.
-      This visualisation follows the story from global sky visibility, to Australian light exposure, to wildlife and human sleep patterns.
+      Unneeded artificial light at night-time has adverse effects for humans and animals alike.
+      This visualisation explores global sky visibility, to Australian light exposure, to wildlife and human sleep patterns.
     </p>
     <div class="meta">
       <span class="pill">FIT2179 Data Visualisation 2</span>
       <span class="pill">Stirling Perrott — 34968253</span>
       <span class="pill">May 2026</span>
-      <span class="pill">Built with Vega-Lite</span>
     </div>
   </div>
 </header>
@@ -328,35 +391,30 @@
 
   <section class="section" id="section-sky">
     <div class="section-intro">
-      <h2>1. The night sky is not equally dark everywhere</h2>
+      <h2>1. The night sky isn't entirely dark</h2>
       <p>
-        Light pollution can be seen through reduced night-sky visibility. Lower limiting magnitude means fewer stars are visible,
-        while higher values indicate darker skies. The first visuals show global observations and an Australian luminance-style heatmap.
+        Light pollution can be seen through reduced night-sky visibility. By Astronomy conventions, a higher magnitude represents a dimmer star,
+        implying that low limiting magnitudes lower the number of stars we can see. The first visuals show global observations and an Australian luminance-style heatmap.
       </p>
-    </div>
-
-    <div class="shared-legend">
-      <span><strong>Limiting magnitude scale:</strong> used by both top visualisations. Lower values mean fewer visible stars and brighter, more light-polluted skies.</span>
-      <img src="https://raw.githubusercontent.com/stirlingp/datavis2/main/heatmap_legend.png" alt="Limiting magnitude legend">
     </div>
 
     <div class="grid">
       <article class="card">
         <div class="card-header">
           <h3>Global night-sky visibility observations</h3>
-          <p>Globe at Night observations mapped by limiting magnitude.</p>
+          <p>Globe at Night observations mapped by closest limiting magnitude.</p>
         </div>
         <div id="earth-vis" class="viz tall"></div>
         <div class="caption">
-          <strong>What this shows:</strong> low limiting magnitude points highlight areas where fewer stars are visible.
-          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+          <strong>What this shows:</strong> light pollution is a widespread and global problem, with obvious brighter patches near major cities.
+          <span class="source-note">Source: Globe at Night maps and data, 2025 observation export.</span>
         </div>
       </article>
 
       <article class="card">
         <div class="card-header">
           <h3>Australia luminance heatmap</h3>
-          <p>Approximate light-pollution surface created from available night-sky data.</p>
+          <p>Approximate light-pollution surface created from night-sky data.</p>
         </div>
         <div class="image-viz">
           <img id="heatmap-img"
@@ -369,14 +427,15 @@
                alt="Australian state boundaries overlay">
         </div>
         <div class="caption">
-          <strong>What this shows:</strong> artificial light is concentrated around populated regions and coastal corridors.
-          <span class="source-note">Source placeholder: derived luminance image and Australian state overlay from repository assets.</span>
+          <strong>What this shows:</strong> artificial light is concentrated around populated regions and coastal corridors. It also shows how the pollution spreads even through less populated areas.
+          <span class="source-note">Source: derived luminance heatmap created from night-sky/light-pollution data; state overlay image from repository assets.</span>
         </div>
       </article>
     </div>
 
-    <div class="grid single">
-      <article class="card wide-card">
+    
+    <div class="grid compact-two">
+      <article class="card">
         <div class="card-header">
           <h3>Visibility levels by limiting magnitude</h3>
           <p>Counts of observations grouped by visible-star quality.</p>
@@ -384,11 +443,11 @@
         <div id="night-visibility" class="viz"></div>
         <div class="caption">
           <strong>What this shows:</strong> lower magnitudes indicate worse visibility, making limiting magnitude easier to interpret as a light-pollution signal.
-          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+          <span class="source-note">Source: Globe at Night maps and data, 2025 observation export.</span>
         </div>
       </article>
 
-      <article class="card wide-card">
+      <article class="card">
         <div class="card-header">
           <h3>Cloud cover and visibility</h3>
           <p>A check on whether poor visibility is caused by clouds or brightened skies.</p>
@@ -396,7 +455,7 @@
         <div id="cloud-cover" class="viz"></div>
         <div class="caption">
           <strong>What this shows:</strong> cloud cover affects visibility, so clear-sky observations with low limiting magnitude are especially important.
-          <span class="source-note">Source placeholder: Globe at Night 2025 dataset, <code>GaN2025.json</code>.</span>
+          <span class="source-note">Source: Globe at Night maps and data, 2025 observation export.</span>
         </div>
       </article>
     </div>
@@ -410,10 +469,11 @@
         <div id="visible-stars" class="viz"></div>
         <div class="caption">
           <strong>What this shows:</strong> magnitude is converted into an approximate number of visible stars, making the loss of dark skies easier to understand.
-          <span class="source-note">Source placeholder: Globe at Night 2025 dataset plus approximate visible-star conversion table.</span>
+          <span class="source-note">Source: Globe at Night observations; visible-star scale is an approximate conversion from limiting magnitude.</span>
         </div>
       </article>
     </div>
+
   </section>
 
   <section class="section" id="section-wildlife">
@@ -421,7 +481,7 @@
       <h2>2. Wildlife interacts with the night, not just the land</h2>
       <p>
         Artificial light can affect animals by changing the timing, direction, or safety of night-time behaviour.
-        The penguin visualisation focuses on arrival timing after sunset, while the turtle graph uses city proximity as a proxy for likely urban light exposure.
+        Since many animals rely on the natural light cues to navigate, when the light is bright enough the animals’ natural patterns can be disrupted.
       </p>
     </div>
 
@@ -435,7 +495,7 @@
         <div id="penguin-arrival-control" class="chart-control"></div>
         <div class="caption">
           <strong>What this shows:</strong> animal behaviour is linked to night-time conditions, with arrival timing compared against sunset and cloud cover.
-          <span class="source-note">Source placeholder: <code>nightly_penguin_counts.csv</code>, embedded via <code>penguins_visualisation.json</code>.</span>
+          <span class="source-note">Source: Phillip Island Nature Parks / penguins.org.au dataset used for nightly penguin arrival visualisation.</span>
         </div>
       </article>
 
@@ -446,8 +506,8 @@
         </div>
         <div id="turtle-vis" class="viz tall"></div>
         <div class="caption">
-          <strong>What this shows:</strong> city proximity is used as a simple proxy for likely exposure to urban coastal lighting.
-          <span class="source-note">Source placeholder: Atlas of Living Australia Flatback Turtle occurrence records, <code>turtle_data.csv</code>.</span>
+          <strong>What this shows:</strong> Turtles are famously affected by city light pollution as the hatched babies often wander towards city lights instead of into the water. This in conjunction with the large percentage of turtles living near cities poses a significant risk to their survival.
+          <span class="source-note">Source: Atlas of Living Australia occurrence records for Flatback Turtle.</span>
         </div>
       </article>
     </div>
@@ -458,7 +518,7 @@
       <h2>3. Outdoor lighting is infrastructure, not just brightness</h2>
       <p>
         The effects of artificial light depend on where lights are placed, what technology they use, and how bright they are.
-        The streetlight graphs use a reduced Western Power dataset so the page loads quickly while preserving bulb type and wattage.
+        
       </p>
     </div>
 
@@ -471,7 +531,7 @@
         <div id="streetbulb-types" class="viz"></div>
         <div class="caption">
           <strong>What this shows:</strong> different outdoor lighting technologies are present in the streetlight dataset, including LED and older lamp types.
-          <span class="source-note">Source placeholder: Western Power Streetlights WP-043, reduced to <code>streetlight_type_grid_small.csv</code>.</span>
+          <span class="source-note">Source: Western Australian Government open data portal / Western Power streetlights dataset, reduced for web loading.</span>
         </div>
       </article>
 
@@ -483,7 +543,7 @@
         <div id="light-types" class="viz"></div>
         <div class="caption">
           <strong>What this shows:</strong> technology and wattage both matter because light pollution is influenced by spectrum and intensity.
-          <span class="source-note">Source placeholder: Western Power Streetlights WP-043, reduced to <code>streetlight_type_grid_small.csv</code>.</span>
+          <span class="source-note">Source: Western Australian Government open data portal / Western Power streetlights dataset, reduced for web loading.</span>
         </div>
       </article>
     </div>
@@ -493,8 +553,8 @@
     <div class="section-intro">
       <h2>4. The urban night also affects people</h2>
       <p>
-        This section shifts from animals to people. It compares sleep timing in Major Cities and Regional/Remote Australia.
-        It does not prove light pollution causes later sleep, but it shows that urban and regional night-time patterns differ.
+        Light pollution also has adverse effects for humans. This section compares sleep timing in Major Cities and Regional/Remote Australia.
+        Light pollution is especially prevalent around cities and studies have shown that sleep timing and quality are worse in areas of high light pollution.
       </p>
     </div>
 
@@ -507,7 +567,7 @@
         <div id="sleep-stats" class="viz tall"></div>
         <div class="caption">
           <strong>What this shows:</strong> sleep and wake times differ between Major Cities and Regional/Remote Australia across age groups.
-          <span class="source-note">Source placeholder: Australian sleep statistics, <code>sleep_stats.csv</code>.</span>
+          <span class="source-note">Source: Australian Bureau of Statistics measured physical activity and sleep data.</span>
         </div>
       </article>
     </div>
@@ -515,11 +575,11 @@
 
   <section class="section" id="section-ending">
     <div class="section-intro">
-      <h2>5. What the data suggests</h2>
+      <h2>5. What the data shows</h2>
       <p>
         Together, the visuals show that artificial light is measurable, spatially concentrated, and relevant to both wildlife and people.
-        The project does not claim direct causation for every pattern, but it highlights where light exposure, animal behaviour,
-        lighting infrastructure and sleep timing intersect.
+        Clearly greater steps must be taken to reduce the effects of light pollution in Australia and additionally at a global scale.
+        
       </p>
     </div>
 
@@ -534,17 +594,22 @@
 <footer>
   <h2>Sources and acknowledgements</h2>
   <p>Created by Stirling Perrott, May 2026. Built for FIT2179 Data Visualisation 2 using Vega-Lite.</p>
-  <ul>
-    <li>Globe at Night 2025 observations — edit with final URL.</li>
-    <li>Australian luminance heatmap / derived image — edit with final method/source.</li>
-    <li>Penguin nightly counts dataset — edit with final URL.</li>
-    <li>Atlas of Living Australia Flatback Turtle records — edit with final URL.</li>
-    <li>Western Power Streetlights WP-043 — edit with final URL.</li>
-    <li>Australian sleep statistics dataset — edit with final URL.</li>
-    <li>National Light Pollution Guidelines for Wildlife — edit with final URL.</li>
+    <ul>
+    <li><a href="https://globeatnight.org/maps-data/" target="_blank" rel="noopener">Globe at Night maps and data</a> — limiting magnitude observations used for the world map, visibility distribution, cloud-cover comparison and visible-star approximation.</li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/31342600/" target="_blank" rel="noopener">Artificial light at night and animal behaviour research</a> — background literature supporting the wildlife focus.</li>
+    <li><a href="https://www.penguins.org.au" target="_blank" rel="noopener">Phillip Island Nature Parks / Penguins.org.au</a> — penguin context and source attribution for penguin-related data.</li>
+    <li><a href="https://biocache.ala.org.au/occurrences/search?q=lsid:https://biodiversity.org.au/afd/taxa/68eba403-5689-4a10-8c58-e3e6e4151cb4#tab_recordsView" target="_blank" rel="noopener">Atlas of Living Australia Flatback Turtle occurrence records</a> — turtle locations used in the proximity-to-city visualisation.</li>
+    <li><a href="https://data.wa.gov.au" target="_blank" rel="noopener">Western Australian Government open data portal</a> — source portal for the Western Power streetlights dataset used to analyse bulb type and wattage.</li>
+    <li><a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/measured-physical-activity-and-sleep/latest-release#data-downloads" target="_blank" rel="noopener">Australian Bureau of Statistics measured physical activity and sleep data downloads</a> — sleep timing data used in the city/regional comparison.</li>
+    <li><a href="https://www.dcceew.gov.au/environment/biodiversity/publications/national-light-pollution-guidelines-wildlife" target="_blank" rel="noopener">National Light Pollution Guidelines for Wildlife</a> — guidance used to frame the ecological risks of artificial light at night.</li>
   </ul>
   <p>
+    Derived assets: the Australian luminance heatmap, heatmap legend and state overlay are project assets in the GitHub repository.
+    The visible-star scale is an approximate explanatory conversion from limiting magnitude, not a direct star count measurement.
+  </p>
+  <p>
     AI acknowledgement: coding assistance, debugging and wording support were provided using ChatGPT.
+    Final design decisions and submission are the author’s responsibility.
   </p>
 </footer>
 
