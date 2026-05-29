@@ -1,0 +1,335 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#f7f3ea",
+  "title": {
+    "text": "How Close Are Flatback Turtle Records to Urban Light Sources?",
+    "subtitle": "Cumulative percentage of turtle occurrence records by distance to nearest major coastal city or town",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "anchor": "start",
+    "color": "#243b35",
+    "subtitleColor": "#5b625e"
+  },
+  "width": 850,
+  "height": 460,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "gridColor": "#ddd6c8",
+      "domainColor": "#9d9588",
+      "tickColor": "#9d9588",
+      "labelColor": "#333333",
+      "titleColor": "#333333"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "x1": 0,
+            "x2": 50,
+            "zone": "Very close"
+          },
+          {
+            "x1": 50,
+            "x2": 150,
+            "zone": "Near city"
+          },
+          {
+            "x1": 150,
+            "x2": 300,
+            "zone": "Regional coast"
+          },
+          {
+            "x1": 300,
+            "x2": 1200,
+            "zone": "Remote coast"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "opacity": 0.18
+      },
+      "encoding": {
+        "x": {
+          "field": "x1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 1200]
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x2"
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": 460
+        },
+        "color": {
+          "field": "zone",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Very close",
+              "Near city",
+              "Regional coast",
+              "Remote coast"
+            ],
+            "range": [
+              "#f4a261",
+              "#e9c46a",
+              "#90be6d",
+              "#577590"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/turtle_data.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "toNumber(datum.decimalLongitude)",
+          "as": "lon"
+        },
+        {
+          "calculate": "toNumber(datum.decimalLatitude)",
+          "as": "lat"
+        },
+        {
+          "filter": "isValid(datum.lon) && isFinite(datum.lon) && isValid(datum.lat) && isFinite(datum.lat)"
+        },
+        {
+          "filter": "datum.lon > 110 && datum.lon < 155 && datum.lat > -45 && datum.lat < -5"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 115.8613) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -31.9523) * 111, 2))",
+          "as": "d_Perth"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 122.2359) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -17.9614) * 111, 2))",
+          "as": "d_Broome"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 116.8463) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -20.7367) * 111, 2))",
+          "as": "d_Karratha"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 118.5878) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -20.3107) * 111, 2))",
+          "as": "d_PortHedland"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 130.8456) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -12.4634) * 111, 2))",
+          "as": "d_Darwin"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 145.7781) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -16.9186) * 111, 2))",
+          "as": "d_Cairns"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 146.8169) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -19.259) * 111, 2))",
+          "as": "d_Townsville"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 149.186) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -21.1411) * 111, 2))",
+          "as": "d_Mackay"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 150.5123) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -23.3789) * 111, 2))",
+          "as": "d_Rockhampton"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 152.3489) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -24.8662) * 111, 2))",
+          "as": "d_Bundaberg"
+        },
+        {
+          "calculate": "sqrt(pow((datum.lon - 153.026) * 111 * cos(datum.lat * 0.01745329252), 2) + pow((datum.lat - -27.4705) * 111, 2))",
+          "as": "d_Brisbane"
+        },
+        {
+          "calculate": "min(datum.d_Perth, datum.d_Broome, datum.d_Karratha, datum.d_PortHedland, datum.d_Darwin, datum.d_Cairns, datum.d_Townsville, datum.d_Mackay, datum.d_Rockhampton, datum.d_Bundaberg, datum.d_Brisbane)",
+          "as": "nearestCityDistanceKm"
+        },
+        {
+          "filter": "isValid(datum.nearestCityDistanceKm) && isFinite(datum.nearestCityDistanceKm)"
+        },
+        {
+          "filter": "datum.nearestCityDistanceKm >= 0 && datum.nearestCityDistanceKm <= 1200"
+        },
+        {
+          "window": [
+            {
+              "op": "count",
+              "as": "cumulativeRecords"
+            }
+          ],
+          "sort": [
+            {
+              "field": "nearestCityDistanceKm",
+              "order": "ascending"
+            }
+          ],
+          "frame": [
+            null,
+            0
+          ]
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "count",
+              "as": "totalRecords"
+            }
+          ]
+        },
+        {
+          "calculate": "datum.cumulativeRecords / datum.totalRecords * 100",
+          "as": "cumulativePercent"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "interpolate": "step-after",
+        "strokeWidth": 4,
+        "color": "#1f5f5b"
+      },
+      "encoding": {
+        "x": {
+          "field": "nearestCityDistanceKm",
+          "type": "quantitative",
+          "title": "Distance to nearest major coastal city or town (km)",
+          "scale": {
+            "domain": [0, 1200]
+          },
+          "axis": {
+            "grid": false,
+            "values": [0, 50, 150, 300, 600, 900, 1200]
+          }
+        },
+        "y": {
+          "field": "cumulativePercent",
+          "type": "quantitative",
+          "title": "Cumulative percentage of turtle records",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "format": ".0f",
+            "grid": true,
+            "values": [0, 25, 50, 75, 100]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "nearestCityDistanceKm",
+            "type": "quantitative",
+            "title": "Distance to nearest city km",
+            "format": ".1f"
+          },
+          {
+            "field": "cumulativePercent",
+            "type": "quantitative",
+            "title": "Records within this distance",
+            "format": ".1f"
+          },
+          {
+            "field": "cumulativeRecords",
+            "type": "quantitative",
+            "title": "Cumulative records"
+          },
+          {
+            "field": "totalRecords",
+            "type": "quantitative",
+            "title": "Total records"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 25,
+            "label": "Very close"
+          },
+          {
+            "x": 100,
+            "label": "Near city"
+          },
+          {
+            "x": 225,
+            "label": "Regional coast"
+          },
+          {
+            "x": 700,
+            "label": "Remote coast"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#3b3b3b",
+        "y": 18
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 1200]
+          }
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "threshold": 50
+          },
+          {
+            "threshold": 150
+          },
+          {
+            "threshold": 300
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [5, 5],
+        "color": "#5f5f5f",
+        "opacity": 0.45
+      },
+      "encoding": {
+        "x": {
+          "field": "threshold",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 1200]
+          }
+        }
+      }
+    }
+  ]
+}
