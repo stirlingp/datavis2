@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "background": "#f7f3ea",
   "title": {
-    "text": "Sleep Timing by Age Group in Major Cities and Regional Australia",
-    "subtitle": "Small-multiple line charts comparing bedtime and wake time patterns across age groups",
+    "text": "Sleep Timing Differences Between Major Cities and Regional Australia",
+    "subtitle": "Dumbbell charts compare Major Cities and Regional/Remote Australia across age groups and sleep periods",
     "anchor": "start",
     "fontSize": 22,
     "subtitleFontSize": 13,
@@ -12,47 +12,47 @@
   },
   "data": {
     "values": [
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1354,"time_label":"10:34 pm"},
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1380,"time_label":"11:00 pm"},
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","order":3,"minutes":1361,"time_label":"10:41 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1323,"time_label":"10:03 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1347,"time_label":"10:27 pm"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","order":3,"minutes":1330,"time_label":"10:10 pm"},
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","minutes":1354,"time_label":"10:34 pm"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weeknights","minutes":1323,"time_label":"10:03 pm"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","minutes":1401,"time_label":"11:21 pm"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","minutes":1377,"time_label":"10:57 pm"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","minutes":1377,"time_label":"10:57 pm"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","minutes":1365,"time_label":"10:45 pm"},
 
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1401,"time_label":"11:21 pm"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1422,"time_label":"11:42 pm"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","order":3,"minutes":1407,"time_label":"11:27 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1377,"time_label":"10:57 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1385,"time_label":"11:05 pm"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","order":3,"minutes":1381,"time_label":"11:01 pm"},
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","minutes":1380,"time_label":"11:00 pm"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"Weekend nights","minutes":1347,"time_label":"10:27 pm"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","minutes":1422,"time_label":"11:42 pm"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"Weekend nights","minutes":1385,"time_label":"11:05 pm"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","minutes":1384,"time_label":"11:04 pm"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","minutes":1368,"time_label":"10:48 pm"},
 
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1377,"time_label":"10:57 pm"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1384,"time_label":"11:04 pm"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","order":3,"minutes":1379,"time_label":"10:59 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weeknights","order":1,"minutes":1365,"time_label":"10:45 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"Weekend nights","order":2,"minutes":1368,"time_label":"10:48 pm"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","order":3,"minutes":1367,"time_label":"10:47 pm"},
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","minutes":1361,"time_label":"10:41 pm"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Bedtime","period":"All nights","minutes":1330,"time_label":"10:10 pm"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","minutes":1407,"time_label":"11:27 pm"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Bedtime","period":"All nights","minutes":1381,"time_label":"11:01 pm"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","minutes":1379,"time_label":"10:59 pm"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Bedtime","period":"All nights","minutes":1367,"time_label":"10:47 pm"},
 
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","order":1,"minutes":420,"time_label":"07:00 am"},
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","order":2,"minutes":450,"time_label":"07:30 am"},
-      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","order":3,"minutes":427,"time_label":"07:07 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","order":1,"minutes":409,"time_label":"06:49 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","order":2,"minutes":427,"time_label":"07:07 am"},
-      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","order":3,"minutes":413,"time_label":"06:53 am"},
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","minutes":420,"time_label":"07:00 am"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekdays","minutes":409,"time_label":"06:49 am"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","minutes":405,"time_label":"06:45 am"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","minutes":387,"time_label":"06:27 am"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","minutes":404,"time_label":"06:44 am"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","minutes":404,"time_label":"06:44 am"},
 
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","order":1,"minutes":405,"time_label":"06:45 am"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","order":2,"minutes":452,"time_label":"07:32 am"},
-      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","order":3,"minutes":415,"time_label":"06:55 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekdays","order":1,"minutes":387,"time_label":"06:27 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","order":2,"minutes":424,"time_label":"07:04 am"},
-      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","order":3,"minutes":395,"time_label":"06:35 am"},
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","minutes":450,"time_label":"07:30 am"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"Weekend days","minutes":427,"time_label":"07:07 am"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","minutes":452,"time_label":"07:32 am"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"Weekend days","minutes":424,"time_label":"07:04 am"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","minutes":421,"time_label":"07:01 am"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","minutes":414,"time_label":"06:54 am"},
 
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","order":1,"minutes":404,"time_label":"06:44 am"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","order":2,"minutes":421,"time_label":"07:01 am"},
-      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"All days","order":3,"minutes":408,"time_label":"06:48 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekdays","order":1,"minutes":404,"time_label":"06:44 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"Weekend days","order":2,"minutes":414,"time_label":"06:54 am"},
-      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"All days","order":3,"minutes":406,"time_label":"06:46 am"}
+      {"region":"Major Cities of Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","minutes":427,"time_label":"07:07 am"},
+      {"region":"Regional and Remote Australia","age_group":"5–17 years","chart":"Wake time","period":"All days","minutes":413,"time_label":"06:53 am"},
+      {"region":"Major Cities of Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","minutes":415,"time_label":"06:55 am"},
+      {"region":"Regional and Remote Australia","age_group":"18–64 years","chart":"Wake time","period":"All days","minutes":395,"time_label":"06:35 am"},
+      {"region":"Major Cities of Australia","age_group":"65+ years","chart":"Wake time","period":"All days","minutes":408,"time_label":"06:48 am"},
+      {"region":"Regional and Remote Australia","age_group":"65+ years","chart":"Wake time","period":"All days","minutes":406,"time_label":"06:46 am"}
     ]
   },
   "vconcat": [
@@ -63,76 +63,108 @@
         "fontSize": 16,
         "color": "#243b35"
       },
+      "transform": [
+        {"filter": "datum.chart == 'Bedtime'"}
+      ],
       "facet": {
         "column": {
-          "field": "region",
+          "field": "period",
           "type": "nominal",
+          "sort": ["Weeknights", "Weekend nights", "All nights"],
           "header": {
             "title": null,
             "labelFontSize": 13,
             "labelColor": "#243b35"
-          },
-          "sort": [
-            "Major Cities of Australia",
-            "Regional and Remote Australia"
-          ]
+          }
         }
       },
       "spec": {
-        "width": 330,
-        "height": 220,
-        "transform": [
-          {"filter": "datum.chart == 'Bedtime'"}
-        ],
-        "mark": {
-          "type": "line",
-          "point": {
-            "filled": true,
-            "size": 90
-          },
-          "strokeWidth": 3
-        },
-        "encoding": {
-          "x": {
-            "field": "period",
-            "type": "ordinal",
-            "title": null,
-            "sort": {
-              "field": "order",
-              "order": "ascending"
+        "width": 220,
+        "height": 180,
+        "layer": [
+          {
+            "mark": {
+              "type": "rule",
+              "strokeWidth": 3,
+              "color": "#b8b0a3"
             },
-            "axis": {
-              "labelAngle": 0
+            "encoding": {
+              "y": {
+                "field": "age_group",
+                "type": "nominal",
+                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "title": "Age group"
+              },
+              "x": {
+                "aggregate": "min",
+                "field": "minutes",
+                "type": "quantitative",
+                "title": "Time",
+                "scale": {
+                  "domain": [1320, 1440]
+                },
+                "axis": {
+                  "values": [1320, 1350, 1380, 1410, 1440],
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                }
+              },
+              "x2": {
+                "aggregate": "max",
+                "field": "minutes"
+              },
+              "detail": {
+                "field": "age_group"
+              }
             }
           },
-          "y": {
-            "field": "minutes",
-            "type": "quantitative",
-            "title": "Time",
-            "scale": {
-              "domain": [1320, 1440]
+          {
+            "mark": {
+              "type": "point",
+              "filled": true,
+              "size": 110
             },
-            "axis": {
-              "values": [1320, 1350, 1380, 1410, 1440],
-              "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+            "encoding": {
+              "y": {
+                "field": "age_group",
+                "type": "nominal",
+                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "title": "Age group"
+              },
+              "x": {
+                "field": "minutes",
+                "type": "quantitative",
+                "scale": {
+                  "domain": [1320, 1440]
+                },
+                "axis": {
+                  "values": [1320, 1350, 1380, 1410, 1440],
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                }
+              },
+              "color": {
+                "field": "region",
+                "type": "nominal",
+                "title": "Region",
+                "scale": {
+                  "domain": [
+                    "Major Cities of Australia",
+                    "Regional and Remote Australia"
+                  ],
+                  "range": [
+                    "#e76f51",
+                    "#2a9d8f"
+                  ]
+                }
+              },
+              "tooltip": [
+                {"field": "period", "type": "nominal", "title": "Period"},
+                {"field": "age_group", "type": "nominal", "title": "Age group"},
+                {"field": "region", "type": "nominal", "title": "Region"},
+                {"field": "time_label", "type": "nominal", "title": "Time"}
+              ]
             }
-          },
-          "color": {
-            "field": "age_group",
-            "type": "nominal",
-            "title": "Age group",
-            "scale": {
-              "domain": ["5–17 years", "18–64 years", "65+ years"],
-              "range": ["#2a9d8f", "#e76f51", "#577590"]
-            }
-          },
-          "tooltip": [
-            {"field": "region", "type": "nominal", "title": "Region"},
-            {"field": "age_group", "type": "nominal", "title": "Age group"},
-            {"field": "period", "type": "nominal", "title": "Period"},
-            {"field": "time_label", "type": "nominal", "title": "Time"}
-          ]
-        }
+          }
+        ]
       }
     },
     {
@@ -142,76 +174,108 @@
         "fontSize": 16,
         "color": "#243b35"
       },
+      "transform": [
+        {"filter": "datum.chart == 'Wake time'"}
+      ],
       "facet": {
         "column": {
-          "field": "region",
+          "field": "period",
           "type": "nominal",
+          "sort": ["Weekdays", "Weekend days", "All days"],
           "header": {
             "title": null,
             "labelFontSize": 13,
             "labelColor": "#243b35"
-          },
-          "sort": [
-            "Major Cities of Australia",
-            "Regional and Remote Australia"
-          ]
+          }
         }
       },
       "spec": {
-        "width": 330,
-        "height": 220,
-        "transform": [
-          {"filter": "datum.chart == 'Wake time'"}
-        ],
-        "mark": {
-          "type": "line",
-          "point": {
-            "filled": true,
-            "size": 90
-          },
-          "strokeWidth": 3
-        },
-        "encoding": {
-          "x": {
-            "field": "period",
-            "type": "ordinal",
-            "title": null,
-            "sort": {
-              "field": "order",
-              "order": "ascending"
+        "width": 220,
+        "height": 180,
+        "layer": [
+          {
+            "mark": {
+              "type": "rule",
+              "strokeWidth": 3,
+              "color": "#b8b0a3"
             },
-            "axis": {
-              "labelAngle": 0
+            "encoding": {
+              "y": {
+                "field": "age_group",
+                "type": "nominal",
+                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "title": "Age group"
+              },
+              "x": {
+                "aggregate": "min",
+                "field": "minutes",
+                "type": "quantitative",
+                "title": "Time",
+                "scale": {
+                  "domain": [380, 460]
+                },
+                "axis": {
+                  "values": [390, 420, 450],
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                }
+              },
+              "x2": {
+                "aggregate": "max",
+                "field": "minutes"
+              },
+              "detail": {
+                "field": "age_group"
+              }
             }
           },
-          "y": {
-            "field": "minutes",
-            "type": "quantitative",
-            "title": "Time",
-            "scale": {
-              "domain": [380, 460]
+          {
+            "mark": {
+              "type": "point",
+              "filled": true,
+              "size": 110
             },
-            "axis": {
-              "values": [390, 420, 450],
-              "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+            "encoding": {
+              "y": {
+                "field": "age_group",
+                "type": "nominal",
+                "sort": ["5–17 years", "18–64 years", "65+ years"],
+                "title": "Age group"
+              },
+              "x": {
+                "field": "minutes",
+                "type": "quantitative",
+                "scale": {
+                  "domain": [380, 460]
+                },
+                "axis": {
+                  "values": [390, 420, 450],
+                  "labelExpr": "timeFormat(datetime(2000,0,1,floor(datum.value/60),datum.value % 60), '%I:%M %p')"
+                }
+              },
+              "color": {
+                "field": "region",
+                "type": "nominal",
+                "title": "Region",
+                "scale": {
+                  "domain": [
+                    "Major Cities of Australia",
+                    "Regional and Remote Australia"
+                  ],
+                  "range": [
+                    "#e76f51",
+                    "#2a9d8f"
+                  ]
+                }
+              },
+              "tooltip": [
+                {"field": "period", "type": "nominal", "title": "Period"},
+                {"field": "age_group", "type": "nominal", "title": "Age group"},
+                {"field": "region", "type": "nominal", "title": "Region"},
+                {"field": "time_label", "type": "nominal", "title": "Time"}
+              ]
             }
-          },
-          "color": {
-            "field": "age_group",
-            "type": "nominal",
-            "title": "Age group",
-            "scale": {
-              "domain": ["5–17 years", "18–64 years", "65+ years"],
-              "range": ["#2a9d8f", "#e76f51", "#577590"]
-            }
-          },
-          "tooltip": [
-            {"field": "region", "type": "nominal", "title": "Region"},
-            {"field": "age_group", "type": "nominal", "title": "Age group"},
-            {"field": "period", "type": "nominal", "title": "Period"},
-            {"field": "time_label", "type": "nominal", "title": "Time"}
-          ]
-        }
+          }
+        ]
       }
     }
   ],
