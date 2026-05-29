@@ -1,6 +1,4 @@
-from pathlib import Path
 
-html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -516,8 +514,4 @@ html = r'''<!DOCTYPE html>
 
 </body>
 </html>
-'''
 
-out = Path('/mnt/data/index.html')
-out.write_text(html, encoding='utf-8')
-print(f"Created {out} ({out.stat().st_size:,} bytes)")
