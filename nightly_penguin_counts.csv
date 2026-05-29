@@ -1,4 +1,4 @@
-Day,Date,CloudCover,Tide,Moon,Rain,Sea,Wind,WindDirection,Firsttimeatbeach,Firstcrossbeach,Paradeclosed,East,Centre,West,Farwest,Totalpenguin,Sunset,sunset_time,first time at beach,
+Day,Date,CloudCover,Tide,Moon,Rain,Sea,Wind,WindDirection,Firsttimeatbeach,Firstcrossbeach,Paradeclosed,East,Centre,West,Farwest,Totalpenguin,Sunset,sunset_time,first time at beach, first cross time
 FRIDAY,1/06/2018,40,2,75,0,2,2,SSW,1741,1742,1855,141,65,114,373,693,1705,5:05 PM,5:41 PM,5:42 PM
 SATURDAY,2/06/2018,30,2,75,0,2,2,S,1738,1739,1845,113,38,117,451,719,1704,5:04 PM,5:38 PM,5:39 PM
 SUNDAY,3/06/2018,70,2,75,0,1,1,N,1729,1734,1850,93,39,67,277,476,1704,5:04 PM,5:29 PM,5:34 PM
