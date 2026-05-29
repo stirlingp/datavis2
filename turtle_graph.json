@@ -1,29 +1,31 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#f7f3ea",
-  "title": {
-    "text": "How Close Are Flatback Turtle Records to Urban Light Sources?",
-    "subtitle": "Cumulative percentage of turtle occurrence records by distance to nearest major coastal city or town",
-    "fontSize": 22,
-    "subtitleFontSize": 13,
-    "anchor": "start",
-    "color": "#243b35",
-    "subtitleColor": "#5b625e"
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "transparent",
+  "description": "Cumulative percentage of Flatback Turtle records by distance to nearest coastal city",
+  "width": 980,
+  "height": 430,
+  "padding": {
+    "left": 10,
+    "right": 35,
+    "top": 20,
+    "bottom": 20
   },
-  "width": 850,
-  "height": 460,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "config": {
     "view": {
       "stroke": null
     },
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "gridColor": "#ddd6c8",
-      "domainColor": "#9d9588",
-      "tickColor": "#9d9588",
-      "labelColor": "#333333",
-      "titleColor": "#333333"
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "gridColor": "#3f424a",
+      "domainColor": "#777a84",
+      "tickColor": "#777a84",
+      "labelColor": "#dddddd",
+      "titleColor": "#eeeeee"
     }
   },
   "layer": [
@@ -72,7 +74,7 @@
           "value": 0
         },
         "y2": {
-          "value": 460
+          "value": 430
         },
         "color": {
           "field": "zone",
@@ -85,9 +87,9 @@
               "Remote coast"
             ],
             "range": [
+              "#e76f51",
               "#f4a261",
-              "#e9c46a",
-              "#90be6d",
+              "#2a9d8f",
               "#577590"
             ]
           },
@@ -206,7 +208,7 @@
         "type": "line",
         "interpolate": "step-after",
         "strokeWidth": 4,
-        "color": "#1f5f5b"
+        "color": "#70c1b3"
       },
       "encoding": {
         "x": {
@@ -285,7 +287,7 @@
         "type": "text",
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#3b3b3b",
+        "color": "#eeeeee",
         "y": 18
       },
       "encoding": {
@@ -318,8 +320,8 @@
       "mark": {
         "type": "rule",
         "strokeDash": [5, 5],
-        "color": "#5f5f5f",
-        "opacity": 0.45
+        "color": "#dddddd",
+        "opacity": 0.55
       },
       "encoding": {
         "x": {
