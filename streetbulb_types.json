@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "#f7f3ea",
+  "title": {
+    "text": "Streetlight Types in the Outdoor Lighting Dataset",
+    "subtitle": "Bulb types grouped by environmental impact",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleFontSize": 13,
+    "color": "#243b35",
+    "subtitleColor": "#5b625e"
+  },
+  "width": 820,
+  "height": 380,
+  "data": {
+    "url": "https://raw.githubusercontent.com/stirlingp/datavis2/main/streetlight_type_grid_small.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.streetlight_count)",
+      "as": "count"
+    },
+    {
+      "filter": "isValid(datum.count) && isFinite(datum.count)"
+    },
+    {
+      "filter": "datum.bulb_type != null && datum.bulb_type != '' && datum.bulb_type != 'Unknown'"
+    },
+    {
+      "calculate": "indexof(lower(datum.bulb_type), 'led') >= 0 || indexof(lower(datum.bulb_type), 'light-emitting diode') >= 0 ? 'LED' : indexof(lower(datum.bulb_type), 'mercury') >= 0 || indexof(lower(datum.bulb_type), 'fluorescent') >= 0 ? 'Mercury / Fluorescent' : indexof(lower(datum.bulb_type), 'sodium') >= 0 ? 'Sodium' : 'Other'",
+      "as": "light_category"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 8
+  },
+  "encoding": {
+    "y": {
+      "field": "light_category",
+      "type": "nominal",
+      "title": null,
+      "sort": ["LED", "Sodium", "Mercury / Fluorescent", "Other"],
+      "axis": {
+        "labelLimit": 260,
+        "labelFontSize": 12
+      }
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative",
+      "title": "Number of streetlights"
+    },
+    "color": {
+      "field": "light_category",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": ["LED", "Sodium", "Mercury / Fluorescent", "Other"],
+        "range": ["#2a9d8f", "#e9c46a", "#e76f51", "#577590"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "light_category",
+        "type": "nominal",
+        "title": "Lighting category"
+      },
+      {
+        "aggregate": "sum",
+        "field": "count",
+        "type": "quantitative",
+        "title": "Streetlights",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#ddd6c8",
+      "domainColor": "#9d9588",
+      "tickColor": "#9d9588",
+      "labelColor": "#333333",
+      "titleColor": "#333333",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}
