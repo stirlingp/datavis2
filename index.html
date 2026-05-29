@@ -148,14 +148,14 @@
 
     .viz {
       width: 100%;
-      min-height: 520px;
+      min-height: 455px;
       height: auto;
       padding: 8px 10px 18px 10px;
       overflow: visible;
     }
 
-    .viz.tall { min-height: 680px; }
-    .viz.short { min-height: 440px; }
+    .viz.tall { min-height: 620px; }
+    .viz.short { min-height: 390px; }
 
     .viz .vega-embed,
     .viz .vega-embed > div,
@@ -166,7 +166,15 @@
     }
 
     .wide-card .viz {
-      min-height: 720px;
+      min-height: 560px;
+    }
+
+    #penguins-vis {
+      min-height: 560px;
+    }
+
+    #sleep-stats {
+      min-height: 760px;
     }
 
     .image-viz {
@@ -218,6 +226,49 @@
       margin-top: 6px;
       color: #bcbcbc;
       font-size: 12px;
+    }
+
+    .shared-legend {
+      background: rgba(44, 45, 51, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 0 0 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .shared-legend img {
+      width: 210px;
+      max-width: 48vw;
+      height: auto;
+      opacity: 0.96;
+    }
+
+    .chart-control {
+      padding: 10px 18px 12px 18px;
+      color: #eeeeee;
+      background: rgba(0,0,0,0.16);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+    }
+
+    .chart-control label {
+      color: #eeeeee;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    .chart-control select {
+      background: #1f2024;
+      color: #eeeeee;
+      border: 1px solid #666a75;
+      border-radius: 6px;
+      padding: 6px 8px;
     }
 
     .callout {
@@ -284,6 +335,11 @@
       </p>
     </div>
 
+    <div class="shared-legend">
+      <span><strong>Limiting magnitude scale:</strong> used by both top visualisations. Lower values mean fewer visible stars and brighter, more light-polluted skies.</span>
+      <img src="https://raw.githubusercontent.com/stirlingp/datavis2/main/heatmap_legend.png" alt="Limiting magnitude legend">
+    </div>
+
     <div class="grid">
       <article class="card">
         <div class="card-header">
@@ -301,9 +357,6 @@
         <div class="card-header">
           <h3>Australia luminance heatmap</h3>
           <p>Approximate light-pollution surface created from available night-sky data.</p>
-          <img class="legend-img"
-               src="https://raw.githubusercontent.com/stirlingp/datavis2/main/heatmap_legend.png"
-               alt="Heatmap legend">
         </div>
         <div class="image-viz">
           <img id="heatmap-img"
@@ -379,6 +432,7 @@
           <p>Nightly arrival timing compared with sunset and cloud cover.</p>
         </div>
         <div id="penguins-vis" class="viz tall"></div>
+        <div id="penguin-arrival-control" class="chart-control"></div>
         <div class="caption">
           <strong>What this shows:</strong> animal behaviour is linked to night-time conditions, with arrival timing compared against sunset and cloud cover.
           <span class="source-note">Source placeholder: <code>nightly_penguin_counts.csv</code>, embedded via <code>penguins_visualisation.json</code>.</span>
